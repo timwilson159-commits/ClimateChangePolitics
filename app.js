@@ -268,7 +268,7 @@
     }
     if (!ok && NZ.isGreenwash(o.p)) floatText('🕵️ Good catch! That one was misleading.', 'good', Math.max(10, r.left - 10), r.top + 20);
     await wait(650);
-    if (res && res.deceived) { await showDeceived(o); }
+    if (res && res.deceived) { await showDeceived(o, res.penalty); }
     paper.classList.add(ok ? 'out-approve' : 'out-reject');
     await wait(420);
     busy = false;
@@ -277,7 +277,7 @@
     renderDesk(false);
   }
 
-  function showDeceived(o) {
+  function showDeceived(o, penalty) {
     return new Promise(resolve => {
       sfx.alarm();
       const p = o.p, adv = ADVISORS[p.adv];
@@ -285,6 +285,7 @@
       const m = h(`<div class="modal"><div class="mcard"><div class="mi">🚨</div><h2>You were tricked!</h2>
         <p class="big"><b>${esc(p.title)}</b> promised <b class="good">−${shown}%</b> pollution.<br>The truth: only <b class="bad">${p.emis > 0 ? '−' + p.emis + '%' : '0%'}</b>.</p>
         <p class="why"><b>The catch:</b> ${esc(p.fine)}</p>
+        ${penalty ? `<p class="bad"><b>You also lost 💰${penalty} points cleaning up the mess.</b></p>` : ""}
         <p><b>Greenwash</b> = sounds green, does little. ${adv.name} (${adv.role}) pitched this one. Think about whether to trust them next time.</p>
         <p class="tip">💡 Next time, read the 🔍 fine print or spend a ✅ fact-check on papers that look too good to be true.</p>
         <button class="btn green" id="gotit">Got it</button></div></div>`);

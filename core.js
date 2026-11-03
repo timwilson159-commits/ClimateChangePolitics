@@ -1,7 +1,7 @@
 // Net Zero Desk - pure game logic (works in browser and node)
 (function (root) {
   const CFG = {
-    rounds: 12, startPts: 100, startPop: 60, baseE: 100, growth: 1.5, floorE: 4,
+    rounds: 12, startPts: 80, fooledPts: 8, startPop: 60, baseE: 100, growth: 1.5, floorE: 4,
     startT: 1.40, k: 0.0003, checks: 3, reissueMult: 1.25, elections: [4, 8],
     firstYear: 2026, yearsPerRound: 2
   };
@@ -175,8 +175,13 @@
     o.done = 'approved';
     s.recent.push({ round: s.round, id: p.id });
     const deceived = isGreenwash(p) && !o.checked;
-    if (deceived) s.deceivedLog.push({ round: s.round, id: p.id });
-    return { ok: true, bonus, amt, deceived };
+    let penalty = 0;
+    if (deceived) {
+      s.deceivedLog.push({ round: s.round, id: p.id });
+      penalty = Math.min(s.pts, CFG.fooledPts);   // clean-up cost when a misleading paper is exposed
+      s.pts -= penalty;
+    }
+    return { ok: true, bonus, amt, deceived, penalty };
   }
   function reject(s, i) {
     const o = s.offers[i];
@@ -209,7 +214,7 @@
     const q = qolAll(s);
     const avg = QOL_KEYS.reduce((a, k) => a + q[k], 0) / 5;
     // voters drift with quality of life, and slowly forget old anger (and old joy)
-    const drift = Math.round((avg - 50) / 6) + Math.round((55 - s.pop) * 0.2);
+    const drift = Math.round((avg - 50) / 6) + Math.round((55 - s.pop) * 0.1);
     s.pop = clamp(s.pop + drift, 0, 100);
     s.popHistory.push(s.pop);
     ev.drift = drift;
