@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260">
+<rect width="400" height="260" fill="#a9d2e6"/>
+<g fill="#fff"><ellipse cx="320" cy="26" rx="30" ry="9"/><ellipse cx="338" cy="19" rx="18" ry="8"/><ellipse cx="120" cy="30" rx="24" ry="7"/></g>
+<!-- green hill behind -->
+<path d="M110 220C130 150 200 96 280 94C350 92 400 130 410 220Z" fill="#4caf50"/>
+<path d="M150 150C180 118 230 100 280 100C240 108 200 124 176 170Z" fill="#6cc070"/>
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M352 150v-14h6v14z" fill="#a86b3c"/><circle cx="355" cy="130" r="14" fill="#2e7d4f"/>
+<path d="M326 120v-10h5v10z" fill="#a86b3c"/><circle cx="328" cy="106" r="11" fill="#2e7d4f"/>
+</g>
+<!-- red earth + mine entrance -->
+<path d="M-5 120L60 102L120 116L150 150L170 222H-5Z" fill="#c4572f"/>
+<path d="M-5 160L40 150L80 164L150 222H-5Z" fill="#d9663b"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M22 168V132C22 106 78 106 78 132V168Z" fill="#2b3042"/>
+<path d="M14 170V130C14 98 86 98 86 130V170" fill="none" stroke-width="6" stroke="#1f2a44"/>
+<path d="M14 170V130C14 98 86 98 86 130V170" fill="none" stroke-width="3" stroke="#a86b3c"/>
+</g>
+<rect y="214" width="400" height="46" fill="#d9663b"/>
+<path d="M0 214H400V226H0Z" fill="#c4572f"/>
+<!-- truck -->
+<g transform="translate(250 150) scale(.76) translate(-250 -150)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M184 100c0-20 16-26 30-22c10-6 26-4 32 6c14-2 26 8 24 22c-6 8-70 12-86-6z" fill="#3a3f4d"/>
+<path d="M200 90c4-8 12-10 20-8" fill="none" stroke="#8a94a6" stroke-width="3"/>
+<path d="M178 168L176 108C220 118 262 114 296 100L300 168Z" fill="#ffd23f"/>
+<path d="M286 110L300 168H266Z" fill="#f2b500" stroke="none"/>
+<path d="M178 168L176 108C220 118 262 114 296 100L300 168Z" fill="none"/>
+<path d="M186 122v34M200 124v32" stroke-width="3" fill="none" opacity=".5"/>
+<rect x="296" y="132" width="40" height="38" rx="6" fill="#ff9f1c"/>
+<rect x="304" y="138" width="24" height="16" rx="3" fill="#b9e6fb" stroke-width="3"/>
+<rect x="170" y="168" width="170" height="14" rx="5" fill="#4d5566"/>
+<circle cx="210" cy="192" r="24" fill="#3a3f4d"/><circle cx="210" cy="192" r="10" fill="#8a94a6" stroke-width="3"/>
+<circle cx="304" cy="192" r="24" fill="#3a3f4d"/><circle cx="304" cy="192" r="10" fill="#8a94a6" stroke-width="3"/>
+</g>
+<!-- no sign -->
+<g fill="none" stroke-linecap="butt">
+<circle cx="250" cy="142" r="72" stroke="#1f2a44" stroke-width="20"/>
+<path d="M199 91L301 193" stroke="#1f2a44" stroke-width="20" stroke-linecap="round"/>
+<circle cx="250" cy="142" r="72" stroke="#e63946" stroke-width="12"/>
+<path d="M199 91L301 193" stroke="#e63946" stroke-width="12" stroke-linecap="round"/>
+<path d="M192 122A60 60 0 0 1 222 90" stroke="#ff7d86" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<!-- miner -->
+<g transform="translate(22 0)" stroke="#1f2a44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M66 226v18M92 226v18" stroke-width="13"/><path d="M66 226v18M92 226v18" stroke-width="7" stroke="#3d4a6b"/>
+<path d="M58 247h16M84 247h16" stroke-width="9"/>
+<path d="M112 160L140 232" stroke-width="5" stroke="#a86b3c"/><path d="M96 168c10-12 40-10 50 0" stroke-width="5" fill="none" stroke="#8a94a6"/>
+<rect x="56" y="176" width="52" height="56" rx="14" fill="#ff9f1c"/>
+<path d="M68 178v52M96 178v52M56 208h52" stroke="#f5f0c0" stroke-width="5"/>
+<path d="M60 186L56 218" stroke-width="12" stroke="#1f2a44"/><path d="M60 186L56 218" stroke-width="5" stroke="#ff9f1c"/>
+<path d="M104 186L116 208" stroke-width="12" stroke="#1f2a44"/><path d="M104 186L116 208" stroke-width="5" stroke="#ff9f1c"/>
+<circle cx="56" cy="220" r="6" fill="#a86b3c" stroke-width="3"/><circle cx="117" cy="210" r="6" fill="#a86b3c" stroke-width="3"/>
+<circle cx="84" cy="158" r="21" fill="#a86b3c"/>
+<g transform="translate(0 -3)"><path d="M61 154c0-26 46-26 46 0z" fill="#ffd23f"/><rect x="56" y="152" width="56" height="8" rx="4" fill="#ffd23f"/><path d="M78 134h12" stroke-width="3"/></g>
+</g>
+<g transform="translate(22 0)"><g stroke="#1f2a44" stroke-width="3" stroke-linecap="round" fill="none"><path d="M69 165l9-4M99 165l-9-4"/><path d="M76 182q8-6 16 0"/></g>
+<g fill="#1f2a44"><circle cx="75" cy="168" r="2.5"/><circle cx="93" cy="168" r="2.5"/></g>
+<path d="M97 174c3 5 5 8 0 9c-4-1-3-5 0-9z" fill="#2ec4b6" stroke="#1f2a44" stroke-width="2.5"/></g>
+</svg>

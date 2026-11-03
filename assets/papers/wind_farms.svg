@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260">
+<defs>
+<g id="wf_wt" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-5 0L5 0L2.8 -90L-2.8 -90Z" fill="#fff"/>
+<path d="M1 -2L5 0L2.8 -90L1.5 -90Z" fill="#dfe6ef" stroke="none"/>
+<g fill="#fff"><path id="wf_bl" d="M0 -90C-8 -100 -7 -128 0 -142C7 -128 8 -100 0 -90Z"/>
+<use href="#wf_bl" transform="rotate(120 0 -90)"/><use href="#wf_bl" transform="rotate(240 0 -90)"/></g>
+<circle cx="0" cy="-90" r="6.5" fill="#fff"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="#8fd3f4"/>
+<g fill="#fff"><ellipse cx="85" cy="40" rx="36" ry="11"/><ellipse cx="108" cy="32" rx="22" ry="11"/><ellipse cx="320" cy="30" rx="30" ry="9"/><ellipse cx="338" cy="24" rx="16" ry="8"/></g>
+<circle cx="250" cy="42" r="15" fill="#ffd23f"/>
+<!-- far hills -->
+<path d="M0 150C60 120 130 120 200 140S340 120 400 135V260H0Z" fill="#d8b24a"/>
+<path d="M0 175C80 150 160 160 240 168S350 150 400 160V260H0Z" fill="#b8e8c0"/>
+<path d="M0 180C70 160 150 170 230 178S340 168 400 172V260H0Z" fill="#4caf50"/>
+<path d="M0 205C90 188 190 196 280 206S370 200 400 198V260H0Z" fill="#2e7d4f"/>
+<path d="M0 220C80 206 200 214 300 222S380 218 400 216V260H0Z" fill="#6cc070"/>
+<path d="M0 240C100 230 260 236 400 232V260H0Z" fill="#4caf50"/>
+<!-- turbines -->
+<use href="#wf_wt" transform="translate(380 160) scale(.4)"/>
+<use href="#wf_wt" transform="translate(186 172) scale(.74)"/>
+<use href="#wf_wt" transform="translate(262 178) scale(.6)"/>
+<use href="#wf_wt" transform="translate(105 200) scale(.98)"/>
+<!-- fence post + galah -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M45 252v-34h14v34z" fill="#a86b3c"/>
+<path d="M45 222h14" stroke-width="3"/>
+<g transform="translate(52 218) scale(1.5)">
+<path d="M5 0c-1 8-3 10-6 12l-5-4c-1-6 2-11 6-13z" fill="#8a94a6" transform="translate(6 -8) rotate(30)"/>
+<ellipse cx="0" cy="-12" rx="11" ry="14" fill="#f08ca0"/>
+<path d="M8 -12c6 4 10 12 14 20c-8 0-16-6-18-14z" fill="#8a94a6"/>
+<circle cx="-2" cy="-31" r="9" fill="#f9bcc8"/>
+<path d="M-8 -37c-2-8 4-12 8-10c-1 4 0 8 3 10z" fill="#fff"/>
+<path d="M-10 -30l-8 3l8 3z" fill="#e8e8e8"/>
+<circle cx="-5" cy="-32" r="1.8" fill="#1f2a44" stroke="none"/>
+</g>
+</g>
+<!-- kangaroo -->
+<g transform="translate(-16 0)" stroke="#1f2a44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M340 236C362 236 380 242 392 252C370 255 350 252 334 247Z" fill="#a86b3c"/>
+<path d="M330 150C318 162 312 190 314 215C316 236 332 244 348 240C360 235 360 214 354 196C350 176 348 160 342 150Z" fill="#d9a066"/>
+<ellipse cx="328" cy="208" rx="8" ry="17" fill="#f5c9a0" stroke="none"/>
+<path d="M314 238L296 245C293 251 300 254 312 254L340 254C345 250 340 241 332 238Z" fill="#a86b3c"/>
+<path d="M332 124L330 106L340 120Z" fill="#d9a066"/>
+<path d="M341 125L349 108L349 128Z" fill="#d9a066"/>
+<path d="M336 122C348 124 348 142 340 153L320 159C309 161 302 155 306 148C311 142 317 138 319 130C323 124 329 121 336 122Z" fill="#d9a066"/>
+<path d="M305 150l4 1" stroke-width="5"/>
+<path d="M322 174C316 178 312 184 313 190" fill="none" stroke-width="5"/>
+</g>
+<circle cx="312" cy="136" r="2.4" fill="#1f2a44"/>
+</svg>

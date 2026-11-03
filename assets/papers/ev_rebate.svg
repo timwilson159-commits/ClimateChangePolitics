@@ -1,0 +1,44 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="evr_sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3df"/><stop offset="1" stop-color="#8fd3f4"/></linearGradient>
+<g id="evr_spark"><path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10Z" fill="#b8e8c0" stroke="#1f2a44" stroke-width="2.5" stroke-linejoin="round"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#evr_sky)"/>
+<circle cx="190" cy="34" r="20" fill="#ffd23f"/>
+<g fill="#fff"><ellipse cx="90" cy="40" rx="34" ry="12"/><ellipse cx="112" cy="32" rx="20" ry="12"/><ellipse cx="130" cy="62" rx="22" ry="8"/></g>
+<path d="M0 170 Q70 140 140 165 T300 160 T400 165 V260 H0Z" fill="#4caf50"/>
+<path d="M0 185 Q100 168 200 182 T400 178 V260 H0Z" fill="#2e7d4f"/>
+<rect y="200" width="400" height="60" fill="#4d5566"/>
+<g fill="#f2c879"><rect x="30" y="228" width="44" height="6" rx="3"/><rect x="150" y="228" width="44" height="6" rx="3"/><rect x="270" y="228" width="44" height="6" rx="3"/></g>
+<ellipse cx="200" cy="214" rx="120" ry="8" fill="#3a4152"/>
+<!-- heart cable -->
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M97 175 C70 178 56 160 52 138" stroke="#1f2a44" stroke-width="12"/>
+<path d="M52 138 C14 112 20 66 44 68 C52 69 54 78 54 84 C54 78 58 69 68 68 C92 66 92 112 52 138Z" stroke="#1f2a44" stroke-width="12"/>
+<path d="M97 175 C70 178 56 160 52 138" stroke="#4caf50" stroke-width="5"/>
+<path d="M52 138 C14 112 20 66 44 68 C52 69 54 78 54 84 C54 78 58 69 68 68 C92 66 92 112 52 138Z" stroke="#4caf50" stroke-width="5"/>
+</g>
+<!-- car -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M104 196 V158 Q104 142 122 140 L152 136 Q166 100 200 98 L232 98 Q258 100 270 134 L292 140 Q310 144 310 164 V196 Z" fill="#2ec4b6"/>
+<path d="M160 134 Q172 108 200 106 L228 106 Q246 108 256 134 Z" fill="#d6f1fb"/>
+<path d="M104 176 H310 V196 H104Z" fill="#20a094" stroke="none"/>
+<path d="M104 196 V158 Q104 142 122 140 L152 136 Q166 100 200 98 L232 98 Q258 100 270 134 L292 140 Q310 144 310 164 V196 Z" fill="none"/>
+<path d="M199 108 V134" stroke-width="3"/>
+<circle cx="180" cy="122" r="11" fill="#f5c9a0"/><path d="M169 119 Q180 104 192 118Z" fill="#3a2a20" stroke="none"/>
+<circle cx="177" cy="122" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="185" cy="122" r="1.8" fill="#1f2a44" stroke="none"/><path d="M176 127 Q181 131 186 127" stroke-width="2" fill="none"/>
+<path d="M170 134 Q150 128 146 108" stroke-width="12" stroke="#1f2a44" fill="none"/><path d="M170 134 Q150 128 146 108" stroke-width="5" stroke="#f5c9a0" fill="none"/><circle cx="146" cy="104" r="8" fill="#f5c9a0"/>
+<circle cx="302" cy="160" r="6" fill="#ffd23f"/>
+<rect x="96" y="160" width="14" height="14" rx="4" fill="#fff"/>
+<g fill="#4d5566"><circle cx="150" cy="198" r="22"/><circle cx="268" cy="198" r="22"/></g>
+<g fill="#d6dbe3"><circle cx="150" cy="198" r="9"/><circle cx="268" cy="198" r="9"/></g>
+</g>
+<!-- tag -->
+<g transform="translate(286 70) rotate(8)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-30 -32 H38 Q48 -32 48 -22 V22 Q48 32 38 32 H-30 L-54 0Z" fill="#ffd23f"/>
+<circle cx="-34" cy="0" r="6" fill="#8fd3f4"/>
+<circle cx="14" cy="0" r="23" fill="#ffffff"/>
+<path d="M14 -12 V10 M5 2 L14 12 L23 2" fill="none" stroke="#e63946" stroke-width="6"/>
+</g>
+<use href="#evr_spark" x="120" y="108"/><use href="#evr_spark" x="320" y="150" transform="translate(0 0)"/><use href="#evr_spark" x="75" y="40" transform="scale(.8) translate(18 10)"/>
+</svg>

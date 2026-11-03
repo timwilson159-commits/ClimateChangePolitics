@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="260" fill="#8fd3f4"/>
+<circle cx="365" cy="34" r="20" fill="#ffd23f"/>
+<path d="M0 90 Q60 60 130 88 T260 82 T400 90 V210 H0 Z" fill="#b8e8c0"/>
+<rect y="205" width="400" height="55" fill="#9bd9a6"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- chimneys -->
+<path d="M60 100 L64 42 H86 L90 100 Z" fill="#8a94a6"/>
+<path d="M62 70 L63 58 H87 L88 70 Z" fill="#d9663b" stroke="none"/>
+<path d="M63.5 50 L64 42 H86 L86.5 50 Z" fill="#d9663b" stroke="none"/>
+<path d="M130 100 L134 50 H156 L160 100 Z" fill="#8a94a6"/>
+<path d="M132 78 L133 66 H157 L158 78 Z" fill="#d9663b" stroke="none"/>
+<!-- smoke wisps -->
+<circle cx="76" cy="30" r="7" fill="#b9bfc9"/><circle cx="88" cy="20" r="5" fill="#b9bfc9"/>
+<circle cx="146" cy="38" r="6" fill="#b9bfc9"/>
+<!-- factory body -->
+<rect x="24" y="100" width="216" height="105" fill="#8a94a6"/>
+<path d="M24 100 V72 L78 100 V72 L132 100 V72 L186 100 V72 L240 100 Z" fill="#4d5566"/>
+<path d="M24 72 L78 100 H24 Z M78 72 L132 100 H78 Z M132 72 L186 100 H132 Z M186 72 L240 100 H186 Z" fill="#6a7385" stroke="none"/>
+<!-- cut-away interior -->
+<rect x="40" y="118" width="104" height="72" rx="6" fill="#fff3c4"/>
+<path d="M50 120 H134 M52 128 H132" stroke="none"/>
+<g stroke-width="3">
+<path d="M65 120 V132 M92 120 V132 M119 120 V132"/>
+<circle cx="65" cy="140" r="8" fill="#ffd23f"/><circle cx="92" cy="140" r="8" fill="#ffd23f"/><circle cx="119" cy="140" r="8" fill="#ffd23f"/>
+</g>
+<g fill="#ffd23f" opacity=".55" stroke="none"><circle cx="65" cy="140" r="14"/><circle cx="92" cy="140" r="14"/><circle cx="119" cy="140" r="14"/></g>
+<rect x="52" y="168" width="80" height="22" rx="5" fill="#6a7385" stroke-width="3"/>
+<rect x="60" y="173" width="12" height="12" rx="3" fill="#2ec4b6" stroke="none"/><rect x="80" y="173" width="40" height="5" rx="2" fill="#b9bfc9" stroke="none"/>
+<!-- insulation wall -->
+<rect x="158" y="114" width="70" height="78" rx="6" fill="#f4a6b8"/>
+<path d="M164 128 Q176 118 188 128 Q200 118 212 128 Q220 122 224 128 M164 148 Q176 138 188 148 Q200 138 212 148 Q220 142 224 148 M164 168 Q176 158 188 168 Q200 158 212 168 Q220 162 224 168" fill="none" stroke="#fff" stroke-width="3.5" opacity=".8"/>
+<rect x="158" y="114" width="70" height="78" rx="6" fill="none"/>
+<!-- door -->
+<!-- control panel -->
+<rect x="262" y="52" width="112" height="110" rx="10" fill="#4d5566"/>
+<path d="M285 162 V205 M351 162 V205" fill="none" stroke-width="7"/>
+<circle cx="318" cy="106" r="42" fill="#fff"/>
+</g>
+<g fill="none" stroke-width="10">
+<path d="M291 106 A27 27 0 0 1 304.5 82.6" stroke="#4caf50"/>
+<path d="M304.5 82.6 A27 27 0 0 1 331.5 82.6" stroke="#ffd23f"/>
+<path d="M331.5 82.6 A27 27 0 0 1 345 106" stroke="#e63946"/>
+</g>
+<g stroke="#1f2a44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M318 106 L297 96" fill="none" stroke-width="5"/>
+<circle cx="318" cy="106" r="6" fill="#ff9f1c"/>
+<path d="M308 124 H328 L318 138 Z" fill="#4caf50"/>
+</g>
+<!-- worker -->
+<g transform="translate(292 234)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M14 -52 Q30 -62 38 -82" stroke-width="13" fill="none"/>
+<path d="M14 -52 Q30 -62 38 -82" stroke="#d9a066" stroke-width="5" fill="none"/>
+<rect x="-17" y="-24" width="14" height="24" rx="4" fill="#3a4a6b"/>
+<rect x="3" y="-24" width="14" height="24" rx="4" fill="#3a4a6b"/>
+<rect x="-20" y="-64" width="40" height="46" rx="11" fill="#ff9f1c"/>
+<rect x="-20" y="-44" width="40" height="7" fill="#e8edf2" stroke="none"/>
+<path d="M-14 -56 Q-26 -44 -22 -36" stroke-width="13" fill="none"/>
+<path d="M-14 -56 Q-26 -44 -22 -36" stroke="#d9a066" stroke-width="5" fill="none"/>
+<circle cx="0" cy="-78" r="15" fill="#d9a066"/>
+<path d="M-16 -89 Q0 -112 16 -89 Z" fill="#ffd23f"/>
+<rect x="-20" y="-93" width="40" height="6" rx="3" fill="#ffd23f"/>
+<circle cx="-5" cy="-76" r="1.6" fill="#1f2a44" stroke="none"/><circle cx="5" cy="-76" r="1.6" fill="#1f2a44" stroke="none"/>
+<path d="M-6 -70 Q0 -64 6 -70" stroke-width="3" fill="none"/>
+</g>
+<g fill="#fff"><path d="M248 190 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/><path d="M386 150 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/><path d="M178 100 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z" transform="translate(-14 -2)"/></g>
+</svg>

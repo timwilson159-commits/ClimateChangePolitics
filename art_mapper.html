@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Net Zero Desk – Art Mapper</title>
+<style>
+  :root{--navy:#1f2a44;--bg:#f3efe4;--card:#fff;--green:#2e9e5b;--red:#d64545;--yellow:#ffd23f;--muted:#6b7488}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--navy);font-size:15px}
+  header{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+  header h1{font-size:1.15rem;margin:0}
+  header .sp{flex:1}
+  button,select,input{font:inherit}
+  button{cursor:pointer;border:2px solid var(--navy);background:var(--yellow);color:var(--navy);font-weight:700;border-radius:8px;padding:5px 12px}
+  button.sec{background:#fff}button.go{background:#5fd48a}button:disabled{opacity:.45;cursor:not-allowed}
+  header button{border-color:#fff}
+  header label{font-size:.85rem;display:flex;gap:6px;align-items:center}
+  header select,header input[type=number]{border-radius:6px;border:2px solid #fff;padding:2px 4px;background:#fff;color:var(--navy)}
+  .tabs{display:flex;gap:6px}
+  .tabs button{background:#3a4a74;color:#fff;border-color:#fff}.tabs button.on{background:var(--yellow);color:var(--navy)}
+  main{max-width:1250px;margin:0 auto;padding:16px}
+  .box{background:var(--card);border:3px solid var(--navy);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+  .box h2,.box h3{margin:0 0 6px}
+  details summary{cursor:pointer;font-weight:700}
+  textarea{width:100%;min-height:130px;border:2px solid var(--navy);border-radius:8px;padding:8px;font:13px/1.4 Consolas,monospace}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:8px 0}
+  .steps div{background:#fff7d6;border:2px dashed var(--navy);border-radius:10px;padding:8px 10px}
+  .pal{border:3px solid var(--navy);border-radius:14px;background:#fff;margin-bottom:16px;overflow:hidden}
+  .pal>.ph{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#dfe9ff;padding:8px 12px;border-bottom:3px solid var(--navy)}
+  .pal>.ph b{font-size:1.05rem}.pal>.ph .sp{flex:1}
+  .pbody{display:grid;grid-template-columns:minmax(260px,1fr) minmax(300px,1.4fr);gap:12px;padding:12px}
+  @media(max-width:850px){.pbody{grid-template-columns:1fr}}
+  .items{margin:0;padding-left:20px;font-size:.88rem}
+  .items li{margin:3px 0}.items small{color:var(--muted)}
+  .drop{border:4px dashed var(--navy);border-radius:12px;min-height:120px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;background:#fafafa;color:var(--muted);font-weight:700;cursor:pointer}
+  .drop.over{background:#d9f7e2;border-color:var(--green)}
+  .bench{grid-column:1/-1;border-top:3px solid var(--navy);padding-top:10px}
+  .prev{max-width:100%;border:2px solid var(--navy);border-radius:8px;display:block}
+  .ctl{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:8px 0;font-size:.88rem}
+  .ctl label{display:flex;gap:6px;align-items:center}.ctl input[type=range]{width:120px}
+  .cells{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
+  .cell{border:3px solid var(--navy);border-radius:10px;padding:6px;background:#fff}
+  .cell.off{opacity:.4}
+  .cell canvas{width:100%;display:block;border:2px solid var(--navy);border-radius:6px;background:#ccc}
+  .cell select{width:100%;margin-top:4px;border:2px solid var(--navy);border-radius:6px}
+  .cell label{display:flex;gap:6px;align-items:center;font-size:.85rem;margin-top:3px}
+  .cell .nm{font-size:.78rem;color:var(--muted);word-break:break-all}
+  .msg{font-size:.85rem;font-weight:700;margin:4px 0}
+  .ok{color:var(--green)}.bad{color:var(--red)}
+  .board{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+  .tile{border:3px solid var(--navy);border-radius:10px;background:#fff;overflow:hidden;position:relative}
+  .tile.over{outline:4px solid var(--green)}
+  .tile img{display:block;width:100%;aspect-ratio:400/260;object-fit:cover;background:#ddd}
+  .tile div{padding:4px 8px;font-size:.8rem}
+  .tile b{display:block;font-size:.85rem}
+  .badge{position:absolute;right:6px;top:6px;border:2px solid var(--navy);border-radius:10px;padding:0 7px;font-size:.7rem;font-weight:800}
+  .badge.new{background:#5fd48a}.badge.old{background:#ffe08a}
+  .grp{margin:14px 0 6px;font-weight:800;font-size:1.05rem}
+  #log{font:12px Consolas,monospace;background:#101828;color:#9ff0b4;border-radius:8px;padding:8px;max-height:140px;overflow:auto;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎨 Net Zero Desk · Art Mapper</h1>
+  <div class="tabs"><button id="tabP" class="on">1 · Palettes</button><button id="tabB">2 · Status board</button></div>
+  <span class="sp"></span>
+  <label>Max grid
+    <select id="gridSel"><option value="2x2">2 × 2 (4 images)</option><option value="3x2" selected>3 × 2 (6 images)</option><option value="3x3">3 × 3 (9 images)</option></select></label>
+  <label>Width <select id="sizeSel"><option>800</option><option selected>1000</option><option>1200</option><option>1600</option></select></label>
+  <label>Format <select id="fmtSel"><option value="webp" selected>WebP (small)</option><option value="png">PNG</option><option value="jpg">JPG</option></select></label>
+  <button id="folderBtn" class="sec">📁 Connect project folder</button>
+</header>
+<main>
+  <div class="box">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div><b>1 · Connect</b><br>Click <i>Connect project folder</i> and choose the <code>net_zero_desk</code> folder (Chrome / Edge). Images are then saved straight into <code>assets/…</code>. Without it you can download a ZIP instead.</div>
+      <div><b>2 · Generate</b><br>On any palette below, press <i>Copy prompt</i>, paste it into your image generator, and save the single contact-sheet picture it makes.</div>
+      <div><b>3 · Drop</b><br>Drag the palette picture (or paste with Ctrl+V) onto its drop zone. It is split into individual images, named and checked.</div>
+      <div><b>4 · Save</b><br>Fix the grid if needed, untick bad cells, press <i>Save</i>. The game uses the new image automatically and keeps the SVG as a fall-back.</div>
+    </div>
+    <details><summary>Shared style prompt (added to every palette prompt, editable)</summary>
+      <textarea id="styleTxt"></textarea>
+      <div class="ctl"><button class="sec" id="styleReset">Reset to default</button></div>
+    </details>
+  </div>
+  <div id="viewP"></div>
+  <div id="viewB" hidden></div>
+  <div class="box"><b>Log</b><div id="log"></div></div>
+</main>
+<script src="tools/art_manifest.js"></script>
+<script src="assets/manifest.js" onerror="void 0"></script>
+<script>
+if (typeof RASTER === 'undefined') window.RASTER = {};
+const $ = (s, el = document) => el.querySelector(s);
+const ASPECT = 400 / 260;
+const DEFAULT_STYLE = `Flat vector illustration in a clean children's picture-book style, like a modern educational app. Thick dark-navy outlines, simple rounded chunky shapes, flat bright colours with one light highlight and one soft shadow. Colours: sky blue, leaf green, sunny yellow, red-orange earth, sand, teal and grey. Australian setting. Friendly cartoon characters with round heads, dot eyes and small smiles, with diverse skin tones. Each picture has one large, clear main subject in the centre and a simple background that fills the picture edge to edge. The pictures contain no words, letters, numbers or logos. All pictures share exactly the same style and line thickness.`;
+const LS = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const LSset = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+$('#styleTxt').value = LS('nzd_style2') || DEFAULT_STYLE;
+$('#styleTxt').oninput = e => LSset('nzd_style2', e.target.value);
+$('#styleReset').onclick = () => { $('#styleTxt').value = DEFAULT_STYLE; LSset('nzd_style2', DEFAULT_STYLE); };
+
+function log(m) { const l = $('#log'); l.textContent += m + '\n'; l.scrollTop = l.scrollHeight; }
+
+// ---------- settings ----------
+let GRID = { cols: 3, rows: 2 };
+const opts = () => ({ w: +$('#sizeSel').value, fmt: $('#fmtSel').value });
+$('#gridSel').onchange = () => { const [c, r] = $('#gridSel').value.split('x').map(Number); GRID = { cols: c, rows: r }; buildPalettes(); };
+$('#tabP').onclick = () => { $('#viewP').hidden = false; $('#viewB').hidden = true; $('#tabP').classList.add('on'); $('#tabB').classList.remove('on'); };
+$('#tabB').onclick = () => { $('#viewP').hidden = true; $('#viewB').hidden = false; $('#tabB').classList.add('on'); $('#tabP').classList.remove('on'); buildBoard(); };
+
+// ---------- project folder (File System Access) ----------
+let dir = null; const zipFiles = {};
+const FOLDERS = ['papers', 'events', 'people', 'endings', 'ui'];
+function idb() { return new Promise((res, rej) => { const r = indexedDB.open('nzd_mapper', 1); r.onupgradeneeded = () => r.result.createObjectStore('h'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); }
+async function idbGet(k) { try { const d = await idb(); return await new Promise(res => { const q = d.transaction('h').objectStore('h').get(k); q.onsuccess = () => res(q.result); q.onerror = () => res(null); }); } catch (e) { return null; } }
+async function idbSet(k, v) { try { const d = await idb(); d.transaction('h', 'readwrite').objectStore('h').put(v, k); } catch (e) {} }
+function folderUI() {
+  const b = $('#folderBtn');
+  b.textContent = dir ? '📁 Saving into: ' + dir.name : '📁 Connect project folder';
+  b.classList.toggle('sec', !dir);
+}
+async function connect() {
+  if (!window.showDirectoryPicker) { alert('This browser cannot write to folders. Use Chrome or Edge, or use the ZIP download option.'); return; }
+  try {
+    const h = await showDirectoryPicker({ mode: 'readwrite' });
+    dir = h; await idbSet('dir', h); folderUI(); log('Connected to folder: ' + h.name);
+    await scanDisk(); if (!$('#viewB').hidden) buildBoard();
+  } catch (e) { /* cancelled */ }
+}
+$('#folderBtn').onclick = connect;
+(async () => {
+  const h = await idbGet('dir');
+  if (h) { try { if ((await h.queryPermission({ mode: 'readwrite' })) === 'granted') { dir = h; scanDisk(); } else { $('#folderBtn').textContent = '📁 Re-connect "' + h.name + '"'; $('#folderBtn').onclick = async () => { try { if ((await h.requestPermission({ mode: 'readwrite' })) === 'granted') { dir = h; folderUI(); await scanDisk(); $('#folderBtn').onclick = connect; log('Re-connected to ' + h.name); } } catch (e) { connect(); } }; return; } } catch (e) {} }
+  folderUI();
+})();
+
+// The folder the user connected may be the project folder (contains assets/) or the assets folder itself.
+async function assetsDir() {
+  if (dir.name === 'assets') return dir;
+  try { return await dir.getDirectoryHandle('assets'); } catch (e) {}
+  for (const f of FOLDERS) { try { await dir.getDirectoryHandle(f); return dir; } catch (e) {} }   // looks like the assets folder already
+  return await dir.getDirectoryHandle('assets', { create: true });
+}
+// find images that already exist on disk so the status board shows them
+async function scanDisk() {
+  if (!dir) return 0;
+  const a = await assetsDir(); let n = 0;
+  for (const f of FOLDERS) {
+    let fd; try { fd = await a.getDirectoryHandle(f); } catch (e) { continue; }
+    for await (const [name] of fd.entries()) { const mm = name.match(/^(.+)\.(png|webp|jpg)$/i); if (mm) { RASTER[f + '/' + mm[1]] = mm[2].toLowerCase(); n++; } }
+  }
+  log('Found ' + n + ' existing images in ' + dir.name + (a === dir ? '' : '/assets'));
+  return n;
+}
+async function writeAsset(folder, id, blob, ext) {
+  const key = folder + '/' + id;
+  if (!dir) { zipFiles['assets/' + key + '.' + ext] = blob; RASTER[key] = ext; updateZipBtn(); return 'zip'; }
+  const assets = await assetsDir();
+  const fd = await assets.getDirectoryHandle(folder, { create: true });
+  for (const e of ['png', 'webp', 'jpg']) if (e !== ext) { try { await fd.removeEntry(id + '.' + e); } catch (er) {} }
+  const fh = await fd.getFileHandle(id + '.' + ext, { create: true });
+  const w = await fh.createWritable(); await w.write(blob); await w.close();
+  RASTER[key] = ext;
+  return 'disk';
+}
+async function writeManifest() {
+  const m = {};
+  if (dir) {
+    const assets = await assetsDir();
+    for (const f of FOLDERS) {
+      let fd; try { fd = await assets.getDirectoryHandle(f); } catch (e) { continue; }
+      for await (const [name] of fd.entries()) { const mm = name.match(/^(.+)\.(png|webp|jpg)$/i); if (mm) m[f + '/' + mm[1]] = mm[2].toLowerCase(); }
+    }
+  } else Object.assign(m, RASTER);
+  const txt = '// written by art_mapper.html: which assets have an image (otherwise the game uses the SVG)\nwindow.RASTER = ' + JSON.stringify(m, null, 1) + ';\n';
+  if (dir) { const assets = await assetsDir(); const fh = await assets.getFileHandle('manifest.js', { create: true }); const w = await fh.createWritable(); await w.write(txt); await w.close(); }
+  else zipFiles['assets/manifest.js'] = new Blob([txt], { type: 'text/javascript' });
+  Object.keys(RASTER).forEach(k => delete RASTER[k]); Object.assign(RASTER, m);
+}
+
+// ---------- tiny ZIP writer (store only) ----------
+const crcT = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = u8 => { let c = 0xFFFFFFFF; for (let i = 0; i < u8.length; i++) c = crcT[(c ^ u8[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+async function makeZip(files) {
+  const enc = new TextEncoder(), parts = [], central = []; let off = 0;
+  for (const name in files) {
+    const data = new Uint8Array(await files[name].arrayBuffer()), nm = enc.encode(name), crc = crc32(data);
+    const lh = new DataView(new ArrayBuffer(30)); lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(8, 0, true); lh.setUint32(14, crc, true); lh.setUint32(18, data.length, true); lh.setUint32(22, data.length, true); lh.setUint16(26, nm.length, true);
+    parts.push(lh, nm, data);
+    const ch = new DataView(new ArrayBuffer(46)); ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint32(16, crc, true); ch.setUint32(20, data.length, true); ch.setUint32(24, data.length, true); ch.setUint16(28, nm.length, true); ch.setUint32(42, off, true);
+    central.push(ch, nm); off += 30 + nm.length + data.length;
+  }
+  const csize = central.reduce((a, p) => a + (p.byteLength ?? p.length), 0);
+  const end = new DataView(new ArrayBuffer(22)); end.setUint32(0, 0x06054b50, true); end.setUint16(8, Object.keys(files).length, true); end.setUint16(10, Object.keys(files).length, true); end.setUint32(12, csize, true); end.setUint32(16, off, true);
+  return new Blob([...parts, ...central, end], { type: 'application/zip' });
+}
+function updateZipBtn() {
+  let b = $('#zipBtn');
+  const n = Object.keys(zipFiles).length;
+  if (!b) { b = document.createElement('button'); b.id = 'zipBtn'; b.className = 'go'; b.onclick = downloadZip; $('header').appendChild(b); }
+  b.hidden = !n; b.textContent = '⬇ Download ZIP (' + n + ' files)';
+}
+async function downloadZip() {
+  await writeManifest();
+  const z = await makeZip(zipFiles); const a = document.createElement('a'); a.href = URL.createObjectURL(z); a.download = 'net_zero_desk_art.zip'; a.click();
+  log('ZIP downloaded. Unzip it into the net_zero_desk folder (it contains assets/… and assets/manifest.js).');
+}
+
+// ---------- image handling ----------
+async function loadImage(file) {
+  const bmp = await createImageBitmap(file);
+  const c = document.createElement('canvas'); c.width = bmp.width; c.height = bmp.height; c.getContext('2d').drawImage(bmp, 0, 0);
+  return c;
+}
+function cropToBlob(src, r, w, fmt) {
+  const h = Math.round(w / ASPECT);
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const g = c.getContext('2d'); g.imageSmoothingQuality = 'high';
+  // cover fit, centred
+  const s = Math.max(w / r.w, h / r.h), sw = w / s, sh = h / s;
+  g.drawImage(src, r.x + (r.w - sw) / 2, r.y + (r.h - sh) / 2, sw, sh, 0, 0, w, h);
+  const mime = fmt === 'png' ? 'image/png' : fmt === 'jpg' ? 'image/jpeg' : 'image/webp';
+  return new Promise(res => c.toBlob(res, mime, 0.92));
+}
+function drawCell(canvas, src, r) {
+  const w = 300, h = Math.round(w / ASPECT); canvas.width = w; canvas.height = h;
+  const g = canvas.getContext('2d'); const s = Math.max(w / r.w, h / r.h), sw = w / s, sh = h / s;
+  g.drawImage(src, r.x + (r.w - sw) / 2, r.y + (r.h - sh) / 2, sw, sh, 0, 0, w, h);
+}
+
+// auto-detect gutters: find runs of near-uniform "background" lines between panels
+function detect(src, cols, rows) {
+  const sc = Math.min(1, 900 / src.width), W = Math.round(src.width * sc), H = Math.round(src.height * sc);
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(src, 0, 0, W, H);
+  const d = g.getImageData(0, 0, W, H).data;
+  const px = (x, y) => { const i = (y * W + x) * 4; return [d[i], d[i + 1], d[i + 2]]; };
+  // background colour = median of the corner pixels + edge samples
+  const samples = []; for (let k = 0; k < 6; k++) { samples.push(px(k, k), px(W - 1 - k, k), px(k, H - 1 - k), px(W - 1 - k, H - 1 - k)); }
+  const med = i => samples.map(s => s[i]).sort((a, b) => a - b)[Math.floor(samples.length / 2)];
+  const bg = [med(0), med(1), med(2)];
+  const near = p => Math.abs(p[0] - bg[0]) + Math.abs(p[1] - bg[1]) + Math.abs(p[2] - bg[2]) < 60;
+  function runs(len, other, get) {
+    const flag = []; for (let i = 0; i < len; i++) { let n = 0; for (let j = 0; j < other; j += 2) if (near(get(i, j))) n++; flag.push(n / (other / 2) > 0.9); }
+    const out = []; let st = null;
+    for (let i = 0; i <= len; i++) { const content = i < len && !flag[i]; if (content && st === null) st = i; if (!content && st !== null) { out.push([st, i]); st = null; } }
+    return out.filter(r => r[1] - r[0] > len * 0.08);
+  }
+  const cx = runs(W, H, (i, j) => px(i, j)), ry = runs(H, W, (i, j) => px(j, i));
+  if (cx.length !== cols || ry.length !== rows) return null;
+  const rects = []; for (const y of ry) for (const x of cx) rects.push({ x: x[0] / sc, y: y[0] / sc, w: (x[1] - x[0]) / sc, h: (y[1] - y[0]) / sc });
+  return rects;
+}
+function sliderRects(W, H, cols, rows, m, gt) {
+  const mx = W * m / 100, my = H * m / 100, gx = W * gt / 100, gy = gx;
+  const cw = (W - 2 * mx - (cols - 1) * gx) / cols, ch = (H - 2 * my - (rows - 1) * gy) / rows;
+  const out = []; for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) out.push({ x: mx + c * (cw + gx), y: my + r * (ch + gy), w: cw, h: ch });
+  return out;
+}
+
+// ---------- palettes ----------
+let PALS = [];
+const GRIDS = { 1: [1, 1], 2: [2, 1], 3: [3, 1], 4: [2, 2], 6: [3, 2], 9: [3, 3] };   // panels -> [cols, rows]; always a full rectangle
+function splitSizes(M, cap) {   // fewest palettes whose sizes are all full rectangles, as even as possible
+  const allowed = Object.keys(GRIDS).map(Number).filter(n => n <= cap).sort((x, y) => y - x);
+  const best = Array(M + 1).fill(null); best[0] = [];
+  for (let m = 1; m <= M; m++) for (const s of allowed) {
+    if (s > m || !best[m - s]) continue;
+    const cand = best[m - s].concat(s);
+    if (!best[m] || cand.length < best[m].length || (cand.length === best[m].length && Math.min(...cand) > Math.min(...best[m]))) best[m] = cand;
+  }
+  return (best[M] || [M]).slice().sort((x, y) => y - x);
+}
+function buildPalettes() {
+  const cap = GRID.cols * GRID.rows;
+  PALS = [];
+  FOLDERS.forEach(f => {
+    const items = ART_MANIFEST.filter(a => a.folder === f);
+    const sizes = splitSizes(items.length, cap); let pos = 0;
+    sizes.forEach((n, i) => { const [cols, rows] = GRIDS[n] || [n, 1]; PALS.push({ id: f + '-' + (i + 1), folder: f, n: i + 1, total: sizes.length, items: items.slice(pos, pos + n), cols, rows }); pos += n; });
+  });
+  renderPalettes();
+}
+const posName = (p, i) => {
+  const r = Math.floor(i / p.cols), c = i % p.cols;
+  const rn = p.rows === 1 ? '' : p.rows === 2 ? ['top', 'bottom'][r] : ['top', 'middle', 'bottom'][r];
+  const cn = p.cols === 1 ? '' : p.cols === 2 ? ['left', 'right'][c] : ['left', 'middle', 'right'][c];
+  return (rn + ' ' + cn).trim() || 'the only picture';
+};
+const NUMW = { 1: 'ONE', 2: 'TWO', 3: 'THREE', 4: 'FOUR', 6: 'SIX', 9: 'NINE' };
+function promptFor(p) {
+  const N = p.items.length;
+  const scene = s => s.replace(/\bA PM\b/g, 'The Prime Minister').replace(/\bPM's\b/g, "the Prime Minister's").replace(/\bPM\b/g, 'the Prime Minister').replace(/\(no [^)]*\)/gi, '').replace(/\s+/g, ' ').trim().replace(/^./, c => c.toUpperCase());
+  const lines = p.items.map((a, i) => 'Picture ' + (i + 1) + ' (' + posName(p, i) + '): ' + scene(a.scene)).join('\n');
+  const layout = N === 1
+    ? 'Create ONE single landscape (3:2) illustration. It is a single picture, not a grid.'
+    : 'Create ONE single image that is a tidy grid of exactly ' + (NUMW[N] || N) + ' (' + N + ') separate pictures: ' + p.cols + ' column' + (p.cols > 1 ? 's' : '') + ' by ' + p.rows + ' row' + (p.rows > 1 ? 's' : '') + '. Every cell of the grid contains a finished picture, so there are no empty cells and no extra cells. All pictures are the same size with a landscape 3:2 shape, divided only by thin plain white lines, with a thin white margin around the whole grid. There are no titles, labels, numbers or frames.';
+  return layout + '\n\nSTYLE: ' + $('#styleTxt').value.trim() + '\n\nRecurring character: the Prime Minister is a friendly, gender-neutral person in a smart blazer with a small green-and-gold lapel pin and tousled brown hair.\n\nThe pictures, in reading order (left to right, then top to bottom):\n' + lines;
+}
+function renderPalettes() {
+  const v = $('#viewP'); v.innerHTML = '';
+  PALS.forEach(p => {
+    const el = document.createElement('div'); el.className = 'pal'; p.el = el;
+    el.innerHTML = `<div class="ph"><b>${p.folder} · palette ${p.n}/${p.total}</b><span class="msg" data-st></span><span class="sp"></span>
+      <button class="sec" data-copy>📋 Copy prompt</button><button class="sec" data-show>👁 Show prompt</button></div>
+      <div class="pbody"><div><ol class="items">${p.items.map(a => `<li><b>${a.id}</b> <small>${a.title}</small></li>`).join('')}</ol></div>
+      <div><div class="drop" data-drop>⬇ Drop the palette picture here<br><small>or click to choose · or hover and press Ctrl+V</small></div><input type="file" accept="image/*" hidden data-file></div>
+      <div class="bench" data-bench hidden></div></div>`;
+    v.appendChild(el);
+    const drop = $('[data-drop]', el), file = $('[data-file]', el);
+    $('[data-copy]', el).onclick = async () => { try { await navigator.clipboard.writeText(promptFor(p)); flash(el, 'Prompt copied ✔'); } catch (e) { showPrompt(p); } };
+    $('[data-show]', el).onclick = () => showPrompt(p);
+    drop.onclick = () => file.click();
+    file.onchange = () => file.files[0] && setPalette(p, file.files[0]);
+    ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+    drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) setPalette(p, f); });
+    el.addEventListener('mouseenter', () => hoverPal = p);
+  });
+}
+let hoverPal = null;
+function flash(el, t) { const s = $('[data-st]', el); s.textContent = t; s.className = 'msg ok'; setTimeout(() => { if (s.textContent === t) s.textContent = ''; }, 2500); }
+function showPrompt(p) {
+  let b = $('[data-pbox]', p.el);
+  if (!b) { b = document.createElement('div'); b.setAttribute('data-pbox', ''); b.style.cssText = 'padding:0 12px 12px'; b.innerHTML = '<textarea readonly></textarea>'; $('.ph', p.el).after(b); }
+  $('textarea', b).value = promptFor(p); $('textarea', b).select();
+}
+document.addEventListener('paste', e => {
+  const f = [...(e.clipboardData?.files || [])].find(x => x.type.startsWith('image/')); if (!f) return;
+  e.preventDefault(); const p = hoverPal || PALS.find(x => !x.src) || PALS[0]; setPalette(p, f);
+});
+
+async function setPalette(p, file) {
+  try { p.src = await loadImage(file); } catch (e) { alert('Could not read that image.'); return; }
+  p.margin = 0; p.gutter = 0; p.cells = null;
+  log(`Loaded ${file.name || 'pasted image'} (${p.src.width}×${p.src.height}) into ${p.id}`);
+  const det = detect(p.src, p.cols, p.rows);
+  if (det) { p.rects = det; p.mode = 'auto'; log('Auto-detected the gutters ✔'); }
+  else { p.mode = 'slider'; p.margin = 1.5; p.gutter = 1.5; p.rects = sliderRects(p.src.width, p.src.height, p.cols, p.rows, p.margin, p.gutter); log('Could not auto-detect gutters, using equal split. Adjust the sliders if needed.'); }
+  p.cells = p.items.map((a, i) => ({ asset: a.id, on: i < p.rects.length }));
+  renderBench(p);
+}
+function renderBench(p) {
+  const bench = $('[data-bench]', p.el); bench.hidden = false;
+  if (p.sel === undefined) p.sel = 0;
+  bench.innerHTML = `<div class="ctl">
+      <b>Split:</b>
+      <label><input type="radio" name="m-${p.id}" value="auto" ${p.mode === 'auto' ? 'checked' : ''}> auto-detect</label>
+      <label><input type="radio" name="m-${p.id}" value="slider" ${p.mode === 'slider' ? 'checked' : ''}> equal split</label>
+      <label><input type="radio" name="m-${p.id}" value="custom" ${p.mode === 'custom' ? 'checked' : ''}> custom (dragged)</label>
+      <label>outer margin <input type="range" min="0" max="10" step="0.1" value="${p.margin}" data-m><span data-mv>${p.margin}%</span></label>
+      <label>gutter <input type="range" min="0" max="10" step="0.1" value="${p.gutter}" data-g><span data-gv>${p.gutter}%</span></label>
+      <button class="sec" data-redetect>↻ Re-detect</button>
+    </div>
+    <div class="ctl"><b>Boxes:</b> drag a box to move it, drag its edges or corners to resize it (arrow keys nudge the selected box).
+      <button class="sec" data-same>⬛ Make all boxes the same size as the selected one</button>
+      <button class="sec" data-snaprows>↔ Align rows &amp; columns</button>
+      <span class="msg" data-selinfo></span></div>
+    <canvas class="prev" data-prev tabindex="0" style="touch-action:none;width:100%"></canvas>
+    <div class="cells" data-cells></div>
+    <div class="ctl"><button class="go" data-save>💾 Save checked images</button><span class="msg" data-sv></span></div>`;
+  const pv = $('[data-prev]', bench), cw = $('[data-cells]', bench), info = $('[data-selinfo]', bench);
+  const MIN = 24, H = 9;                       // min box size (source px), handle hit size (screen px)
+  const scale = () => pv.width / p.src.width;
+  const clampv = (v, a, b) => Math.max(a, Math.min(b, v));
+  const thumbs = [], cellEls = [];
+  const radio = v => { const r = bench.querySelector(`input[name="m-${p.id}"][value="${v}"]`); if (r) r.checked = true; };
+
+  function drawPreview() {
+    const s = scale(), g = pv.getContext('2d');
+    g.drawImage(p.src, 0, 0, pv.width, pv.height);
+    g.font = 'bold 18px Arial';
+    p.rects.forEach((r, i) => {
+      const on = p.cells[i] && p.cells[i].on, sel = i === p.sel, col = on ? '#16c05a' : '#e63946';
+      g.lineWidth = sel ? 5 : 3; g.strokeStyle = col; g.strokeRect(r.x * s, r.y * s, r.w * s, r.h * s);
+      if (sel) { g.fillStyle = 'rgba(22,192,90,.12)'; g.fillRect(r.x * s, r.y * s, r.w * s, r.h * s); }
+      g.fillStyle = col; g.fillRect(r.x * s, r.y * s, 26, 24); g.fillStyle = '#fff'; g.fillText(i + 1, r.x * s + 7, r.y * s + 19);
+      if (sel) {
+        g.fillStyle = '#fff'; g.strokeStyle = '#1f2a44'; g.lineWidth = 2;
+        [[r.x, r.y], [r.x + r.w, r.y], [r.x, r.y + r.h], [r.x + r.w, r.y + r.h], [r.x + r.w / 2, r.y], [r.x + r.w / 2, r.y + r.h], [r.x, r.y + r.h / 2], [r.x + r.w, r.y + r.h / 2]]
+          .forEach(([x, y]) => { g.fillRect(x * s - 6, y * s - 6, 12, 12); g.strokeRect(x * s - 6, y * s - 6, 12, 12); });
+      }
+    });
+    const r = p.rects[p.sel];
+    info.textContent = r ? `Selected #${p.sel + 1}: ${Math.round(r.w)}×${Math.round(r.h)} px (final images are ${ASPECT.toFixed(2)}:1; any extra is cropped from the centre)` : '';
+  }
+  function thumb(i) { if (thumbs[i] && p.rects[i]) drawCell(thumbs[i], p.src, p.rects[i]); }
+  function allThumbs() { p.rects.forEach((_, i) => thumb(i)); }
+  function buildCells() {
+    cw.innerHTML = ''; thumbs.length = 0; cellEls.length = 0;
+    p.rects.forEach((r, i) => {
+      const c = p.cells[i] || (p.cells[i] = { asset: '', on: false });
+      const cell = document.createElement('div'); cell.className = 'cell' + (c.on ? '' : ' off');
+      const optsH = ['<option value="">— skip —</option>'].concat(ART_MANIFEST.map(a => `<option value="${a.id}" ${a.id === c.asset ? 'selected' : ''}>${a.folder}/${a.id}</option>`)).join('');
+      cell.innerHTML = `<canvas></canvas><select>${optsH}</select><label><input type="checkbox" ${c.on ? 'checked' : ''}> include</label><div class="nm"></div>`;
+      thumbs[i] = $('canvas', cell); cellEls[i] = cell;
+      const nm = $('.nm', cell), upd = () => { const a = ART_MANIFEST.find(x => x.id === c.asset); nm.textContent = a ? `→ assets/${a.folder}/${a.id}.${opts_ext()}` : 'not saved'; };
+      upd();
+      thumbs[i].onclick = () => { p.sel = i; drawPreview(); };
+      $('select', cell).onchange = e => { c.asset = e.target.value; c.on = !!c.asset; $('input', cell).checked = c.on; cell.classList.toggle('off', !c.on); upd(); drawPreview(); };
+      $('input', cell).onchange = e => { c.on = e.target.checked; cell.classList.toggle('off', !c.on); drawPreview(); };
+      cw.appendChild(cell);
+    });
+    allThumbs();
+  }
+  function setup() {
+    const W = Math.min(1100, p.src.width); pv.width = W; pv.height = Math.round(p.src.height * W / p.src.width);
+    buildCells(); drawPreview();
+  }
+  const redo = () => { if (p.mode === 'slider') p.rects = sliderRects(p.src.width, p.src.height, p.cols, p.rows, p.margin, p.gutter); allThumbs(); drawPreview(); };
+
+  bench.querySelectorAll(`input[name="m-${p.id}"]`).forEach(r => r.onchange = () => {
+    p.mode = r.value;
+    if (p.mode === 'auto') { const d = detect(p.src, p.cols, p.rows); if (d) p.rects = d; else { $('[data-sv]', bench).textContent = 'Auto-detect failed, using equal split.'; p.mode = 'slider'; radio('slider'); } }
+    if (p.mode === 'slider') p.rects = sliderRects(p.src.width, p.src.height, p.cols, p.rows, p.margin, p.gutter);
+    allThumbs(); drawPreview();
+  });
+  $('[data-m]', bench).oninput = e => { p.margin = +e.target.value; $('[data-mv]', bench).textContent = p.margin + '%'; p.mode = 'slider'; radio('slider'); redo(); };
+  $('[data-g]', bench).oninput = e => { p.gutter = +e.target.value; $('[data-gv]', bench).textContent = p.gutter + '%'; p.mode = 'slider'; radio('slider'); redo(); };
+  $('[data-redetect]', bench).onclick = () => { const d = detect(p.src, p.cols, p.rows); if (d) { p.rects = d; p.mode = 'auto'; radio('auto'); allThumbs(); drawPreview(); } else $('[data-sv]', bench).textContent = 'Auto-detect failed. Drag the boxes or use the sliders.'; };
+  $('[data-same]', bench).onclick = () => {
+    const s = p.rects[p.sel]; if (!s) return; const sw = s.w, sh = s.h;
+    p.rects.forEach(r => { const cx = r.x + r.w / 2, cy = r.y + r.h / 2; r.w = sw; r.h = sh; r.x = clampv(cx - sw / 2, 0, p.src.width - sw); r.y = clampv(cy - sh / 2, 0, p.src.height - sh); });
+    p.mode = 'custom'; radio('custom'); allThumbs(); drawPreview();
+  };
+  $('[data-snaprows]', bench).onclick = () => {   // average each row's y and each column's x so the boxes line up
+    const cols = p.cols, rows = p.rows;
+    for (let r = 0; r < rows; r++) { const idx = [...Array(cols)].map((_, c) => r * cols + c).filter(i => p.rects[i]); if (!idx.length) continue; const y = idx.reduce((a, i) => a + p.rects[i].y, 0) / idx.length; idx.forEach(i => p.rects[i].y = y); }
+    for (let c = 0; c < cols; c++) { const idx = [...Array(rows)].map((_, r) => r * cols + c).filter(i => p.rects[i]); if (!idx.length) continue; const x = idx.reduce((a, i) => a + p.rects[i].x, 0) / idx.length; idx.forEach(i => p.rects[i].x = x); }
+    p.mode = 'custom'; radio('custom'); allThumbs(); drawPreview();
+  };
+  $('[data-save]', bench).onclick = () => savePalette(p);
+
+  // ---- dragging boxes ----
+  const ptr = e => { const b = pv.getBoundingClientRect(); return { x: (e.clientX - b.left) * pv.width / b.width, y: (e.clientY - b.top) * pv.height / b.height, k: pv.width / b.width }; };
+  function hit(pt) {   // returns {i, mode}: mode is 'move' or a mix of l r t b
+    const s = scale(), tol = H * pt.k;
+    const order = p.rects.map((_, i) => i).filter(i => i !== p.sel).reverse(); order.unshift(p.sel);   // selected box wins ties
+    for (const i of order) {
+      const r = p.rects[i]; if (!r) continue;
+      const x0 = r.x * s, y0 = r.y * s, x1 = (r.x + r.w) * s, y1 = (r.y + r.h) * s;
+      if (pt.x < x0 - tol || pt.x > x1 + tol || pt.y < y0 - tol || pt.y > y1 + tol) continue;
+      const nl = Math.abs(pt.x - x0) <= tol, nr = Math.abs(pt.x - x1) <= tol, nt = Math.abs(pt.y - y0) <= tol, nb = Math.abs(pt.y - y1) <= tol;
+      let m = ''; if (nl) m += 'l'; else if (nr) m += 'r'; if (nt) m += 't'; else if (nb) m += 'b';
+      if (m) return { i, mode: m };
+      if (pt.x > x0 && pt.x < x1 && pt.y > y0 && pt.y < y1) return { i, mode: 'move' };
+    }
+    return null;
+  }
+  const cursorFor = m => !m ? 'default' : m === 'move' ? 'move' : (m === 'l' || m === 'r') ? 'ew-resize' : (m === 't' || m === 'b') ? 'ns-resize' : (m === 'lt' || m === 'rb') ? 'nwse-resize' : 'nesw-resize';
+  let drag = null;
+  pv.addEventListener('pointerdown', e => {
+    const pt = ptr(e), h = hit(pt); if (!h) return;
+    p.sel = h.i;
+    drag = { i: h.i, mode: h.mode, start: pt, orig: { ...p.rects[h.i] } };
+    pv.setPointerCapture(e.pointerId); pv.focus({ preventScroll: true }); e.preventDefault(); drawPreview();
+  });
+  pv.addEventListener('pointermove', e => {
+    const pt = ptr(e);
+    if (!drag) { const h = hit(pt); pv.style.cursor = cursorFor(h && h.mode); return; }
+    const s = scale(), dx = (pt.x - drag.start.x) / s, dy = (pt.y - drag.start.y) / s, o = drag.orig, r = p.rects[drag.i], W = p.src.width, Hh = p.src.height;
+    let x0 = o.x, y0 = o.y, x1 = o.x + o.w, y1 = o.y + o.h;
+    if (drag.mode === 'move') { x0 = clampv(o.x + dx, 0, W - o.w); y0 = clampv(o.y + dy, 0, Hh - o.h); x1 = x0 + o.w; y1 = y0 + o.h; }
+    else {
+      if (drag.mode.includes('l')) x0 = clampv(o.x + dx, 0, x1 - MIN);
+      if (drag.mode.includes('r')) x1 = clampv(o.x + o.w + dx, x0 + MIN, W);
+      if (drag.mode.includes('t')) y0 = clampv(o.y + dy, 0, y1 - MIN);
+      if (drag.mode.includes('b')) y1 = clampv(o.y + o.h + dy, y0 + MIN, Hh);
+    }
+    r.x = x0; r.y = y0; r.w = x1 - x0; r.h = y1 - y0;
+    if (p.mode !== 'custom') { p.mode = 'custom'; radio('custom'); }
+    thumb(drag.i); drawPreview();
+  });
+  const end = () => { drag = null; };
+  pv.addEventListener('pointerup', end); pv.addEventListener('pointercancel', end);
+  pv.addEventListener('keydown', e => {   // arrow keys nudge the selected box (Shift = 10px)
+    const r = p.rects[p.sel]; if (!r) return;
+    const st = e.shiftKey ? 10 : 1;
+    if (e.key === 'ArrowLeft') r.x = clampv(r.x - st, 0, p.src.width - r.w);
+    else if (e.key === 'ArrowRight') r.x = clampv(r.x + st, 0, p.src.width - r.w);
+    else if (e.key === 'ArrowUp') r.y = clampv(r.y - st, 0, p.src.height - r.h);
+    else if (e.key === 'ArrowDown') r.y = clampv(r.y + st, 0, p.src.height - r.h);
+    else return;
+    e.preventDefault(); if (p.mode !== 'custom') { p.mode = 'custom'; radio('custom'); } thumb(p.sel); drawPreview();
+  });
+  setup();
+}
+const opts_ext = () => opts().fmt;
+
+async function savePalette(p) {
+  const bench = $('[data-bench]', p.el), sv = $('[data-sv]', bench), { w, fmt } = opts();
+  const todo = p.rects.map((r, i) => ({ r, c: p.cells[i] })).filter(x => x.c && x.c.on && x.c.asset);
+  if (!todo.length) { sv.textContent = 'Nothing checked.'; sv.className = 'msg bad'; return; }
+  const seen = new Set(); for (const t of todo) { if (seen.has(t.c.asset)) { sv.textContent = 'Two cells use the same name: ' + t.c.asset; sv.className = 'msg bad'; return; } seen.add(t.c.asset); }
+  sv.className = 'msg'; sv.textContent = 'Saving…';
+  let n = 0, where = '';
+  try {
+    for (const t of todo) { const a = ART_MANIFEST.find(x => x.id === t.c.asset); const blob = await cropToBlob(p.src, t.r, w, fmt); where = await writeAsset(a.folder, a.id, blob, fmt === 'jpg' ? 'jpg' : fmt); n++; log(`saved assets/${a.folder}/${a.id}.${fmt} (${Math.round(blob.size / 1024)} KB)`); }
+    await writeManifest();
+    sv.className = 'msg ok'; sv.textContent = where === 'disk' ? `✔ Saved ${n} images into your project folder.` : `✔ Prepared ${n} images. Use “Download ZIP” at the top (no folder connected).`;
+    $('[data-st]', p.el).textContent = `${n} saved`; $('[data-st]', p.el).className = 'msg ok';
+  } catch (e) { sv.className = 'msg bad'; sv.textContent = 'Save failed: ' + e.message; log('ERROR ' + e.message); }
+}
+
+// ---------- status board ----------
+function buildBoard() {
+  const v = $('#viewB'); v.innerHTML = '';
+  const have = ART_MANIFEST.filter(a => RASTER[a.folder + '/' + a.id]).length;
+  v.innerHTML = `<div class="box"><b>${have} / ${ART_MANIFEST.length}</b> assets now use your images. Drop a single image onto any tile to replace just that one (it is centre-cropped to fit).</div>`;
+  FOLDERS.forEach(f => {
+    const items = ART_MANIFEST.filter(a => a.folder === f); if (!items.length) return;
+    const h = document.createElement('div'); h.className = 'grp'; h.textContent = f + ' (' + items.length + ')'; v.appendChild(h);
+    const grid = document.createElement('div'); grid.className = 'board'; v.appendChild(grid);
+    items.forEach(a => {
+      const key = a.folder + '/' + a.id, ext = RASTER[key];
+      const t = document.createElement('div'); t.className = 'tile';
+      t.innerHTML = `<img src="assets/${key}.${ext || 'svg'}?t=${Date.now()}" alt=""><span class="badge ${ext ? 'new' : 'old'}">${ext ? 'your image' : 'SVG'}</span><div><b>${a.id}</b>${a.title}</div>`;
+      ['dragenter', 'dragover'].forEach(ev => t.addEventListener(ev, e => { e.preventDefault(); t.classList.add('over'); }));
+      ['dragleave', 'drop'].forEach(ev => t.addEventListener(ev, e => { e.preventDefault(); t.classList.remove('over'); }));
+      t.addEventListener('drop', async e => {
+        const f = e.dataTransfer.files[0]; if (!f) return;
+        try { const src = await loadImage(f); const { w, fmt } = opts(); const blob = await cropToBlob(src, { x: 0, y: 0, w: src.width, h: src.height }, w, fmt); await writeAsset(a.folder, a.id, blob, fmt); await writeManifest(); log(`saved assets/${key}.${fmt}`); buildBoard(); } catch (er) { log('ERROR ' + er.message); }
+      });
+      grid.appendChild(t);
+    });
+  });
+}
+
+buildPalettes();
+if (location.protocol === 'file:') log('Tip: open this page via http://localhost (e.g. python -m http.server) for the status board thumbnails. Saving to a folder works in Chrome/Edge.');
+</script>
+</body>
+</html>

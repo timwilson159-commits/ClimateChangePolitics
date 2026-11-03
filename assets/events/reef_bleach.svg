@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260"><defs><clipPath id="reef_bleach-clip"><rect width="400" height="260"/></clipPath></defs><g clip-path="url(#reef_bleach-clip)">
+<defs>
+<linearGradient id="reef_bleach-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd0ee"/><stop offset="0.6" stop-color="#2f9ad0"/><stop offset="1" stop-color="#1d7fb5"/></linearGradient>
+<g id="reef_bleach-branch" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0 L0 -26 M0 -12 L-14 -30 M0 -16 L14 -34 M-14 -30 L-16 -44 M14 -34 L18 -48 M0 -26 L2 -46"/></g>
+<g id="reef_bleach-dome"><path d="M-26 0 C-26 -30 26 -30 26 0Z"/></g>
+<g id="reef_bleach-domelines" fill="none" stroke-linecap="round"><path d="M-14 -6 C-8 -14 -2 -6 2 -14 C6 -20 12 -10 16 -6 M-8 -20 C-2 -24 4 -22 8 -24"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#reef_bleach-water)"/>
+<!-- light rays -->
+<g fill="#ffffff" opacity="0.18"><path d="M60 0 L110 0 L180 260 L90 260Z"/><path d="M230 0 L270 0 L330 260 L260 260Z"/></g>
+<!-- seabed -->
+<path d="M0 205 C80 192 160 208 240 200 C320 192 370 204 400 198 L400 260 L0 260Z" fill="#f2c879"/>
+<path d="M0 232 C100 222 260 238 400 226 L400 260 L0 260Z" fill="#e0b25f"/>
+<!-- LEFT: healthy corals -->
+<g transform="translate(46 216) scale(1.9)"><g stroke="#1f2a44" stroke-width="12"><use href="#reef_bleach-branch"/></g><g stroke="#e0609a" stroke-width="5"><use href="#reef_bleach-branch"/></g></g>
+<g stroke="#4caf50" stroke-width="6" stroke-linecap="round" fill="none"><path d="M12 214 C6 196 20 188 12 172"/></g>
+<g transform="translate(98 216) scale(1.9)" stroke="#1f2a44" stroke-width="2.6" stroke-linejoin="round"><use href="#reef_bleach-dome" fill="#ff9f1c"/><g stroke="#c9660d" stroke-width="2.2"><use href="#reef_bleach-domelines"/></g></g>
+<g transform="translate(160 218) scale(1.8)"><g stroke="#1f2a44" stroke-width="12"><use href="#reef_bleach-branch"/></g><g stroke="#ffd23f" stroke-width="5"><use href="#reef_bleach-branch"/></g></g>
+<g fill="#4caf50" stroke="#1f2a44" stroke-width="3"><circle cx="126" cy="214" r="5"/></g>
+<!-- RIGHT: bleached corals -->
+<g transform="translate(256 218) scale(1.8)"><g stroke="#1f2a44" stroke-width="12"><use href="#reef_bleach-branch"/></g><g stroke="#f4f1ea" stroke-width="5"><use href="#reef_bleach-branch"/></g></g>
+<g transform="translate(308 216) scale(1.9)" stroke="#1f2a44" stroke-width="2.6" stroke-linejoin="round"><use href="#reef_bleach-dome" fill="#f4f1ea"/><g stroke="#cfc9bd" stroke-width="2.2"><use href="#reef_bleach-domelines"/></g></g>
+<g transform="translate(356 216) scale(1.7)"><g stroke="#1f2a44" stroke-width="12"><use href="#reef_bleach-branch"/></g><g stroke="#f4f1ea" stroke-width="5"><use href="#reef_bleach-branch"/></g></g>
+<g fill="#cfc9bd" stroke="#1f2a44" stroke-width="3"><circle cx="228" cy="218" r="5"/><circle cx="338" cy="220" r="4"/></g>
+<!-- turtle -->
+<g transform="translate(-6 -12)"><g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M92 98 C82 104 72 112 68 122 C82 124 98 114 106 104Z" fill="#6fae5a"/>
+<path d="M82 90 L68 90 L76 98Z" fill="#6fae5a"/>
+<path d="M126 100 C138 112 152 124 168 122 C170 108 156 94 142 92Z" fill="#6fae5a"/>
+<path d="M140 88 C146 80 156 78 162 82 C176 80 184 90 176 98 C168 104 154 102 146 98Z" fill="#6fae5a"/>
+<path d="M84 90 C84 70 100 60 118 62 C138 64 150 78 150 92 C150 102 136 108 116 108 C96 108 84 102 84 90Z" fill="#a8873b"/>
+<path d="M96 88 C98 76 108 72 118 74 M124 74 C134 78 140 86 138 96 M104 100 C116 104 128 102 134 98" fill="none" stroke-width="3" stroke="#6b5420"/>
+</g>
+<g fill="#1f2a44"><circle cx="168" cy="87" r="2.6"/></g>
+<path d="M164 94 q6 3 11 -1" stroke="#1f2a44" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+<!-- clownfish -->
+<g transform="translate(0 -24)"><g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M222 176 C240 164 248 160 248 178 C248 196 240 196 222 182Z" fill="#ff9f1c"/>
+<path d="M170 180 C170 156 196 148 214 154 C230 160 236 170 236 180 C236 194 224 206 204 206 C184 206 170 198 170 180Z" fill="#ff9f1c"/>
+<path d="M190 152 C194 146 206 144 214 152Z" fill="#ff9f1c"/>
+<path d="M192 154 C186 170 186 190 192 204 C196 206 200 206 202 206 C196 190 196 170 202 152Z" fill="#ffffff" stroke-width="3"/>
+<path d="M214 156 C220 170 220 190 214 204 C220 204 226 200 230 196 C232 184 232 170 226 160Z" fill="#ffffff" stroke-width="3"/>
+<path d="M200 194 C192 202 190 208 198 208 C204 206 206 200 204 196Z" fill="#ff9f1c" stroke-width="3"/>
+</g>
+<g fill="#ffffff" stroke="#1f2a44" stroke-width="3"><circle cx="182" cy="174" r="7"/></g>
+<g fill="#1f2a44"><circle cx="183" cy="176" r="3"/></g>
+<path d="M176 168 L188 164 M176 190 q5 -5 11 -1" stroke="#1f2a44" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M178 182 C174 188 174 192 178 194 C182 192 182 188 178 182Z" fill="#8fd3f4" stroke="#1f2a44" stroke-width="2.5"/>
+</g>
+<!-- diver -->
+<g transform="translate(318 92)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M30 4 L52 -8 L56 4 L34 10Z" fill="#ffd23f"/>
+<path d="M30 12 L50 14 L50 26 L28 20Z" fill="#ffd23f"/>
+<rect x="4" y="-20" width="20" height="9" rx="4" fill="#8a94a6"/>
+<path d="M-6 -10 C6 -14 30 -12 34 2 C34 14 10 16 -6 10Z" fill="#4d5566"/>
+<path d="M-8 2 L-30 0" stroke-width="10"/><path d="M-8 2 L-30 0" stroke="#d9a066" stroke-width="3"/>
+<rect x="-52" y="-10" width="26" height="20" rx="4" fill="#8a94a6"/>
+<circle cx="-39" cy="0" r="6" fill="#8fd3f4" stroke-width="3"/>
+<rect x="-45" y="-14" width="10" height="5" rx="2" fill="#e63946" stroke-width="3"/>
+<circle cx="-14" cy="-4" r="12" fill="#d9a066"/>
+<path d="M-24 -10 C-20 -20 -6 -18 -4 -8Z" fill="#1f1f1f" stroke-width="3"/>
+<rect x="-26" y="-8" width="16" height="10" rx="5" fill="#8fd3f4" stroke-width="3"/>
+</g>
+<g fill="#ffffff" stroke="#1f2a44" stroke-width="2.5"><circle cx="296" cy="64" r="4"/><circle cx="304" cy="48" r="6"/><circle cx="296" cy="32" r="4"/></g>
+<!-- small fish -->
+<g fill="#ffd23f" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"><path d="M40 140 C48 132 60 132 66 140 C60 148 48 148 40 140Z M66 140 L74 134 L74 146Z"/></g>
+<g fill="#ffffff" stroke="#1f2a44" stroke-width="2.5"><circle cx="150" cy="140" r="3.5"/><circle cx="160" cy="124" r="4.5"/></g>
+</g></svg>

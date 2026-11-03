@@ -1,0 +1,66 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="fw_core" stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-10 -13 Q0 -18 10 -13 Q13 -5 6 -3 H-6 Q-13 -5 -10 -13 Z" fill="#e63946"/>
+<path d="M-10 13 Q0 18 10 13 Q13 5 6 3 H-6 Q-13 5 -10 13 Z" fill="#e63946"/>
+<path d="M-5 -3 H5 V3 H-5 Z" fill="#fff3d6" stroke="none"/>
+<path d="M0 -15 Q2 -21 7 -22" fill="none"/>
+</g>
+<g id="fw_peel" stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-18 -6 Q-2 16 18 -8 Q17 5 0 11 Q-15 12 -18 -6 Z" fill="#ffd23f"/>
+<circle cx="-18" cy="-7" r="3.5" fill="#7a4a2b"/><circle cx="18" cy="-9" r="3.5" fill="#7a4a2b"/>
+</g>
+<g id="fw_carrot" stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-14 -6 L14 -2 L-10 8 Q-16 4 -14 -6 Z" fill="#ff9f1c"/>
+<path d="M-12 -6 L-18 -12 M-12 -4 L-20 -4 M-12 -2 L-18 3" fill="none" stroke="#4caf50" stroke-width="4"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="#8fd3f4"/>
+<rect y="70" width="400" height="140" fill="#d9a066"/>
+<g stroke="#c58d50" stroke-width="3"><path d="M40 70 V210 M100 70 V210 M160 70 V210 M220 70 V210 M280 70 V210 M340 70 V210"/></g>
+<path d="M0 70 H400" stroke="#b97b3f" stroke-width="5"/>
+<rect y="205" width="400" height="55" fill="#8fcf9a"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- rubbish bin -->
+<path d="M42 112 H122 L116 205 H48 Z" fill="#6a7385"/>
+<path d="M54 124 V190" stroke="#8a94a6" stroke-width="5" fill="none"/>
+<rect x="36" y="108" width="92" height="12" rx="6" fill="#4d5566"/>
+<use href="#fw_peel" x="84" y="86" transform="translate(84 86) scale(1.3) translate(-84 -86)"/>
+<use href="#fw_core" x="58" y="96" transform="translate(58 96) rotate(-25) translate(-58 -96)"/>
+<use href="#fw_carrot" x="110" y="98" transform="translate(110 98) rotate(-30) translate(-110 -98)"/>
+<path d="M82 62 Q76 54 82 48 Q88 42 82 34 M64 66 Q58 58 64 52" fill="none" stroke="#4caf50" stroke-width="4"/>
+<!-- fly -->
+<circle cx="112" cy="58" r="4" fill="#1f2a44" stroke="none"/><ellipse cx="108" cy="52" rx="4" ry="2.5" fill="#fff" stroke-width="2"/><ellipse cx="116" cy="52" rx="4" ry="2.5" fill="#fff" stroke-width="2"/>
+<!-- compost bin -->
+<path d="M176 108 L190 64 H262 L250 108 Z" fill="#2e7d4f"/>
+<path d="M194 72 H252" stroke="#4caf50" stroke-width="4" fill="none"/>
+<path d="M170 112 H252 L246 205 H176 Z" fill="#4caf50"/>
+<path d="M184 124 V190" stroke="#b8e8c0" stroke-width="5" fill="none"/>
+<path d="M176 112 Q200 98 224 112 Q238 102 250 112 Z" fill="#7a4a2b"/>
+<rect x="168" y="108" width="86" height="12" rx="5" fill="#2e7d4f"/>
+<path d="M204 190 Q184 180 188 154 Q216 150 222 176 Q218 190 204 190 Z" fill="#fff"/>
+<path d="M194 182 Q206 170 216 160" fill="none" stroke="#4caf50" stroke-width="3"/>
+<!-- worm -->
+<path d="M250 202 Q238 190 244 180 Q252 170 248 160" fill="none" stroke-width="17"/>
+<path d="M250 202 Q238 190 244 180 Q252 170 248 160" fill="none" stroke="#f4a6b8" stroke-width="9"/>
+<circle cx="248" cy="154" r="9" fill="#f4a6b8"/>
+<circle cx="245" cy="152" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="252" cy="152" r="1.8" fill="#1f2a44" stroke="none"/>
+<path d="M244 157 Q248 161 252 157" fill="none" stroke-width="2.5"/>
+<!-- falling scraps -->
+<use href="#fw_carrot" x="268" y="106" transform="translate(268 106) rotate(70) translate(-268 -106)"/>
+<use href="#fw_core" x="282" y="82" transform="translate(282 82) rotate(25) translate(-282 -82)"/>
+<!-- kid -->
+<g transform="translate(332 236)">
+<rect x="-14" y="-28" width="11" height="28" rx="4" fill="#f5c9a0"/><rect x="3" y="-28" width="11" height="28" rx="4" fill="#f5c9a0"/>
+<rect x="-19" y="-34" width="38" height="14" rx="5" fill="#1d7fb5"/>
+<rect x="-20" y="-72" width="40" height="46" rx="13" fill="#2ec4b6"/>
+<circle cx="0" cy="-88" r="17" fill="#f5c9a0"/>
+<path d="M-17 -92 Q-16 -110 2 -108 Q18 -108 17 -92 Q8 -100 -2 -99 Q-10 -100 -17 -92 Z" fill="#c9a36a"/>
+<circle cx="-6" cy="-86" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="6" cy="-86" r="1.8" fill="#1f2a44" stroke="none"/>
+<path d="M-6 -79 Q0 -73 6 -79 Z" fill="#fff" stroke-width="3"/>
+<path d="M-18 -60 Q-36 -66 -44 -78" stroke-width="13" fill="none"/><path d="M-18 -60 Q-36 -66 -44 -78" stroke="#f5c9a0" stroke-width="5" fill="none"/>
+<path d="M18 -58 Q26 -46 22 -36" stroke-width="13" fill="none"/><path d="M18 -58 Q26 -46 22 -36" stroke="#f5c9a0" stroke-width="5" fill="none"/>
+<path d="M-66 -92 Q-64 -72 -46 -72 Q-28 -72 -26 -88 Z" fill="#fff" transform="rotate(-30 -46 -82)"/>
+</g>
+</g>
+</svg>

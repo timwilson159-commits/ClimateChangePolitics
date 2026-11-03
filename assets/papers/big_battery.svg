@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260">
+<defs>
+<linearGradient id="bb_sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3df"/><stop offset="1" stop-color="#b9e4f7"/></linearGradient>
+<g id="bb_wt" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-5 0L5 0L2.8 -90L-2.8 -90Z" fill="#fff"/>
+<g fill="#fff"><path id="bb_bl" d="M0 -90C-8 -100 -7 -128 0 -142C7 -128 8 -100 0 -90Z"/>
+<use href="#bb_bl" transform="rotate(120 0 -90)"/><use href="#bb_bl" transform="rotate(240 0 -90)"/></g>
+<circle cx="0" cy="-90" r="6.5" fill="#fff"/>
+</g>
+<g id="bb_sp" stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<rect x="-24" y="-34" width="48" height="34" rx="3" fill="#dfe6ef"/>
+<rect x="-20" y="-30" width="40" height="26" rx="1.5" fill="#2a4f9e" stroke-width="2"/>
+<path d="M-7 -30V-4M7 -30V-4M-20 -17H20" stroke="#dfe6ef" stroke-width="2" fill="none"/>
+<path d="M-16 -27h9l-5 8h-8z" fill="#fff" stroke="none" opacity=".8"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="url(#bb_sky)"/>
+<circle cx="52" cy="50" r="16" fill="#ffd23f" opacity=".0"/>
+<!-- town -->
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round">
+<g fill="#3b5ea8">
+<rect x="12" y="156" width="44" height="50"/><path d="M8 158L34 140L60 158Z"/>
+<rect x="64" y="146" width="38" height="60"/><path d="M60 148L83 130L106 148Z"/>
+<rect x="296" y="150" width="40" height="56"/><path d="M292 152L316 134L340 152Z"/>
+<rect x="344" y="160" width="46" height="46"/><path d="M340 162L367 144L394 162Z"/>
+<rect x="252" y="166" width="38" height="40"/><path d="M248 168L271 152L294 168Z"/>
+</g>
+<g fill="#ffe680" stroke="none">
+<rect x="20" y="166" width="10" height="10"/><rect x="38" y="166" width="10" height="10"/><rect x="20" y="184" width="10" height="10"/>
+<rect x="72" y="158" width="10" height="10"/><rect x="88" y="176" width="10" height="10"/><rect x="72" y="176" width="10" height="10"/>
+<rect x="304" y="162" width="10" height="10"/><rect x="320" y="162" width="10" height="10"/><rect x="312" y="182" width="10" height="10"/>
+<rect x="354" y="172" width="10" height="10"/><rect x="372" y="172" width="10" height="10"/>
+<rect x="260" y="176" width="10" height="10"/>
+</g></g>
+<rect y="200" width="400" height="60" fill="#2e7d4f"/>
+<rect y="200" width="400" height="9" fill="#4caf50"/>
+<!-- turbine right -->
+<use href="#bb_wt" transform="translate(354 214) scale(.78)"/>
+<use href="#bb_wt" transform="translate(308 212) scale(.5)"/>
+<!-- solar panels left -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linecap="round"><path d="M44 218V196M96 218V196" fill="none"/></g>
+<use href="#bb_sp" transform="translate(44 200)"/>
+<use href="#bb_sp" transform="translate(96 200)" />
+<!-- cables -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M96 222C112 240 132 238 150 224" stroke="#1f2a44" stroke-width="10"/><path d="M96 222C112 240 132 238 150 224" stroke="#ff9f1c" stroke-width="4.5"/>
+<path d="M354 224C320 242 280 238 254 224" stroke="#1f2a44" stroke-width="10"/><path d="M354 224C320 242 280 238 254 224" stroke="#ff9f1c" stroke-width="4.5"/>
+</g>
+<!-- battery -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="144" y="212" width="12" height="16" rx="3" fill="#4d5566"/><rect x="244" y="212" width="12" height="16" rx="3" fill="#4d5566"/>
+<rect x="184" y="52" width="32" height="16" rx="5" fill="#dfe6ef"/>
+<rect x="146" y="64" width="108" height="154" rx="16" fill="#2ec4b6"/>
+<rect x="146" y="64" width="108" height="34" rx="16" fill="#ffd23f"/>
+<rect x="146" y="84" width="108" height="16" fill="#ffd23f" stroke="none"/>
+<path d="M146 100H254" fill="none"/>
+<path d="M146 99v-20" stroke="none"/>
+<path d="M158 120c0-8 4-12 8-14" stroke="#7fe0d4" stroke-width="5" fill="none"/>
+</g>
+<g stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"><path d="M160 98V86M240 98V86" stroke="none"/></g>
+<!-- face -->
+<g fill="#1f2a44"><ellipse cx="180" cy="120" rx="4.5" ry="6"/><ellipse cx="220" cy="120" rx="4.5" ry="6"/></g>
+<g fill="#fff"><circle cx="181.5" cy="117.5" r="1.8"/><circle cx="221.5" cy="117.5" r="1.8"/></g>
+<path d="M190 130q10 10 20 0" fill="none" stroke="#1f2a44" stroke-width="3.5" stroke-linecap="round"/>
+<!-- bolt on top band -->
+<path d="M204 67l-14 17h9l-4 12l15-18h-9z" fill="#ff9f1c" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"/>
+<!-- charge bar -->
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round">
+<rect x="158" y="150" width="84" height="52" rx="8" fill="#e8f7f5"/>
+<g fill="#4caf50" stroke-width="2.5"><rect x="164" y="158" width="14" height="36" rx="3"/><rect x="180" y="158" width="14" height="36" rx="3"/><rect x="196" y="158" width="14" height="36" rx="3"/><rect x="212" y="158" width="14" height="36" rx="3"/></g>
+<rect x="228" y="158" width="8" height="36" rx="3" fill="#4caf50" stroke-width="2.5"/>
+</g>
+<g fill="#b8e8c0"><rect x="166" y="161" width="3" height="28" rx="1.5"/><rect x="182" y="161" width="3" height="28" rx="1.5"/><rect x="198" y="161" width="3" height="28" rx="1.5"/><rect x="214" y="161" width="3" height="28" rx="1.5"/></g>
+<g fill="#fff" stroke="#ffd23f" stroke-width="1.5"><path d="M118 90l3 7l7 3l-7 3l-3 7l-3-7l-7-3l7-3z"/><path d="M282 100l3 7l7 3l-7 3l-3 7l-3-7l-7-3l7-3z"/></g>
+</svg>

@@ -1,0 +1,69 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="mtx_bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3df"/><stop offset="1" stop-color="#b6e3f7"/></linearGradient>
+<g id="mtx_coin" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle r="12" fill="#ffd23f"/><path d="M0 -6 V6" stroke-width="3.5" fill="none"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#mtx_bg)"/>
+<circle cx="350" cy="36" r="22" fill="#ffd23f"/>
+<g fill="#fff"><ellipse cx="80" cy="30" rx="30" ry="9"/><ellipse cx="98" cy="23" rx="16" ry="9"/></g>
+<!-- backyard -->
+<path d="M0 120 Q100 100 200 116 T400 110 V260 H0Z" fill="#4caf50"/>
+<rect y="130" width="400" height="8" fill="#a86b3c" opacity="0"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round"><rect x="0" y="96" width="400" height="34" fill="#f2c879" opacity="0"/></g>
+<rect y="196" width="400" height="64" fill="#d9a066"/>
+<rect y="196" width="400" height="5" fill="#a86b3c"/>
+<g stroke="#c38d52" stroke-width="3"><path d="M0 226 H400 M90 201 V260 M230 201 V260 M350 201 V260"/></g>
+<!-- bbq -->
+<g transform="translate(345 222) scale(.8) translate(-316 -222)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M276 220 L284 170 M356 220 L348 170" fill="none" stroke="#4d5566"/>
+<path d="M262 138 H370 Q368 178 316 182 Q264 178 262 138Z" fill="#3a4152"/>
+<rect x="256" y="130" width="120" height="12" rx="6" fill="#8a94a6"/>
+<path d="M280 124 Q276 110 284 100 Q286 112 294 108 Q300 114 292 124Z" fill="#ff9f1c" stroke-width="3"/>
+<path d="M320 124 Q316 106 326 94 Q328 110 338 106 Q344 114 334 124Z" fill="#e63946" stroke-width="3"/>
+<path d="M312 124 Q310 114 318 110 Q320 118 318 124Z" fill="#ffd23f" stroke="none"/>
+</g>
+<!-- plate with steak / sausage hero -->
+<ellipse cx="148" cy="226" rx="92" ry="10" fill="#b57e47" opacity=".6"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="146" cy="196" rx="94" ry="30" fill="#fff"/>
+<ellipse cx="146" cy="194" rx="70" ry="20" fill="#e3e8f0" stroke-width="3"/>
+<g transform="translate(96 196) scale(1.2) translate(-96 -196)"><path d="M80 194Q78 174 100 170Q126 164 146 172Q162 180 156 196Q150 212 120 210Q86 212 80 194Z" fill="#f6dcb4"/>
+<path d="M90 194Q89 180 106 177Q126 172 142 179Q152 185 147 196Q142 204 120 203Q94 204 90 194Z" fill="#b8402c" stroke-width="3"/>
+<path d="M104 184L118 178M116 192L134 184M128 200L142 192" fill="none" stroke="#6a2218" stroke-width="3.5"/>
+<path d="M102 190H130M116 190V202" fill="none" stroke="#1f2a44" stroke-width="12"/><path d="M102 190H130M116 190V202" fill="none" stroke="#fff6e6" stroke-width="5"/></g>
+<g transform="translate(16 0)"><rect x="156" y="176" width="52" height="16" rx="8" fill="#d9663b" transform="rotate(-8 182 184)"/><path d="M168 180V190M180 178V189M192 176V187" stroke="#8c3a1c" stroke-width="3" fill="none" transform="rotate(-8 182 184)"/><path d="M162 181Q174 178 190 178" stroke="#f0a07a" stroke-width="3" fill="none"/>
+<rect x="152" y="194" width="52" height="16" rx="8" fill="#e08756" transform="rotate(6 178 202)"/><path d="M164 197V207M176 197V207M188 197V207" stroke="#8c3a1c" stroke-width="3" fill="none" transform="rotate(6 178 202)"/></g>
+</g>
+<g stroke="#b9bfc9" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M120 148 Q112 134 124 124 Q132 114 124 104"/><path d="M158 144 Q150 130 162 120 Q170 110 162 100"/></g>
+<!-- price tag with red up arrow -->
+<g transform="translate(70 50) rotate(-10)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-30 -30 H46 Q56 -30 56 -20 V20 Q56 30 46 30 H-30 L-56 0Z" fill="#ffd23f"/>
+<circle cx="-36" cy="0" r="6" fill="#b6e3f7"/>
+<circle cx="16" cy="0" r="23" fill="#fff"/>
+<path d="M16 12 V-12 M5 -2 L16 -14 L27 -2" fill="none" stroke="#e63946" stroke-width="7"/>
+</g>
+
+<!-- coins flying away -->
+<use href="#mtx_coin" x="212" y="150"/><use href="#mtx_coin" x="236" y="104" transform="translate(0 0)"/><use href="#mtx_coin" x="268" y="70" transform="translate(0 0)"/>
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M210 164 Q216 176 224 178" opacity="0"/></g>
+<!-- dad -->
+<g transform="translate(-52 0)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M306 240 V214 M330 240 V214" stroke-width="12"/><path d="M306 240 V214 M330 240 V214" stroke-width="5" stroke="#8a94a6"/>
+<path d="M294 218 V178 Q294 156 318 156 Q342 156 342 178 V218Z" fill="#e63946"/>
+<path d="M300 170 H336" stroke="#fff" stroke-width="3" opacity="0"/>
+<path d="M300 198 H336 V218 H300Z" fill="#fff" opacity="0"/>
+<path d="M302 200 H334 V224 H302Z" fill="#f2f5fa" stroke-width="3"/>
+<path d="M300 170 L284 156" fill="none" stroke-width="12"/><path d="M300 170 L284 156" fill="none" stroke-width="5" stroke="#e63946"/>
+<path d="M336 170 L352 150" fill="none" stroke-width="12"/><path d="M336 170 L352 150" fill="none" stroke-width="5" stroke="#e63946"/>
+<circle cx="282" cy="152" r="7" fill="#f5c9a0"/><circle cx="354" cy="146" r="7" fill="#f5c9a0"/>
+<path d="M352 146 L368 130 M354 146 L372 138" stroke="#b9bfc9" stroke-width="5" fill="none"/>
+<circle cx="318" cy="134" r="17" fill="#f5c9a0"/>
+<path d="M301 130 Q300 112 318 112 Q336 112 335 130 Q330 120 318 120 Q306 120 301 130Z" fill="#3a2a20" stroke="none"/>
+<path d="M300 126 L296 130" stroke-width="0"/>
+<path d="M308 124 Q312 120 316 124 M322 124 Q326 120 330 124" fill="none" stroke-width="2.5"/>
+<ellipse cx="311" cy="131" rx="3.6" ry="4.2" fill="#fff" stroke-width="2"/><ellipse cx="325" cy="131" rx="3.6" ry="4.2" fill="#fff" stroke-width="2"/>
+<circle cx="311" cy="132" r="1.4" fill="#1f2a44" stroke="none"/><circle cx="325" cy="132" r="1.4" fill="#1f2a44" stroke="none"/>
+<ellipse cx="318" cy="146" rx="6" ry="5" fill="#7a2f20" stroke-width="3"/>
+</g>
+
+</svg>

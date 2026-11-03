@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="260" fill="#8fd3f4"/>
+<path d="M0 170 Q70 150 150 172 T300 164 T400 170 V215 H0 Z" fill="#b8e8c0"/>
+<rect y="205" width="400" height="55" fill="#d8b24a"/>
+<!-- bunting -->
+<path d="M10 22 Q110 52 215 26" fill="none" stroke="#1f2a44" stroke-width="3" stroke-linecap="round"/>
+<g stroke="#1f2a44" stroke-width="3" stroke-linejoin="round">
+<path d="M30 28 l10 2 l-4 14 z" fill="#4caf50"/><path d="M62 36 l11 1 l-5 14 z" fill="#ffd23f"/><path d="M96 41 l11 0 l-5 14 z" fill="#4caf50"/><path d="M130 42 l11 -1 l-5 14 z" fill="#ffd23f"/><path d="M164 38 l11 -3 l-4 14 z" fill="#4caf50"/>
+</g>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- smoke -->
+<g fill="#8a94a6"><circle cx="262" cy="46" r="26"/><circle cx="300" cy="30" r="24"/><circle cx="338" cy="44" r="28"/><circle cx="364" cy="22" r="20"/><circle cx="312" cy="70" r="20"/></g>
+<g fill="#b9bfc9" stroke="none"><circle cx="258" cy="42" r="16"/><circle cx="298" cy="26" r="15"/><circle cx="336" cy="40" r="18"/><circle cx="310" cy="66" r="11"/></g>
+<!-- factory -->
+<path d="M246 125 L250 78 H272 L276 125 Z M302 125 L306 70 H328 L332 125 Z" fill="#8a94a6"/>
+<path d="M248 104 L249 92 H273 L274 104 Z M304 104 L305 90 H329 L330 104 Z" fill="#d9663b" stroke="none"/>
+<rect x="206" y="125" width="170" height="80" fill="#8a94a6"/>
+<path d="M206 125 V98 L250 125 V98 L294 125 V98 L338 125 V98 L376 125 Z" fill="#4d5566"/>
+<rect x="222" y="150" width="26" height="18" rx="3" fill="#ffd23f" stroke-width="3"/><rect x="262" y="150" width="26" height="18" rx="3" fill="#ffd23f" stroke-width="3"/><rect x="302" y="150" width="26" height="18" rx="3" fill="#ffd23f" stroke-width="3"/>
+<rect x="340" y="160" width="24" height="45" rx="3" fill="#4d5566" stroke-width="3"/>
+<!-- sapling pot -->
+<g transform="translate(66 236) scale(1.15) translate(-80 -236)">
+<path d="M80 204 V182" fill="none"/>
+<path d="M80 190 Q62 192 60 174 Q78 172 80 190 Z M80 186 Q98 188 100 170 Q82 168 80 186 Z M80 182 Q74 170 80 160 Q88 170 80 182 Z" fill="#4caf50"/>
+<path d="M66 178 Q70 176 74 180" fill="none" stroke="#b8e8c0" stroke-width="2.5"/>
+<path d="M60 236 L65 210 H95 L100 236 Z" fill="#d9663b"/>
+<rect x="57" y="203" width="46" height="10" rx="3" fill="#d9663b"/>
+<path d="M63 208 H76" stroke="#f08a5d" stroke-width="3" fill="none"/>
+</g>
+</g>
+<!-- salesman -->
+<g transform="translate(144 238) scale(1.18)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- hidden arm w crossed fingers -->
+<path d="M20 -60 Q44 -56 42 -40" stroke-width="13" fill="none"/><path d="M20 -60 Q44 -56 42 -40" stroke="#1d7fb5" stroke-width="5" fill="none"/>
+<g transform="translate(44 -38) scale(1.45) translate(-46 38)">
+<path d="M38 -44 L50 -70" stroke-width="11" fill="none"/><path d="M54 -44 L42 -70" stroke-width="11" fill="none"/>
+<path d="M38 -44 L50 -70" stroke="#d9a066" stroke-width="4" fill="none"/><path d="M54 -44 L42 -70" stroke="#d9a066" stroke-width="4" fill="none"/>
+<path d="M46 -57 l0 0" stroke="#d9a066" stroke-width="6" fill="none"/>
+<circle cx="46" cy="-38" r="11" fill="#d9a066"/>
+<path d="M38 -36 Q46 -30 54 -36" fill="none" stroke-width="2.5"/>
+</g>
+<rect x="-19" y="-34" width="15" height="34" rx="5" fill="#3a4a6b"/><rect x="4" y="-34" width="15" height="34" rx="5" fill="#3a4a6b"/>
+<rect x="-30" y="-104" width="60" height="76" rx="18" fill="#1d7fb5"/>
+<path d="M-9 -102 L0 -76 L9 -102 Z" fill="#fff" stroke-width="3"/>
+<path d="M0 -96 L-4 -82 L0 -62 L4 -82 Z" fill="#ffd23f" stroke-width="3"/>
+<path d="M-6 -100 L-20 -70 M6 -100 L20 -70" fill="none" stroke-width="3"/>
+<path d="M-24 -86 Q-22 -80 -22 -76" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>
+<!-- raised arm with certificate -->
+<path d="M-24 -90 Q-46 -92 -50 -116" stroke-width="13" fill="none"/><path d="M-24 -90 Q-46 -92 -50 -116" stroke="#1d7fb5" stroke-width="5" fill="none"/>
+<circle cx="-50" cy="-118" r="7" fill="#d9a066"/>
+<g transform="rotate(-8 -70 -140)">
+<rect x="-94" y="-170" width="60" height="48" rx="3" fill="#fff"/>
+<rect x="-89" y="-165" width="50" height="38" rx="2" fill="#f6f6ee" stroke="none"/>
+<path d="M-84 -152 H-62 M-84 -143 H-62 M-84 -134 H-70" stroke="#b9bfc9" stroke-width="3" fill="none"/>
+<circle cx="-52" cy="-136" r="11" fill="#4caf50" stroke-width="3.5"/>
+<path d="M-57 -136 L-53 -131 L-46 -141" stroke="#fff" stroke-width="3.5" fill="none"/>
+</g>
+<!-- head -->
+<circle cx="0" cy="-126" r="23" fill="#d9a066"/>
+<path d="M-24 -130 Q-24 -152 0 -151 Q24 -152 24 -130 Q14 -142 -4 -141 Q-16 -140 -24 -130 Z" fill="#1f1f1f"/>
+<path d="M-14 -142 Q-6 -146 4 -144" stroke="#fff" stroke-width="2.5" fill="none" opacity=".6"/>
+<path d="M-15 -134 L-5 -131" stroke-width="3.5" fill="none"/><path d="M5 -137 L15 -133" stroke-width="3.5" fill="none"/>
+<circle cx="-7" cy="-127" r="2.2" fill="#1f2a44" stroke="none"/><circle cx="11" cy="-127" r="2.2" fill="#1f2a44" stroke="none"/>
+<path d="M-12 -113 Q2 -104 16 -114 Q2 -110 -12 -113 Z" fill="#fff" stroke-width="3"/>
+<path d="M26 -134 Q31 -126 26 -122 Q22 -126 26 -134 Z" fill="#8fd3f4" stroke-width="2.5"/>
+</g>
+</svg>

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="pbn_car" stroke="#1f2a44" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 -2 V-22 Q0 -30 10 -32 L26 -36 Q34 -56 52 -58 H70 Q86 -58 92 -38 L100 -34 Q110 -30 110 -20 V-2Z" fill="currentColor"/>
+<path d="M32 -37 Q38 -52 52 -52 H69 Q80 -52 85 -38Z" fill="#d6f1fb"/>
+<path d="M0 -12 H110 V-2 H0Z" fill="#000" fill-opacity=".15" stroke="none"/>
+<circle cx="26" cy="-2" r="12" fill="#4d5566"/><circle cx="26" cy="-2" r="5" fill="#d6dbe3" stroke="none"/>
+<circle cx="86" cy="-2" r="12" fill="#4d5566"/><circle cx="86" cy="-2" r="5" fill="#d6dbe3" stroke="none"/>
+<rect x="100" y="-26" width="8" height="7" rx="3" fill="#fff6c9" stroke-width="0"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="#d8efe6"/>
+<rect y="0" width="400" height="12" fill="#b8e8c0"/>
+<g fill="#c4e3d8"><rect x="0" y="120" width="400" height="6"/></g>
+<rect y="196" width="400" height="64" fill="#b9bfc9"/>
+<rect y="196" width="400" height="5" fill="#8a94a6"/>
+<g stroke="#a3abb9" stroke-width="3"><path d="M0 228 H400 M70 201 L40 260 M200 201 V260 M330 201 L360 260"/></g>
+<!-- calendar -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="138" y="14" width="124" height="94" rx="10" fill="#fff"/>
+<path d="M138 24 Q138 14 148 14 H252 Q262 14 262 24 V40 H138Z" fill="#e63946"/>
+<path d="M164 8 V22 M236 8 V22" stroke-width="6"/>
+</g>
+<g fill="#cfd6e2"><rect x="148" y="48" width="16" height="12" rx="3"/><rect x="170" y="48" width="16" height="12" rx="3"/><rect x="192" y="48" width="16" height="12" rx="3"/><rect x="214" y="48" width="16" height="12" rx="3"/><rect x="236" y="48" width="12" height="12" rx="3"/>
+<rect x="148" y="66" width="16" height="12" rx="3"/><rect x="170" y="66" width="16" height="12" rx="3"/><rect x="214" y="66" width="16" height="12" rx="3"/><rect x="236" y="66" width="12" height="12" rx="3"/>
+<rect x="148" y="84" width="16" height="12" rx="3"/><rect x="170" y="84" width="16" height="12" rx="3"/><rect x="192" y="84" width="16" height="12" rx="3"/></g>
+<rect x="192" y="66" width="16" height="12" rx="3" fill="#ffd23f"/>
+<ellipse cx="200" cy="72" rx="22" ry="16" fill="none" stroke="#e63946" stroke-width="5"/>
+<!-- EV row -->
+<ellipse cx="290" cy="208" rx="100" ry="7" fill="#8a94a6" opacity=".6"/>
+<g stroke-width="5" transform="translate(198 206) scale(.8)" color="#2ec4b6"><use href="#pbn_car"/></g>
+<circle cx="239" cy="184" r="8" fill="#ffd23f" stroke="#1f2a44" stroke-width="2"/><path d="M240 178 l-5 7 h3.5 l-1.5 5 l6 -7 h-3.5z" fill="#1f2a44"/>
+<g stroke-width="5" transform="translate(294 206) scale(.8)" color="#4caf50"><use href="#pbn_car"/></g>
+<circle cx="335" cy="184" r="8" fill="#ffd23f" stroke="#1f2a44" stroke-width="2"/><path d="M336 178 l-5 7 h3.5 l-1.5 5 l6 -7 h-3.5z" fill="#1f2a44"/>
+<g fill="#4caf50" stroke="#1f2a44" stroke-width="2.5" stroke-linejoin="round"><path d="M180 128 Q182 134 188 136 Q182 138 180 144 Q178 138 172 136 Q178 134 180 128Z"/><path d="M372 128 Q374 134 380 136 Q374 138 372 144 Q370 138 364 136 Q370 134 372 128Z"/></g>
+<!-- petrol car with ban -->
+<ellipse cx="78" cy="210" rx="64" ry="8" fill="#8a94a6" opacity=".6"/>
+<g fill="#b9bfc9" stroke="#1f2a44" stroke-width="3"><circle cx="16" cy="182" r="8"/><circle cx="9" cy="168" r="6"/></g>
+<g stroke-width="4" transform="translate(22 206)" color="#d9663b"><use href="#pbn_car"/></g>
+<g stroke-linecap="round"><circle cx="78" cy="170" r="48" fill="none" stroke="#1f2a44" stroke-width="13"/>
+<circle cx="78" cy="170" r="48" fill="none" stroke="#e63946" stroke-width="7"/>
+<path d="M44 204 L112 136" stroke="#1f2a44" stroke-width="13"/><path d="M44 204 L112 136" stroke="#e63946" stroke-width="7"/></g>
+</svg>

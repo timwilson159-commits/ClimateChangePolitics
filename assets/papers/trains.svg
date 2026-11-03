@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="trn_sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3df"/><stop offset="1" stop-color="#8fd3f4"/></linearGradient>
+<g id="trn_person" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="0" cy="0" r="12"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="url(#trn_sky)"/>
+<circle cx="340" cy="30" r="20" fill="#ffd23f"/>
+<g fill="#fff"><ellipse cx="80" cy="30" rx="32" ry="10"/><ellipse cx="102" cy="22" rx="18" ry="10"/><ellipse cx="230" cy="40" rx="24" ry="7"/></g>
+<!-- skyline -->
+<g fill="#7fb4d6"><rect x="10" y="48" width="36" height="60"/><rect x="50" y="26" width="30" height="82"/><rect x="86" y="58" width="40" height="50"/><rect x="134" y="38" width="32" height="70"/><rect x="176" y="62" width="44" height="46"/><rect x="226" y="30" width="28" height="78"/><rect x="262" y="52" width="40" height="56"/><rect x="310" y="40" width="30" height="68"/><rect x="346" y="64" width="44" height="44"/></g>
+<g fill="#a8d3ea"><rect x="58" y="34" width="6" height="8"/><rect x="58" y="52" width="6" height="8"/><rect x="142" y="48" width="6" height="8"/><rect x="142" y="66" width="6" height="8"/><rect x="234" y="40" width="6" height="8"/><rect x="234" y="58" width="6" height="8"/><rect x="318" y="50" width="6" height="8"/><rect x="318" y="70" width="6" height="8"/></g>
+<rect y="108" width="400" height="40" fill="#8a94a6" opacity="0"/>
+<g transform="translate(0 -16)"><!-- track bed -->
+<rect y="168" width="400" height="30" fill="#6f7a8f"/>
+<g fill="#4d5566"><rect y="178" width="400" height="5"/></g>
+<!-- speed lines -->
+<g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M6 118 H26"/><path d="M12 142 H34"/><path d="M4 100 H18"/></g>
+<!-- train -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 170 V96 Q0 84 12 84 H290 Q336 84 366 138 Q376 160 358 170Z" fill="#e3e9f2"/>
+<path d="M0 134 H336 Q348 152 362 156 L358 170 H0Z" fill="#1d7fb5"/>
+<path d="M0 134 H336" fill="none" stroke-width="3"/>
+<g fill="#2b5f93"><rect x="10" y="98" width="42" height="26" rx="7"/><rect x="64" y="98" width="42" height="26" rx="7"/><rect x="118" y="98" width="42" height="26" rx="7"/><rect x="172" y="98" width="42" height="26" rx="7"/><rect x="226" y="98" width="42" height="26" rx="7"/></g>
+<path d="M286 98 H300 Q326 98 346 130 H286Z" fill="#2b5f93"/>
+<path d="M360 150 Q372 152 368 142" fill="#ffd23f"/>
+<circle cx="352" cy="152" r="6" fill="#ffd23f"/>
+<g fill="#4d5566"><circle cx="40" cy="176" r="10"/><circle cx="110" cy="176" r="10"/><circle cx="260" cy="176" r="10"/><circle cx="330" cy="176" r="10"/></g>
+</g>
+<g fill="#fff" opacity=".7"><rect x="16" y="102" width="14" height="5" rx="2.5"/><rect x="70" y="102" width="14" height="5" rx="2.5"/><rect x="124" y="102" width="14" height="5" rx="2.5"/><rect x="178" y="102" width="14" height="5" rx="2.5"/><rect x="232" y="102" width="14" height="5" rx="2.5"/></g>
+</g><!-- platform -->
+<path d="M0 178 H400 V260 H0Z" fill="#b9bfc9"/>
+<rect y="178" width="400" height="8" fill="#ffd23f"/>
+<rect y="186" width="400" height="5" fill="#8a94a6"/>
+<!-- commuters -->
+<g transform="translate(0 8)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- adult 1 left, waving -->
+<path d="M58 250 V218 Q58 200 78 200 Q98 200 98 218 V250Z" fill="#e63946"/>
+<path d="M64 214 L48 192" fill="none" stroke-width="13" stroke="#1f2a44"/><path d="M64 214 L48 192" fill="none" stroke-width="5" stroke="#e63946"/><circle cx="46" cy="188" r="7" fill="#a86b3c"/>
+<circle cx="78" cy="182" r="14" fill="#a86b3c"/><path d="M64 180 Q66 164 80 166 Q94 166 92 180 Q86 172 64 180Z" fill="#1f1f1f" stroke="none"/>
+<circle cx="73" cy="184" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="83" cy="184" r="1.8" fill="#1f2a44" stroke="none"/><path d="M73 190 Q78 194 83 190" fill="none" stroke-width="2.5"/>
+<!-- kid -->
+<path d="M148 252 V230 Q148 216 162 216 Q176 216 176 230 V252Z" fill="#ffd23f"/>
+<circle cx="162" cy="200" r="12" fill="#f5c9a0"/><path d="M150 198 Q152 186 164 187 Q174 188 174 198 Q166 192 150 198Z" fill="#c9a36a" stroke="none"/>
+<circle cx="158" cy="202" r="1.6" fill="#1f2a44" stroke="none"/><circle cx="167" cy="202" r="1.6" fill="#1f2a44" stroke="none"/><path d="M158 207 Q162 211 167 207" fill="none" stroke-width="2.5"/>
+<!-- adult 2 with bag -->
+<path d="M236 252 V214 Q236 196 258 196 Q280 196 280 214 V252Z" fill="#2ec4b6"/>
+<rect x="276" y="222" width="22" height="20" rx="5" fill="#d9663b"/><path d="M280 222 Q287 210 294 222" fill="none"/>
+<circle cx="258" cy="178" r="14" fill="#f5c9a0"/><path d="M243 176 Q244 160 260 161 Q274 162 272 176 Q266 168 243 176Z" fill="#3a2a20" stroke="none"/>
+<circle cx="253" cy="180" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="263" cy="180" r="1.8" fill="#1f2a44" stroke="none"/><path d="M253 186 Q258 190 263 186" fill="none" stroke-width="2.5"/>
+<!-- adult 3 -->
+<path d="M322 252 V216 Q322 200 342 200 Q362 200 362 216 V252Z" fill="#4aa3df"/>
+<circle cx="342" cy="182" r="14" fill="#d9a066"/><path d="M328 180 Q330 164 344 165 Q358 166 356 180 Q350 172 328 180Z" fill="#c9a36a" stroke="none"/>
+<circle cx="337" cy="184" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="347" cy="184" r="1.8" fill="#1f2a44" stroke="none"/><path d="M337 190 Q342 194 347 190" fill="none" stroke-width="2.5"/>
+</g>
+</svg>

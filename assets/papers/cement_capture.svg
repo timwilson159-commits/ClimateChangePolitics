@@ -1,0 +1,64 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="cc_b" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="-17" y="-24" width="14" height="24" rx="4" fill="#3a4a6b"/>
+<rect x="3" y="-24" width="14" height="24" rx="4" fill="#3a4a6b"/>
+<rect x="-20" y="-64" width="40" height="46" rx="11" fill="#4aa3df"/>
+<circle cx="0" cy="-78" r="15" fill="currentColor"/>
+<path d="M-16 -89 Q0 -112 16 -89 Z" fill="#fff"/>
+<rect x="-20" y="-93" width="40" height="6" rx="3" fill="#fff"/>
+<circle cx="-5" cy="-76" r="1.6" fill="#1f2a44" stroke="none"/><circle cx="5" cy="-76" r="1.6" fill="#1f2a44" stroke="none"/>
+<path d="M-6 -70 Q0 -64 6 -70" stroke-width="3" fill="none"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="#8fd3f4"/>
+<circle cx="360" cy="38" r="20" fill="#ffd23f"/>
+<path d="M0 150 Q80 120 160 148 T330 140 T400 150 V215 H0 Z" fill="#e6b07a"/>
+<rect y="205" width="400" height="55" fill="#f2c879"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- works -->
+<rect x="30" y="140" width="120" height="65" fill="#8a94a6"/>
+<rect x="40" y="152" width="22" height="16" rx="3" fill="#8fd3f4" stroke-width="3"/><rect x="72" y="152" width="22" height="16" rx="3" fill="#8fd3f4" stroke-width="3"/>
+<path d="M30 100 Q30 88 46 88 H62 Q78 88 78 100 V140 H30 Z" fill="#b9bfc9"/>
+<path d="M84 110 Q84 100 98 100 H108 Q122 100 122 110 V140 H84 Z" fill="#b9bfc9"/>
+<path d="M120 140 L124 62 H146 L150 140 Z" fill="#8a94a6"/>
+<path d="M122 112 L123 98 H147 L148 112 Z M123 84 L124 72 H146 L147 84 Z" fill="#d9663b" stroke="none"/>
+<!-- tube -->
+<path d="M135 62 V38 H300 V98" fill="none" stroke-width="30"/>
+<path d="M135 62 V38 H300 V98" fill="none" stroke="#d7f3f2" stroke-width="22"/>
+<path d="M142 52 V42 H206" fill="none" stroke="#fff" stroke-width="3.5" opacity=".9"/>
+<g fill="#8a94a6" stroke="none"><circle cx="135" cy="54" r="6"/><circle cx="141" cy="49" r="5"/><circle cx="170" cy="38" r="7"/><circle cx="178" cy="35" r="5"/><circle cx="216" cy="38" r="7"/><circle cx="224" cy="35" r="5"/><circle cx="262" cy="38" r="7"/><circle cx="270" cy="35" r="5"/><circle cx="300" cy="66" r="7"/><circle cx="304" cy="76" r="5"/></g>
+<!-- tank -->
+<path d="M258 100 H348 V196 Q348 206 338 206 H268 Q258 206 258 196 Z" fill="#e8f1f5"/>
+<ellipse cx="303" cy="100" rx="45" ry="10" fill="#d7f3f2"/>
+<rect x="276" y="120" width="54" height="40" rx="8" fill="#d7f3f2" stroke-width="3.5"/>
+<rect x="281" y="136" width="44" height="19" rx="5" fill="#b9bfc9" stroke="none"/>
+<path d="M281 136 Q290 131 303 136 T325 136" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>
+<rect x="258" y="176" width="90" height="12" fill="#2ec4b6" stroke="none"/>
+<path d="M258 188 H348" fill="none" stroke-width="3"/>
+<circle cx="303" cy="182" r="11" fill="#ffd23f"/><path d="M300 178 V186 M306 178 V186" stroke-width="3" fill="none"/>
+<path d="M172 24 V52 M218 24 V52 M264 24 V52" stroke="#8a94a6" stroke-width="0" fill="none"/>
+</g>
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round"><rect x="228" y="24" width="8" height="28" rx="2" fill="#8a94a6"/><rect x="285" y="82" width="30" height="8" rx="2" fill="#8a94a6"/><circle cx="332" cy="150" r="0"/></g>
+<g fill="#fff" opacity=".7"><circle cx="338" cy="122" r="3"/><path d="M336 134 l3 -6 l3 6 l-3 6 z"/></g>
+<!-- cement blocks -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="40" y="212" width="38" height="22" rx="3" fill="#b9bfc9"/><rect x="82" y="212" width="38" height="22" rx="3" fill="#b9bfc9"/><rect x="61" y="190" width="38" height="22" rx="3" fill="#d4d9e1"/>
+<path d="M46 218 H58 M88 218 H100 M67 196 H79" stroke="#fff" stroke-width="3" fill="none" opacity=".7"/>
+</g>
+<!-- engineer A -->
+<use href="#cc_b" x="178" y="236" color="#f5c9a0"/>
+<g transform="translate(178 236)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M14 -56 Q22 -44 10 -40" stroke-width="13" fill="none"/><path d="M14 -56 Q22 -44 10 -40" stroke="#4aa3df" stroke-width="5" fill="none"/>
+<rect x="-4" y="-62" width="28" height="34" rx="3" fill="#fff"/>
+<path d="M2 -52 H18 M2 -45 H18 M2 -38 H12" stroke="#4aa3df" stroke-width="3" fill="none"/>
+<path d="M-14 -56 Q-12 -42 4 -40" stroke-width="13" fill="none"/><path d="M-14 -56 Q-12 -42 4 -40" stroke="#4aa3df" stroke-width="5" fill="none"/>
+</g>
+<!-- engineer B -->
+<use href="#cc_b" x="226" y="238" color="#a86b3c"/>
+<g transform="translate(226 238)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M16 -56 Q34 -66 30 -92" stroke-width="13" fill="none"/><path d="M16 -56 Q34 -66 30 -92" stroke="#a86b3c" stroke-width="5" fill="none"/>
+<circle cx="30" cy="-94" r="6" fill="#a86b3c" stroke-width="3.5"/>
+<path d="M-16 -54 Q-26 -44 -20 -36" stroke-width="13" fill="none"/><path d="M-16 -54 Q-26 -44 -20 -36" stroke="#a86b3c" stroke-width="5" fill="none"/>
+</g>
+</svg>

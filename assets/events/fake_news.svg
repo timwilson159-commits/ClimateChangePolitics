@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260"><defs><clipPath id="fake_news-clip"><rect width="400" height="260"/></clipPath></defs><g clip-path="url(#fake_news-clip)">
+<defs>
+<linearGradient id="fake_news-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b4a6b"/><stop offset="1" stop-color="#5a4a78"/></linearGradient>
+<radialGradient id="fake_news-spot" cx="0.5" cy="0" r="1"><stop offset="0" stop-color="#ffd23f" stop-opacity="0.55"/><stop offset="1" stop-color="#ffd23f" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="260" fill="url(#fake_news-wall)"/>
+<path d="M290 0 L350 0 L400 200 L240 200Z" fill="url(#fake_news-spot)"/>
+<path d="M0 0 L110 0 L60 190 L0 190Z" fill="#ffffff" opacity="0.06"/>
+<!-- on-air lamp -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round"><rect x="326" y="18" width="52" height="22" rx="8" fill="#4d5566"/><circle cx="342" cy="29" r="6" fill="#e63946" stroke-width="3"/><rect x="354" y="25" width="16" height="8" rx="3" fill="#e63946" stroke-width="0"/></g>
+<!-- TV -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="70" y="150" width="60" height="16" rx="4" fill="#4d5566"/>
+<rect x="18" y="26" width="196" height="130" rx="14" fill="#8a94a6"/>
+<rect x="30" y="38" width="172" height="106" rx="8" fill="#b8e8c0"/>
+<path d="M30 70 L202 70" stroke="#ffffff" stroke-width="3" opacity="0.5" fill="none"/>
+<!-- thermometer cartoon -->
+<rect x="56" y="48" width="22" height="70" rx="11" fill="#ffffff" stroke-width="3.5"/>
+<circle cx="67" cy="122" r="14" fill="#ffffff" stroke-width="3.5"/>
+<rect x="62" y="96" width="10" height="26" rx="5" fill="#4aa3df" stroke-width="0"/>
+<circle cx="67" cy="122" r="9" fill="#4aa3df" stroke-width="0"/>
+<path d="M78 62 L86 62 M78 76 L84 76 M78 90 L86 90" fill="none" stroke-width="3"/>
+<!-- smug sun -->
+<circle cx="146" cy="68" r="15" fill="#ffd23f" stroke-width="3.5"/>
+<path d="M146 44 v-5 M146 92 v5 M122 68 h-5 M170 68 h5" stroke="#ff9f1c" stroke-width="4" fill="none"/>
+<!-- fake stamp -->
+<g transform="rotate(-16 142 112)"><rect x="96" y="94" width="104" height="38" rx="9" fill="none" stroke="#e63946" stroke-width="6"/><path d="M106 113 L190 113" stroke="#e63946" stroke-width="12" fill="none"/></g>
+<circle cx="192" cy="150" r="3" fill="#e63946" stroke-width="2"/>
+</g>
+<g fill="#ffffff" opacity="0.35"><path d="M38 44 L90 44 L38 90Z"/></g>
+<!-- desk -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 196 L400 196 L400 260 L0 260Z" fill="#7a3d5a"/>
+<path d="M0 196 L400 196 L400 208 L0 208Z" fill="#a85b78"/>
+<path d="M230 216 L370 216 L370 244 L230 244Z" fill="#5a2d44" stroke-width="3"/>
+</g>
+<!-- anchor -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M254 200 L254 168 C254 150 276 146 308 146 C340 146 362 150 362 168 L362 200Z" fill="#2e3a5c"/>
+<path d="M296 148 L308 172 L320 148Z" fill="#ffffff" stroke-width="3"/>
+<path d="M308 160 L302 172 L308 190 L314 172Z" fill="#e63946" stroke-width="3"/>
+<path d="M284 128 C282 112 296 100 312 100 C330 100 340 114 334 134 C330 148 316 150 306 148 C292 146 286 138 284 128Z" fill="#f5c9a0"/>
+<path d="M280 124 C276 100 300 90 322 94 C340 98 344 116 336 122 C330 112 316 108 300 112 C292 114 286 120 284 130Z" fill="#c9a36a"/>
+<path d="M289 124 L236 134 C230 137 232 142 238 142 L289 140Z" fill="#f5c9a0"/>
+<path d="M282 164 L282 196" stroke="#8a94a6" stroke-width="3" fill="none"/>
+</g>
+<g fill="#ffffff" stroke="#1f2a44" stroke-width="2.5"><circle cx="302" cy="124" r="6"/><circle cx="321" cy="124" r="6"/></g>
+<g fill="#1f2a44"><circle cx="300" cy="125" r="2.6"/><circle cx="319" cy="125" r="2.6"/></g>
+<path d="M296 114 L308 110 M316 110 L328 114" stroke="#1f2a44" stroke-width="3" stroke-linecap="round" fill="none"/>
+<path d="M300 138 q14 8 30 -4" stroke="#1f2a44" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- microphone -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M340 200 L340 178" stroke-width="5" fill="none"/><circle cx="340" cy="170" r="8" fill="#4d5566"/></g>
+<!-- phone -->
+<g transform="rotate(-8 140 190)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="112" y="136" width="58" height="96" rx="10" fill="#4d5566"/>
+<rect x="118" y="146" width="46" height="72" rx="4" fill="#ffffff" stroke-width="3"/>
+<path d="M141 154 L158 186 L124 186Z" fill="#e63946" stroke-width="3.5"/>
+<path d="M141 164 L141 174" stroke="#ffffff" stroke-width="4" fill="none"/><circle cx="141" cy="180.5" r="1.6" fill="#ffffff" stroke="none"/>
+<path d="M124 198 L158 198 M124 206 L150 206" stroke="#b9bfc9" stroke-width="3" fill="none"/>
+</g>
+</g></svg>

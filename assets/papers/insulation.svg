@@ -1,0 +1,68 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="in_p" stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<circle r="13" fill="currentColor"/>
+<circle cx="-4.5" cy="-1" r="1.5" fill="#1f2a44" stroke="none"/><circle cx="4.5" cy="-1" r="1.5" fill="#1f2a44" stroke="none"/>
+<path d="M-5 4 Q0 10 5 4" fill="none" stroke-width="3"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="#cfeafa"/>
+<rect y="205" width="400" height="55" fill="#8fcf9a"/>
+<!-- outside weather -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="44" cy="100" r="26" fill="#e6f4ff"/>
+<path d="M44 80 V120 M27 90 L61 110 M27 110 L61 90" fill="none" stroke="#4aa3df" stroke-width="5"/>
+<circle cx="356" cy="92" r="19" fill="#ffd23f"/>
+<path d="M356 62 V68 M356 116 V122 M326 92 H332 M380 92 H386 M334 70 L338 74 M378 70 L374 74 M334 114 L338 110 M378 114 L374 110" fill="none" stroke="#ff9f1c" stroke-width="4"/>
+</g>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- room -->
+<rect x="98" y="108" width="204" height="97" fill="#fff0cf" stroke="none"/>
+<rect x="98" y="192" width="204" height="13" fill="#a86b3c" stroke="none"/>
+<!-- roof -->
+<path d="M74 114 L200 34 L326 114 Z" fill="#d9663b"/>
+<path d="M100 110 L200 48 L300 110 Z" fill="#f4a6b8"/>
+<path d="M118 100 Q130 88 144 96 Q158 80 172 86 Q184 70 200 66 Q216 70 228 86 Q242 80 256 96 Q270 88 282 100" fill="none" stroke="#fff" stroke-width="4" opacity=".9"/>
+<path d="M130 106 Q150 96 170 106 Q190 94 210 106 Q230 96 250 106 Q262 100 272 106" fill="none" stroke="#fff" stroke-width="3.5" opacity=".9"/>
+<path d="M98 110 H302" fill="none"/>
+<!-- walls -->
+<rect x="80" y="110" width="20" height="95" rx="5" fill="#f4a6b8"/>
+<rect x="300" y="110" width="20" height="95" rx="5" fill="#f4a6b8"/>
+<path d="M90 120 q6 6 0 12 q-6 6 0 12 q6 6 0 12 q-6 6 0 12 q6 6 0 12 M310 120 q6 6 0 12 q-6 6 0 12 q6 6 0 12 q-6 6 0 12 q6 6 0 12" fill="none" stroke="#fff" stroke-width="3.5"/>
+<path d="M98 205 H302" fill="none"/>
+<!-- thermometer -->
+<rect x="112" y="116" width="16" height="62" rx="8" fill="#fff"/>
+<circle cx="120" cy="184" r="12" fill="#e63946"/>
+<rect x="116" y="146" width="8" height="36" fill="#e63946" stroke="none"/>
+<path d="M118 126 V132" stroke="#fff" stroke-width="2.5" fill="none"/>
+<path d="M134 124 H142 M134 136 H142 M134 148 H142" stroke-width="3" fill="none"/>
+<circle cx="138" cy="164" r="7" fill="#4caf50" stroke-width="3"/>
+<path d="M135 164 L137 166.5 L141 161.5" stroke="#fff" stroke-width="2" fill="none"/>
+</g>
+<g transform="translate(224 198) scale(.86) translate(-210 -198)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- couch -->
+<rect x="148" y="168" width="124" height="30" rx="10" fill="#4aa3df"/>
+<rect x="140" y="156" width="20" height="42" rx="9" fill="#1d7fb5"/>
+<rect x="260" y="156" width="20" height="42" rx="9" fill="#1d7fb5"/>
+<!-- family -->
+<path d="M156 170 Q156 148 176 148 Q196 148 196 170 Z" fill="#ff9f1c"/>
+<path d="M164 158 H188 M162 165 H190" stroke="#ffd23f" stroke-width="3.5" fill="none"/>
+<path d="M196 172 Q196 156 210 156 Q224 156 224 172 Z" fill="#4caf50"/>
+<path d="M202 164 H218" stroke="#b8e8c0" stroke-width="3.5" fill="none"/>
+<path d="M226 170 Q226 148 246 148 Q266 148 266 170 Z" fill="#2ec4b6"/>
+<path d="M234 158 H258 M232 165 H260" stroke="#b8e8c0" stroke-width="3.5" fill="none"/>
+<use href="#in_p" x="176" y="138" color="#f5c9a0"/>
+<path d="M164 134 Q166 120 178 122 Q190 120 190 134 Q182 128 176 129 Q170 128 164 134 Z" fill="#3a2a20" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"/>
+<use href="#in_p" x="210" y="149" color="#a86b3c" transform="translate(210 149) scale(.82) translate(-210 -149)"/>
+<use href="#in_p" x="246" y="138" color="#d9a066"/>
+<path d="M233 136 Q234 124 246 125 Q258 124 259 136 Q252 131 246 132 Q240 131 233 136 Z" fill="#d6dbe3" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"/>
+<path d="M150 184 Q210 176 270 184 V196 H150 Z" fill="#b8e8c0" stroke-width="3.5"/><path d="M168 186 V196 M190 183 V196 M212 182 V196 M234 183 V196 M254 185 V196" stroke="#4caf50" stroke-width="3" fill="none"/>
+</g>
+<!-- rug / lamp -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M290 130 V190" fill="none"/>
+<path d="M281 128 L286 112 H294 L299 128 Z" fill="#ffd23f"/>
+</g>
+<!-- ground edge -->
+<rect x="70" y="205" width="260" height="6" rx="3" fill="#6a4a30" stroke="#1f2a44" stroke-width="4"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="fof_sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3df"/><stop offset="1" stop-color="#b6e3f7"/></linearGradient>
+<g id="fof_leaf"><path d="M0 0 Q6 -14 18 -14 Q18 -2 6 4 Q2 4 0 0Z" fill="#4caf50" stroke="#1f2a44" stroke-width="2.5" stroke-linejoin="round"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#fof_sky)"/>
+<circle cx="340" cy="38" r="22" fill="#ffd23f"/>
+<g fill="#fff"><ellipse cx="300" cy="226" rx="50" ry="14"/><ellipse cx="330" cy="216" rx="26" ry="14"/><ellipse cx="60" cy="236" rx="40" ry="11"/><ellipse cx="120" cy="40" rx="30" ry="9"/><ellipse cx="140" cy="33" rx="16" ry="8"/></g>
+<path d="M172 162C150 160 130 158 108 156C94 150 78 156 82 166C70 172 82 184 98 180C124 176 150 172 172 170Z" fill="#c9ced8" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"/>
+<path d="M150 164C130 163 112 162 98 163" fill="none" stroke="#e3e8ef" stroke-width="3" stroke-linecap="round"/>
+<!-- plane -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M92 112 L70 62 H100 L132 108Z" fill="#e3e9f2"/>
+<path d="M82 78 L96 74" stroke="#4caf50" stroke-width="7" />
+<path d="M90 114 Q86 98 120 96 H292 Q352 98 372 124 Q356 150 292 152 H120 Q86 150 90 114Z" fill="#f4f7fb"/>
+<path d="M88 130 Q88 142 120 144 H300 Q346 144 364 130 H88Z" fill="#cfd6e2" stroke="none"/>
+<path d="M90 114 Q86 98 120 96 H292 Q352 98 372 124 Q356 150 292 152 H120 Q86 150 90 114Z" fill="none"/>
+<path d="M98 122 H362 Q356 132 336 136 H98Z" fill="#4caf50" stroke="none"/>
+<path d="M98 122 H364" stroke-width="3" fill="none"/>
+<path d="M300 106 Q320 100 342 108 Q336 116 312 116 Q302 114 300 106Z" fill="#2b5f93" stroke-width="3"/>
+<path d="M238 128 L186 188 H236 L280 132Z" fill="#cfd6e2"/>
+<path d="M236 128 L186 188 H198 L248 130Z" fill="#4caf50" stroke="none"/>
+<path d="M238 128 L186 188 H236 L280 132Z" fill="none"/>
+<rect x="176" y="154" width="46" height="24" rx="11" fill="#8a94a6"/>
+<ellipse cx="222" cy="166" rx="4" ry="9" fill="#3a4152" stroke-width="2.5"/>
+</g>
+<g stroke="#1f2a44" stroke-width="3">
+<rect x="126" y="102" width="20" height="16" rx="6" fill="#8fd3f4"/><rect x="154" y="102" width="20" height="16" rx="6" fill="#8fd3f4"/><rect x="176" y="98" width="32" height="24" rx="9" fill="#8fd3f4"/><rect x="210" y="102" width="20" height="16" rx="6" fill="#8fd3f4"/>
+</g>
+<!-- waving passenger -->
+<circle cx="190" cy="112" r="8.5" fill="#d9a066" stroke="#1f2a44" stroke-width="2.5"/>
+<path d="M180 108 Q190 98 200 108 Q190 104 180 108Z" fill="#1f1f1f"/>
+<circle cx="187" cy="113" r="1.2" fill="#1f2a44"/><circle cx="193" cy="113" r="1.2" fill="#1f2a44"/>
+<path d="M186 117 Q190 121 195 117" fill="none" stroke="#1f2a44" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M200 120 L203 108" stroke="#1f2a44" stroke-width="7" stroke-linecap="round"/><path d="M200 120 L203 108" stroke="#d9a066" stroke-width="3" stroke-linecap="round"/><circle cx="203" cy="106" r="4.5" fill="#d9a066" stroke="#1f2a44" stroke-width="2"/>
+<!-- sticker -->
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="262" cy="106" r="19" fill="#fff"/>
+<rect x="259" y="108" width="6" height="12" rx="2" fill="#a86b3c" stroke-width="2.5"/>
+<path d="M254 106 C246 100 250 88 258 90 C260 84 272 84 274 92 C282 94 280 108 272 108Z" fill="#4caf50" stroke-width="3"/>
+</g>
+<circle cx="260" cy="98" r="1.4" fill="#1f2a44"/><circle cx="269" cy="98" r="1.4" fill="#1f2a44"/><path d="M259 102 Q264 106 270 102" fill="none" stroke="#1f2a44" stroke-width="1.8" stroke-linecap="round"/>
+<use href="#fof_leaf" x="130" y="136"/><use href="#fof_leaf" x="170" y="140" transform="translate(0 0)"/><use href="#fof_leaf" x="300" y="146" transform="translate(0 0)"/>
+<g fill="#b8e8c0" stroke="#1f2a44" stroke-width="2.5" stroke-linejoin="round"><path d="M330 70 Q332 78 340 80 Q332 82 330 90 Q328 82 320 80 Q328 78 330 70Z"/><path d="M60 100 Q62 106 68 108 Q62 110 60 116 Q58 110 52 108 Q58 106 60 100Z" opacity="0"/></g>
+</svg>

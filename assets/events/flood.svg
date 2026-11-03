@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260"><defs><clipPath id="flood-clip"><rect width="400" height="260"/></clipPath></defs><g clip-path="url(#flood-clip)">
+<defs>
+<linearGradient id="flood-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f8497"/><stop offset="1" stop-color="#b3c4d0"/></linearGradient>
+<g id="flood-cloud"><circle cx="0" cy="0" r="22"/><circle cx="26" cy="-6" r="26"/><circle cx="56" cy="2" r="20"/><rect x="-22" y="0" width="98" height="22" rx="11"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#flood-sky)"/>
+<g fill="#55687a"><use href="#flood-cloud" transform="translate(20 30)"/><use href="#flood-cloud" transform="translate(150 18) scale(1.2)"/><use href="#flood-cloud" transform="translate(290 34)"/></g>
+<!-- rain -->
+<g stroke="#dcecf5" stroke-width="3" stroke-linecap="round" opacity="0.8"><path d="M30 70 l-6 16 M80 80 l-6 16 M130 66 l-6 16 M190 70 l-6 16 M250 62 l-6 16 M310 76 l-6 16 M360 66 l-6 16 M55 110 l-6 16 M340 110 l-6 16 M370 140 l-6 16 M20 140 l-6 16"/></g>
+<!-- far hills & trees -->
+<path d="M0 150 C60 120 120 140 180 128 C250 116 330 140 400 124 L400 200 L0 200Z" fill="#7fa58a"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- left house -->
+<g>
+<rect x="10" y="118" width="82" height="90" rx="5" fill="#f2c879"/>
+<path d="M2 122 L51 84 L100 122Z" fill="#8a94a6"/>
+<path d="M18 116 L51 92 M34 116 L60 96 M50 116 L72 99" stroke="#4d5566" stroke-width="3" fill="none"/>
+<rect x="22" y="132" width="20" height="18" rx="3" fill="#8fd3f4" stroke-width="3"/>
+<rect x="58" y="132" width="20" height="18" rx="3" fill="#8fd3f4" stroke-width="3"/>
+</g>
+<!-- right house -->
+<g>
+<rect x="305" y="112" width="86" height="96" rx="5" fill="#b8e8c0"/>
+<path d="M296 118 L348 78 L400 118Z" fill="#d9663b"/>
+<path d="M312 112 L348 87 M328 114 L358 92 M344 116 L368 97" stroke="#a84a28" stroke-width="3" fill="none"/>
+<rect x="318" y="128" width="20" height="18" rx="3" fill="#8fd3f4" stroke-width="3"/>
+<rect x="356" y="128" width="20" height="18" rx="3" fill="#8fd3f4" stroke-width="3"/>
+</g>
+<!-- centre house with roof -->
+<g>
+<rect x="132" y="112" width="136" height="100" rx="5" fill="#f5e6c8"/>
+<path d="M118 118 L156 76 L244 76 L282 118Z" fill="#d9663b"/>
+<path d="M140 108 L166 84 M166 112 L186 84 M196 112 L206 84 M226 112 L226 84 M252 110 L238 84" stroke="#a84a28" stroke-width="3" fill="none"/>
+<rect x="148" y="130" width="24" height="20" rx="3" fill="#8fd3f4" stroke-width="3"/>
+<rect x="228" y="130" width="24" height="20" rx="3" fill="#8fd3f4" stroke-width="3"/>
+<rect x="184" y="140" width="32" height="50" rx="4" fill="#7a4a2b" stroke-width="3"/>
+</g>
+</g>
+<!-- family on roof -->
+<g transform="translate(200 76) scale(1.45) translate(-200 -76)"><g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<g><path d="M166 76 L166 66 C166 58 184 58 184 66 L184 76Z" fill="#4aa3df"/><circle cx="175" cy="48" r="9" fill="#f5c9a0"/><path d="M166 47 A9 9 0 0 1 184 47 C180 42 170 42 166 47Z" fill="#3a2a20"/><path d="M184 62 C192 56 194 48 192 40" fill="none"/></g>
+<g><path d="M196 76 L196 62 C196 54 216 54 216 62 L216 76Z" fill="#e63946"/><circle cx="206" cy="44" r="9.5" fill="#a86b3c"/><path d="M196.5 43 A9.5 9.5 0 0 1 215.5 43 C212 38 200 38 196.5 43Z" fill="#1f1f1f"/><path d="M196 58 C188 52 186 46 188 38" fill="none"/></g>
+<g><path d="M224 76 L224 68 C224 62 236 62 236 68 L236 76Z" fill="#ffd23f"/><circle cx="230" cy="56" r="7" fill="#f5c9a0"/><path d="M223 55 A7 7 0 0 1 237 55 C233 51 227 51 223 55Z" fill="#c9a36a"/></g>
+</g>
+<g fill="#1f2a44"><circle cx="172" cy="49" r="1.6"/><circle cx="178" cy="49" r="1.6"/><circle cx="203" cy="45" r="1.6"/><circle cx="209" cy="45" r="1.6"/><circle cx="228" cy="56" r="1.3"/><circle cx="232" cy="56" r="1.3"/></g>
+<g stroke="#1f2a44" stroke-width="2" fill="none" stroke-linecap="round"><path d="M172 53 q3 3 6 0"/><path d="M203 50 q3 3 6 0"/><path d="M228 60 q2 2 4 0"/></g>
+</g>
+<!-- car -->
+<g transform="translate(2 212) scale(1.35) translate(-26 -200)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M26 200 L26 178 C26 172 32 170 38 170 L52 160 C56 156 62 154 68 154 L96 154 C102 154 106 156 110 160 L120 170 C130 172 134 176 134 182 L134 200Z" fill="#4aa3df"/>
+<path d="M56 168 L62 160 L78 160 L78 168Z M84 168 L84 160 L98 160 L106 168Z" fill="#b8e8c0" stroke-width="3"/>
+<path d="M86 160 L86 172" stroke-width="3" fill="none"/>
+</g>
+<!-- water -->
+<rect x="0" y="196" width="400" height="64" fill="#b07a45"/>
+<path d="M0 196 C20 190 40 202 60 196 C80 190 100 202 120 196 C140 190 160 202 180 196 C200 190 220 202 240 196 C260 190 280 202 300 196 C320 190 340 202 360 196 C380 190 390 200 400 196 L400 208 L0 208Z" fill="#c8935a"/>
+<g stroke="#8a5c33" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"><path d="M20 215 q10 -6 20 0 t20 0"/><path d="M150 230 q10 -6 20 0 t20 0"/><path d="M300 240 q10 -6 20 0 t20 0"/><path d="M60 245 q10 -6 20 0 t20 0"/></g>
+<g stroke="#1f2a44" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"><path d="M20 190 q8 6 16 0 t16 0"/></g>
+<!-- rescue boat -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M205 214 C205 204 225 200 250 200 L350 200 C374 200 392 206 392 214 C392 228 376 238 356 238 L240 238 C220 238 205 228 205 214Z" fill="#ff9f1c"/>
+<path d="M214 210 L384 210" fill="none" stroke="#ffd23f" stroke-width="4"/>
+<path d="M228 202 C230 186 246 180 254 190" fill="none" stroke-width="0"/>
+<g>
+<path d="M300 200 L300 186 C300 176 326 176 326 186 L326 200Z" fill="#ffd23f"/>
+<circle cx="313" cy="166" r="11" fill="#d9a066"/>
+<path d="M300 164 C300 150 326 150 326 164Z" fill="#ffd23f"/>
+<path d="M296 164 L330 164" fill="none"/>
+</g>
+</g>
+<g fill="#1f2a44"><circle cx="309" cy="170" r="1.8"/><circle cx="317" cy="170" r="1.8"/></g>
+<path d="M309 175 q4 3 8 0" stroke="#1f2a44" stroke-width="2" fill="none" stroke-linecap="round"/>
+<g stroke="#1f2a44" stroke-width="3" stroke-linecap="round"><path d="M258 224 L340 224" stroke="#e63946" stroke-width="6"/></g>
+</g></svg>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="gs_w" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M-17 -54 Q-32 -64 -31 -90" stroke-width="13" fill="none"/>
+<path d="M17 -54 Q32 -64 31 -90" stroke-width="13" fill="none"/>
+<path d="M-17 -54 Q-32 -64 -31 -90" stroke="currentColor" stroke-width="5" fill="none"/>
+<path d="M17 -54 Q32 -64 31 -90" stroke="currentColor" stroke-width="5" fill="none"/>
+<rect x="-17" y="-24" width="14" height="24" rx="4" fill="#3a4a6b"/>
+<rect x="3" y="-24" width="14" height="24" rx="4" fill="#3a4a6b"/>
+<rect x="-20" y="-64" width="40" height="46" rx="11" fill="#ff9f1c"/>
+<rect x="-20" y="-44" width="40" height="7" fill="#e8edf2" stroke="none"/>
+<circle cx="0" cy="-78" r="15" fill="currentColor"/>
+<path d="M-16 -89 Q0 -112 16 -89 Z" fill="#ffd23f"/>
+<rect x="-20" y="-93" width="40" height="6" rx="3" fill="#ffd23f"/>
+<circle cx="-5" cy="-76" r="1.6" fill="#1f2a44" stroke="none"/>
+<circle cx="5" cy="-76" r="1.6" fill="#1f2a44" stroke="none"/>
+<path d="M-6 -70 Q0 -63 6 -70 Z" fill="#fff" stroke-width="2.5"/>
+</g>
+</defs>
+<rect width="400" height="260" fill="#dce6ef"/>
+<rect x="0" y="0" width="400" height="36" fill="#c3cfdc"/>
+<rect x="20" y="52" width="82" height="62" rx="6" fill="#8fd3f4"/>
+<rect x="298" y="52" width="82" height="62" rx="6" fill="#8fd3f4"/>
+<path d="M30 100 Q50 70 80 100 Z M310 98 Q330 72 360 98 Z" fill="#fff"/>
+<rect y="205" width="400" height="55" fill="#4d5566"/>
+<rect y="205" width="400" height="8" fill="#8a94a6"/>
+<!-- crane -->
+<rect x="0" y="14" width="400" height="14" fill="#8a94a6" stroke="#1f2a44" stroke-width="4"/>
+<path d="M221 28 V50" stroke="#1f2a44" stroke-width="5" stroke-linecap="round"/>
+<!-- steel stream -->
+<path d="M247 86 Q258 130 262 190" stroke="#ff9f1c" stroke-width="11" fill="none" stroke-linecap="round"/>
+<path d="M247 86 Q258 130 262 190" stroke="#ffd23f" stroke-width="4" fill="none" stroke-linecap="round"/>
+<!-- mould -->
+<path d="M225 185 H300 L292 212 H233 Z" fill="#4d5566" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round"/>
+<path d="M233 188 H292 L290 196 H235 Z" fill="#ff9f1c"/>
+<ellipse cx="262" cy="190" rx="22" ry="4" fill="#ffd23f"/>
+<!-- ladle -->
+<g transform="rotate(30 200 92)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M200 50 L170 66 M200 50 L230 66" fill="none"/>
+<path d="M164 66 H236 L222 130 Q200 140 178 130 Z" fill="#6a7385"/>
+<path d="M164 66 H236 L233 78 H167 Z" fill="#8a94a6"/>
+<ellipse cx="200" cy="66" rx="36" ry="7" fill="#ff9f1c"/>
+<ellipse cx="200" cy="66" rx="22" ry="3.5" fill="#ffd23f" stroke="none"/>
+</g>
+<circle cx="221" cy="54" r="6" fill="#8a94a6" stroke="#1f2a44" stroke-width="4"/>
+<!-- sparks -->
+<g fill="#ffd23f"><circle cx="285" cy="170" r="3.5"/><circle cx="240" cy="165" r="3"/><circle cx="296" cy="150" r="2.5"/><circle cx="228" cy="150" r="2.5"/></g>
+<!-- clean steam -->
+<g fill="#fff" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round">
+<circle cx="296" cy="162" r="13"/><circle cx="305" cy="134" r="17"/><circle cx="294" cy="102" r="20"/><circle cx="326" cy="116" r="12"/>
+</g>
+<g fill="#fff"><circle cx="296" cy="162" r="9"/><circle cx="305" cy="134" r="13"/><circle cx="294" cy="102" r="16"/><circle cx="326" cy="116" r="8"/></g>
+<!-- hydrogen tank -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M92 196 H228" fill="none" stroke-width="14"/><path d="M92 196 H228" fill="none" stroke="#2ec4b6" stroke-width="6"/>
+<rect x="34" y="104" width="62" height="102" rx="26" fill="#2ec4b6"/>
+<path d="M46 124 V176" stroke="#b8f0ea" stroke-width="5" fill="none"/>
+<path d="M54 104 V94 H76 V104" fill="#8a94a6"/>
+<circle cx="65" cy="150" r="22" fill="#fff"/>
+<path d="M56 138 V162 M74 138 V162 M56 150 H74" fill="none" stroke="#1f2a44" stroke-width="11"/>
+<path d="M56 138 V162 M74 138 V162 M56 150 H74" fill="none" stroke="#2ec4b6" stroke-width="5"/>
+<path d="M76 176 Q92 166 94 150 Q80 150 76 176 Z" fill="#4caf50" stroke-width="3.5" transform="translate(-4 4)"/>
+</g>
+<!-- workers -->
+<use href="#gs_w" x="140" y="236" color="#d9a066"/>
+<use href="#gs_w" x="348" y="236" color="#7a4a2b"/>
+</svg>

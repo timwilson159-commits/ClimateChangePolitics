@@ -1,0 +1,75 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="fsl_sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa3df"/><stop offset="1" stop-color="#b6e3f7"/></linearGradient>
+<g id="fsl_panel" stroke="#1f2a44" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 0 H50 L58 -26 H8Z" fill="#2b4f8f" stroke-width="3.5"/>
+<path d="M17 0 L25 -26 M33 0 L41 -26 M4 -13 H54" stroke-width="2" fill="none" stroke="#9fc4ee"/>
+<path d="M14 -6 L22 -20" stroke="#fff" stroke-width="3" opacity=".8"/>
+</g>
+<g id="fsl_wheat" stroke="#1f2a44" stroke-width="3" stroke-linecap="round"><path d="M0 0 V-18" stroke="#a8841f" fill="none"/><ellipse cx="0" cy="-24" rx="4" ry="8" fill="#f2c879"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#fsl_sky)"/>
+<circle cx="70" cy="48" r="24" fill="#ffd23f"/>
+<g stroke="#ffd23f" stroke-width="5" stroke-linecap="round"><path d="M70 14 V8 M70 82 V88 M36 48 H30 M104 48 H110 M46 24 L42 20 M94 72 L98 76 M94 24 L98 20 M46 72 L42 76"/></g>
+<circle cx="63" cy="46" r="2" fill="#1f2a44"/><circle cx="77" cy="46" r="2" fill="#1f2a44"/><path d="M62 55 Q70 62 78 55" fill="none" stroke="#1f2a44" stroke-width="2.5" stroke-linecap="round"/>
+<g fill="#fff"><ellipse cx="190" cy="34" rx="32" ry="10"/><ellipse cx="210" cy="26" rx="18" ry="9"/><ellipse cx="340" cy="52" rx="24" ry="7"/></g>
+<!-- ground and wheat -->
+<path d="M0 140 Q100 122 200 136 T400 128 V260 H0Z" fill="#e6c25a"/>
+<path d="M0 166 Q120 150 240 164 T400 160 V260 H0Z" fill="#d8b24a"/>
+<g stroke="#c49b30" stroke-width="3" stroke-linecap="round" fill="none"><path d="M0 178 Q100 168 200 176 T400 172 M0 196 Q100 186 200 194 T400 190 M0 214 Q100 204 200 212 T400 208 M0 234 Q100 224 200 232 T400 228"/></g>
+<g><use href="#fsl_wheat" x="200" y="236"/><use href="#fsl_wheat" x="220" y="238"/><use href="#fsl_wheat" x="380" y="236"/><use href="#fsl_wheat" x="120" y="240"/><use href="#fsl_wheat" x="140" y="238"/><use href="#fsl_wheat" x="160" y="240"/><use href="#fsl_wheat" x="10" y="196"/><use href="#fsl_wheat" x="26" y="198"/><use href="#fsl_wheat" x="10" y="222"/><use href="#fsl_wheat" x="30" y="224"/><use href="#fsl_wheat" x="350" y="200"/><use href="#fsl_wheat" x="368" y="198"/><use href="#fsl_wheat" x="386" y="200"/></g>
+<!-- windmill pump behind -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M326 160 L338 84 M356 160 L342 84 M330 130 H352" fill="none" stroke="#8a94a6"/>
+<g transform="translate(340 76)"><path d="M0 0 L-6 -26 H6Z M0 0 L26 -6 L24 6Z M0 0 L6 26 H-6Z M0 0 L-26 6 L-24 -6Z" fill="#e3e9f2" stroke-width="3"/><circle r="5" fill="#d9663b"/></g>
+<path d="M335 54 L318 46 L324 62Z" fill="#d9663b" stroke-width="3"/>
+</g>
+<!-- shed -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="62" y="120" width="120" height="74" fill="#d9663b"/>
+<path d="M62 136 H182 M62 152 H182 M62 168 H182" stroke="#b64c27" stroke-width="3" fill="none"/>
+<path d="M50 124 L76 88 H168 L194 124Z" fill="#8a94a6"/>
+<rect x="92" y="148" width="46" height="46" rx="4" fill="#7a4a2b"/>
+<path d="M115 148 V194" stroke-width="3"/>
+<rect x="148" y="136" width="24" height="20" rx="3" fill="#8fd3f4" stroke-width="3"/>
+</g>
+<!-- solar panels on shed roof (tilted along roof) -->
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M66 120L80 93H164L178 120Z" fill="#e3e9f2"/>
+<path d="M74 116L86 98H158L170 116Z" fill="#2b4f8f" stroke-width="2"/>
+<path d="M110 98L106 116M134 98L138 116M80 107H164" stroke="#9fc4ee" stroke-width="2" fill="none"/>
+<path d="M92 112L100 102" stroke="#fff" stroke-width="3" opacity=".85"/>
+</g>
+<!-- charging post + ute -->
+<ellipse cx="270" cy="216" rx="76" ry="8" fill="#a8841f" opacity=".5"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="204" y="152" width="28" height="64" rx="9" fill="#fff"/>
+<rect x="210" y="158" width="16" height="20" rx="4" fill="#2e7d4f"/><path d="M219 160 L213 170 H218 L216 176 L223 166 H218Z" fill="#ffd23f" stroke-width="1.2"/>
+<rect x="204" y="196" width="28" height="12" rx="5" fill="#2ec4b6"/>
+</g>
+<path d="M232 176 C246 196 252 176 262 186" fill="none" stroke="#1f2a44" stroke-width="10" stroke-linecap="round"/><path d="M232 176 C246 196 252 176 262 186" fill="none" stroke="#4caf50" stroke-width="4" stroke-linecap="round"/>
+<g transform="translate(252 154)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 22 H52 V62 H0Z" fill="#4caf50"/>
+<path d="M52 62 V14 Q52 6 60 4 L84 2 Q92 2 96 10 L102 22 Q116 24 118 36 V62Z" fill="#4caf50"/>
+<path d="M4 44 H48 M56 48 H114" stroke="#2e7d4f" stroke-width="10" fill="none"/>
+<path d="M52 62 V14 Q52 6 60 4 L84 2 Q92 2 96 10 L102 22 Q116 24 118 36 V62Z" fill="none"/>
+<path d="M60 14 Q62 10 68 10 H82 Q86 10 89 15 L92 22 H60Z" fill="#d6f1fb"/>
+<rect x="108" y="24" width="10" height="9" rx="3" fill="#fff6c9" stroke-width="3"/>
+<g fill="#4d5566"><circle cx="24" cy="64" r="15"/><circle cx="92" cy="64" r="15"/></g>
+<g fill="#d6dbe3"><circle cx="24" cy="64" r="6"/><circle cx="92" cy="64" r="6"/></g>
+</g>
+<g transform="translate(52 240) scale(.85) translate(-62 -236)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="62" cy="236" rx="22" ry="5" fill="#a8841f" opacity=".5" stroke="none"/>
+<path d="M52 236 V212 M72 236 V212" stroke-width="12"/><path d="M52 236 V212 M72 236 V212" stroke-width="5" stroke="#2b5f93"/>
+<path d="M44 214 V172 Q44 156 62 156 Q80 156 80 172 V214Z" fill="#4aa3df"/>
+<path d="M46 174 Q36 190 44 204" fill="none" stroke-width="12"/><path d="M46 174 Q36 190 44 204" fill="none" stroke="#4aa3df" stroke-width="5"/>
+<path d="M76 168 Q96 160 92 136" fill="none" stroke-width="12"/><path d="M76 168 Q96 160 92 136" fill="none" stroke="#4aa3df" stroke-width="5"/>
+<circle cx="92" cy="132" r="8" fill="#a86b3c"/>
+<circle cx="62" cy="138" r="15" fill="#a86b3c"/>
+<ellipse cx="62" cy="128" rx="26" ry="6" fill="#c9a36a"/>
+<path d="M48 128 Q48 108 62 108 Q76 108 76 128Z" fill="#c9a36a"/>
+<path d="M49 124 H75" stroke="#7a4a2b" stroke-width="3"/>
+<circle cx="56" cy="140" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="68" cy="140" r="1.8" fill="#1f2a44" stroke="none"/>
+<path d="M54 146 Q62 154 70 146" fill="none" stroke-width="2.5"/>
+</g>
+</svg>

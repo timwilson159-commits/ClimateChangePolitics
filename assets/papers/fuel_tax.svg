@@ -1,0 +1,68 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="ftx_sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d98a3a"/><stop offset="1" stop-color="#f2c879"/></linearGradient>
+<g id="ftx_coin" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle r="12" fill="#ffd23f"/><path d="M0 -6 V6" stroke-width="3.5" fill="none"/></g>
+</defs>
+<rect width="400" height="260" fill="url(#ftx_sky)"/>
+<g fill="#b9bfc9"><ellipse cx="60" cy="26" rx="46" ry="14" opacity=".8"/><ellipse cx="250" cy="18" rx="40" ry="11" opacity=".8"/><ellipse cx="350" cy="110" rx="36" ry="10" opacity=".6"/></g>
+<path d="M0 170 Q100 150 200 164 T400 158 V200 H0Z" fill="#d9663b"/>
+<rect y="196" width="400" height="64" fill="#8a94a6"/>
+<rect y="196" width="400" height="6" fill="#6f7a8f"/>
+<rect x="0" y="236" width="400" height="5" fill="#f2c879" opacity=".6"/>
+<ellipse cx="100" cy="222" rx="50" ry="7" fill="#6f7a8f"/>
+<ellipse cx="318" cy="228" rx="70" ry="7" fill="#6f7a8f"/>
+<ellipse cx="190" cy="226" rx="26" ry="5" fill="#6f7a8f"/>
+<!-- price sign -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="82" y="78" width="10" height="40" fill="#4d5566"/>
+<rect x="14" y="20" width="150" height="64" rx="12" fill="#3a4152"/>
+<rect x="26" y="34" width="22" height="36" rx="6" fill="#ffd23f" stroke-width="3"/><rect x="54" y="34" width="22" height="36" rx="6" fill="#ffd23f" stroke-width="3"/><circle cx="86" cy="66" r="4" fill="#ffd23f" stroke-width="2"/><rect x="96" y="34" width="22" height="36" rx="6" fill="#ffd23f" stroke-width="3"/>
+<path d="M142 72 V36 M128 48 L142 32 L156 48" fill="none" stroke="#e63946" stroke-width="9"/>
+</g>
+<!-- bowser -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<rect x="62" y="126" width="76" height="92" rx="10" fill="#e63946"/>
+<rect x="56" y="118" width="88" height="16" rx="8" fill="#fff"/>
+<rect x="72" y="142" width="56" height="26" rx="6" fill="#3a4152"/>
+<rect x="78" y="149" width="12" height="12" rx="3" fill="#ffd23f" stroke-width="0"/><rect x="94" y="149" width="12" height="12" rx="3" fill="#ffd23f" stroke-width="0"/><rect x="110" y="149" width="12" height="12" rx="3" fill="#ffd23f" stroke-width="0"/>
+<rect x="72" y="178" width="56" height="12" rx="6" fill="#b83040" stroke-width="3"/>
+<path d="M138 150 Q166 150 160 184 Q158 196 150 190" fill="none" stroke="#1f2a44" stroke-width="10"/>
+<path d="M138 150 Q166 150 160 184 Q158 196 150 190" fill="none" stroke="#4d5566" stroke-width="4"/>
+<path d="M146 186 H156 V200 H146Z" fill="#4d5566"/>
+<rect x="52" y="214" width="96" height="10" rx="5" fill="#4d5566"/>
+</g>
+<!-- coins flying to bag -->
+<use href="#ftx_coin" x="206" y="92"/>
+<use href="#ftx_coin" x="250" y="66"/>
+<use href="#ftx_coin" x="288" y="44" transform="scale(.8) translate(72 11)"/>
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M310 88 Q300 60 314 40 H350 Q364 60 354 88 Q332 98 310 88Z" fill="#4caf50"/>
+<path d="M312 42 Q332 52 352 42 L356 34 Q332 26 308 34Z" fill="#2e7d4f"/>
+<circle cx="332" cy="68" r="12" fill="#ffd23f" stroke-width="3"/><path d="M332 62 V74" stroke-width="3.5" fill="none"/>
+</g>
+<!-- ute facing left -->
+<g transform="translate(396 134) scale(-1 1)" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 22 H52 V62 H0Z" fill="#d9663b"/>
+<path d="M52 62 V14 Q52 6 60 4 L84 2 Q92 2 96 10 L102 22 Q116 24 118 36 V62Z" fill="#d9663b"/>
+<path d="M4 44 H48 M56 48 H114" stroke="#b64c27" stroke-width="10" fill="none"/>
+<path d="M52 62 V14 Q52 6 60 4 L84 2 Q92 2 96 10 L102 22 Q116 24 118 36 V62Z" fill="none"/>
+<path d="M60 14 Q62 10 68 10 H82 Q86 10 89 15 L92 22 H60Z" fill="#d6f1fb"/>
+<rect x="108" y="24" width="10" height="9" rx="3" fill="#fff6c9" stroke-width="3"/>
+<g fill="#4d5566"><circle cx="24" cy="64" r="15"/><circle cx="92" cy="64" r="15"/></g>
+<g fill="#d6dbe3"><circle cx="24" cy="64" r="6"/><circle cx="92" cy="64" r="6"/></g>
+</g>
+<!-- angry driver -->
+<g stroke="#1f2a44" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M176 224 V198 M196 224 V198" stroke-width="10" stroke="#1f2a44"/><path d="M176 224 V198 M196 224 V198" stroke-width="4" stroke="#2b5f93"/>
+<path d="M168 202 V160 Q168 148 186 148 Q204 148 204 160 V202Z" fill="#4aa3df"/>
+<path d="M170 158 Q154 140 160 114" fill="none" stroke-width="14"/><path d="M170 158 Q154 140 160 114" fill="none" stroke="#4aa3df" stroke-width="6"/>
+<circle cx="160" cy="108" r="9" fill="#d9a066"/>
+<path d="M203 162 Q212 176 206 192" fill="none" stroke-width="12"/><path d="M203 162 Q212 176 206 192" fill="none" stroke="#4aa3df" stroke-width="5"/>
+<circle cx="186" cy="130" r="15" fill="#e8946f"/>
+<path d="M172 124 Q172 110 188 110 Q202 110 200 124 Q190 118 172 124Z" fill="#3a2a20" stroke="none"/>
+<path d="M176 126 L186 130 M198 126 L190 130" stroke-width="3.5" fill="none"/>
+<circle cx="181" cy="134" r="1.8" fill="#1f2a44" stroke="none"/><circle cx="192" cy="134" r="1.8" fill="#1f2a44" stroke="none"/>
+<path d="M180 143 Q186 138 192 143" fill="none" stroke-width="3"/>
+</g>
+<g stroke="#1f2a44" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M146 96 L138 90"/><path d="M142 110 L132 110"/><path d="M148 124 L140 130"/></g>
+</svg>
