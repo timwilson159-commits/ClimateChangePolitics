@@ -210,12 +210,20 @@
     const sh = NZ.offerShown(o);
     const n = h(`<div class="screen deskwrap">
       ${hudHTML()}
+      <aside class="keyguide" aria-label="Keyboard shortcuts"><b>Quick keys</b>
+        <div class="kk" data-k="a"><kbd>A</kbd><span>Approve</span></div>
+        <div class="kk" data-k="x"><kbd>X</kbd><span>Reject</span></div>
+        <div class="kk" data-k="f"><kbd>F</kbd><span>Fact-check</span></div>
+        <div class="kk" data-k="r"><kbd>R</kbd><span>Fine print</span></div>
+        ${G.round === 1 ? `<div class="ktip">${COACH[G.idx] || COACH[3]}</div>` : ''}
+      </aside>
       <div class="stage">
-        ${G.round === 1 ? `<div class="coach">${COACH[G.idx] || COACH[3]}</div>` : ''}
+        ${G.round === 1 ? `<div class="coach inline">${COACH[G.idx] || COACH[3]}</div>` : ''}
         ${budgetHTML()}
-        <div class="paper" id="paper">
+        <div class="paper" id="paper"><div class="pgrid"><div class="pcol-l">
           <div class="ptop"><span class="area">${area.icon} ${area.name}</span><span>Paper ${G.idx + 1} of ${G.offers.length}</span></div>
           <div class="pimg"><img src="${art('assets/papers/' + o.p.id + '.svg')}" alt="${esc(o.p.title)}" ${FB}></div>
+          </div><div class="pcol-r">
           <h2>${esc(o.p.title)}</h2>
           <p class="desc">${esc(o.p.text)}</p>
           ${badgeHTML(o)}
@@ -223,14 +231,14 @@
           <div class="advice"><div class="face"><img src="${art(adv.img)}" ${FB} alt="${adv.name}"></div>
             <div class="bubble"><b>${adv.name} · ${adv.role}</b>“${esc(o.p.say)}”</div></div>
           <div class="tools">
-            <button class="tool" id="fineb">🔍 Read the fine print</button>
-            <button class="tool" id="factb" ${o.checked || G.checks <= 0 ? 'disabled' : ''}>${o.checked ? '✅ Fact-checked' : `✅ Fact-check (${G.checks} left)`}</button>
+            <button class="tool" id="fineb">🔍 Fine print <kbd>R</kbd></button>
+            <button class="tool" id="factb" ${o.checked || G.checks <= 0 ? 'disabled' : ''}>${o.checked ? '✅ Fact-checked' : `✅ Fact-check (${G.checks} left) <kbd>F</kbd>`}</button>
           </div>
           <div class="fine" id="fine" hidden><b>Fine print</b>${esc(o.p.fine)}</div>
-        </div>
+        </div></div></div>
         <div class="stamps">
-          <button class="stampbtn rj" id="btnrj">❌ REJECT<small>Costs nothing</small></button>
-          <button class="stampbtn ap" id="btnap" ${afford ? '' : 'disabled'}>✅ APPROVE<small>${afford ? '💰 ' + o.cost + ' · leaves ' + (G.pts - o.cost) : 'Need 💰 ' + (o.cost - G.pts) + ' more'}</small></button>
+          <button class="stampbtn rj" id="btnrj">❌ REJECT <kbd>X</kbd><small>Costs nothing</small></button>
+          <button class="stampbtn ap" id="btnap" ${afford ? '' : 'disabled'}>✅ APPROVE <kbd>A</kbd><small>${afford ? '💰 ' + o.cost + ' · leaves ' + (G.pts - o.cost) : 'Need 💰 ' + (o.cost - G.pts) + ' more'}</small></button>
         </div>
       </div>
       ${newTerm && G.idx === 0 ? `<div class="termbanner"><div>${yearOf(G.round)}<small>Term ${G.round} of ${CFG.rounds}</small></div></div>` : ''}
@@ -494,11 +502,21 @@
   // keyboard shortcuts on the desk
   document.addEventListener('keydown', e => {
     if (!G || G.phase !== 'desk' || busy) return;
-    const r = document.getElementById('btnrj');
+    if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;           // leave browser shortcuts (Ctrl+R etc.) alone
+    if (document.querySelector('.modal')) return;                          // ignore keys while an alert is open
+    if (/INPUT|TEXTAREA|SELECT/.test((e.target && e.target.tagName) || '')) return;
     if (!document.getElementById('paper')) return;
-    if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'a') { const b = document.getElementById('btnap'); if (b && !b.disabled) b.click(); }
-    else if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'r') { if (r) r.click(); }
-    else if (e.key.toLowerCase() === 'f') { const f = document.getElementById('fineb'); if (f) f.click(); }
+    const k = e.key.toLowerCase();
+    let id, kk;
+    if (k === 'a' || e.key === 'ArrowRight') { id = 'btnap'; kk = 'a'; }
+    else if (k === 'x' || e.key === 'ArrowLeft') { id = 'btnrj'; kk = 'x'; }
+    else if (k === 'f') { id = 'factb'; kk = 'f'; }
+    else if (k === 'r') { id = 'fineb'; kk = 'r'; }
+    else return;
+    const cap = document.querySelector('.kk[data-k="' + kk + '"]');
+    if (cap) { cap.classList.add('press'); setTimeout(() => cap.classList.remove('press'), 180); }
+    const b = document.getElementById(id);
+    if (b && !b.disabled) { e.preventDefault(); b.click(); }
   });
 
   window.NZ_DEBUG = { get G() { return G; } };

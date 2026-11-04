@@ -13,3 +13,6 @@ Play: open `index.html` (or the GitHub Pages site). No build step, no dependenci
 - `assets/` - illustrations (SVG, optionally replaced by images in `assets/manifest.js`)
 - `art_mapper.html` - tool for turning AI-generated image palettes into the individual game images
 - `tools/` - balance simulator (`node tools/sim.js`), SVG renderer/linter and the art brief
+
+## Keyboard shortcuts (desk screen)
+A = approve, X = reject, F = fact-check, R = read the fine print. Arrow keys also work (right = approve, left = reject). A key guide shows on the left of wide screens.
