@@ -188,14 +188,14 @@
     return `<div class="badges">
       <div class="badge cost ${o.checked ? 'checked' : ''}"><div class="ic">💰</div><div class="v">${old('cost')}${sh.cost}</div><div class="l">Cost</div></div>
       <div class="badge ${popV > 0 ? 'pos' : popV < 0 ? 'neg' : ''} ${o.checked ? 'checked' : ''}"><div class="ic">${popV > 0 ? '😊' : popV < 0 ? '😠' : '😐'}</div><div class="v ${popV > 0 ? 'good' : popV < 0 ? 'bad' : ''}">${old('pop')}${sgn(popV)}</div><div class="l">Votes</div></div>
-      <div class="badge ${emisV > 0 ? 'pos' : ''} ${o.checked ? 'checked' : ''}"><div class="ic">🏭</div><div class="v ${emisV > 0 ? 'good' : ''}">${old('emis')}${emisV > 0 ? '−' + emisV + '%' : '0%'}</div><div class="l">Pollution</div></div>
+      <div class="badge ${emisV > 0 ? 'pos' : emisV < 0 ? 'neg' : ''} ${o.checked ? 'checked' : ''}"><div class="ic">🏭</div><div class="v ${emisV > 0 ? 'good' : emisV < 0 ? 'bad' : ''}">${old('emis')}${emisV > 0 ? '−' + emisV + '%' : emisV < 0 ? '+' + (-emisV) + '%' : '0%'}</div><div class="l">Pollution</div></div>
     </div>`;
   }
   function chipsHTML(o) {
-    const p = o.p, c = [];
+    const p = o.p, c = [], sh = NZ.offerShown(o);
     if (o.reissue) c.push(`<span class="chip r">📈 Back again, now ${Math.round((o.cost / p.cost - 1) * 100)}% pricier</span>`);
-    if (p.pay) c.push(`<span class="chip g">🔁 Pays back 💰${p.pay} every term</span>`);
-    if (p.delay) c.push(`<span class="chip y">⏳ Pollution cut starts in ${p.delay * 2} years</span>`);
+    if (sh.pay) c.push(`<span class="chip g">🔁 Pays back 💰${sh.pay} every term</span>`);
+    if (sh.delay) c.push(`<span class="chip y">⏳ Pollution cut starts in ${sh.delay * 2} years</span>`);
     if (p.syn) { const ids = Object.keys(p.syn).filter(id => G.byId[id]); const have = ids.filter(id => G.approved.some(a => a.p.id === id));
       if (have.length) c.push(`<span class="chip b">🔗 Team-up bonus with ${esc(G.byId[have[0]].title)}</span>`);
       else c.push(`<span class="chip b">🔗 Team up with ${esc(G.byId[ids[0]].title)} for extra pollution cut</span>`); }
@@ -206,8 +206,8 @@
   function renderDesk(newTerm) {
     const o = G.offers[G.idx];
     const area = AREAS[o.p.area], adv = ADVISORS[o.p.adv];
-    const afford = G.pts >= o.cost;
     const sh = NZ.offerShown(o);
+    const afford = G.pts >= sh.cost;
     const n = h(`<div class="screen deskwrap">
       ${hudHTML()}
       <aside class="keyguide" aria-label="Keyboard shortcuts"><b>Quick keys</b>
@@ -238,7 +238,7 @@
         </div></div></div>
         <div class="stamps">
           <button class="stampbtn rj" id="btnrj">❌ REJECT <kbd>X</kbd><small>Costs nothing</small></button>
-          <button class="stampbtn ap" id="btnap" ${afford ? '' : 'disabled'}>✅ APPROVE <kbd>A</kbd><small>${afford ? '💰 ' + o.cost + ' · leaves ' + (G.pts - o.cost) : 'Need 💰 ' + (o.cost - G.pts) + ' more'}</small></button>
+          <button class="stampbtn ap" id="btnap" ${afford ? '' : 'disabled'}>✅ APPROVE <kbd>A</kbd><small>${afford ? '💰 ' + sh.cost + ' · leaves ' + (G.pts - sh.cost) : 'Need 💰 ' + (sh.cost - G.pts) + ' more'}</small></button>
         </div>
       </div>
       ${newTerm && G.idx === 0 ? `<div class="termbanner"><div>${yearOf(G.round)}<small>Term ${G.round} of ${CFG.rounds}</small></div></div>` : ''}
@@ -261,6 +261,12 @@
     if (busy) return; busy = true;
     const paper = document.getElementById('paper');
     const i = G.idx, o = G.offers[i];
+    if (ok && !NZ.canAfford(G, o)) {            // the real price is higher than the badge said
+      busy = false; o.checked = true; sfx.nope();
+      const rr = paper.getBoundingClientRect();
+      floatText('💸 The real price is 💰' + o.cost + '!', 'bad', Math.max(10, rr.left + 20), rr.top + 20);
+      renderDeskKeep(true); return;
+    }
     const before = { pts: G.pts, pop: G.pop };
     const mark = h(`<div class="stampmark ${ok ? 'ap' : 'rj'}">${ok ? 'APPROVED' : 'REJECTED'}</div>`);
     paper.appendChild(mark);
@@ -272,6 +278,7 @@
       floatText('−' + o.cost + ' 💰', 'bad', r.left + 20, r.top + 30);
       if (real.pop) floatText(sgn(real.pop) + ' votes', real.pop > 0 ? 'good' : 'bad', r.left + r.width / 2 - 30, r.top + 60);
       if (real.emis + (res.bonus || 0) > 0) setTimeout(() => floatText('−' + (real.emis + (res.bonus || 0)) + '% pollution' + (real.delay ? ' (later)' : ''), 'good', r.left + r.width - 190, r.top + 90), 150);
+      if (real.emis + (res.bonus || 0) < 0) setTimeout(() => floatText('+' + (-(real.emis + (res.bonus || 0))) + '% pollution (worse!)', 'bad', r.left + r.width - 220, r.top + 90), 150);
       if (res.bonus) setTimeout(() => floatText('🔗 Pair bonus!', 'good', r.left + r.width / 2 - 50, r.top + 130), 300);
     }
     if (!ok && NZ.isGreenwash(o.p)) floatText('🕵️ Good catch! That one was misleading.', 'good', Math.max(10, r.left - 10), r.top + 20);
@@ -285,13 +292,24 @@
     renderDesk(false);
   }
 
+  const fmtE = v => v > 0 ? '−' + v + '%' : v < 0 ? '+' + (-v) + '% (worse!)' : '0%';
+  function diffText(p) {
+    return NZ.deceptionDiffs(p).map(d => {
+      if (d.k === 'emis') return '🏭 Pollution: promised ' + fmtE(d.shown) + ', really ' + fmtE(d.truth);
+      if (d.k === 'cost') return '💰 Price: said ' + d.shown + ', really ' + d.truth;
+      if (d.k === 'pop') return '😊 Votes: promised ' + sgn(d.shown) + ', really ' + sgn(d.truth);
+      if (d.k === 'pay') return '🔁 Pays back: promised 💰' + d.shown + ' a term, really 💰' + d.truth;
+      return '⏳ Starts: promised straight away, really in ' + (d.truth * 2) + ' years';
+    });
+  }
   function showDeceived(o, penalty) {
     return new Promise(resolve => {
       sfx.alarm();
       const p = o.p, adv = ADVISORS[p.adv];
       const shown = (p.shown && p.shown.emis !== undefined) ? p.shown.emis : p.emis;
       const m = h(`<div class="modal"><div class="mcard"><div class="mi">🚨</div><h2>You were tricked!</h2>
-        <p class="big"><b>${esc(p.title)}</b> promised <b class="good">−${shown}%</b> pollution.<br>The truth: only <b class="bad">${p.emis > 0 ? '−' + p.emis + '%' : '0%'}</b>.</p>
+        <p class="big"><b>${esc(p.title)}</b> was not what it seemed <span class="lvl" title="trick level">${'●'.repeat(p.lvl || 2)}${'○'.repeat(3 - (p.lvl || 2))}</span></p>
+        <ul class="lies">${diffText(p).map(x => '<li>' + x + '</li>').join('')}</ul>
         <p class="why"><b>The catch:</b> ${esc(p.fine)}</p>
         ${penalty ? `<p class="bad"><b>You also lost 💰${penalty} points cleaning up the mess.</b></p>` : ""}
         <p><b>Greenwash</b> = sounds green, does little. ${adv.name} (${adv.role}) pitched this one. Think about whether to trust them next time.</p>
@@ -478,7 +496,7 @@
 
       <div class="card"><h2>🧐 What really happened</h2>
         ${R.caught ? `<div class="listitem ok">🕵️ You rejected <b>${R.caught}</b> misleading paper${R.caught > 1 ? 's' : ''}.</div>` : ''}
-        ${R.fooled.length ? `<p><b>You fell for ${R.fooled.length} greenwash paper${R.fooled.length > 1 ? 's' : ''}:</b></p>` + R.fooled.map(a => `<div class="listitem"><b>${esc(a.p.title)}</b>: looked like −${a.p.shown.emis}% pollution, was really −${a.p.emis}%.<br><small>${esc(a.p.fine)}</small></div>`).join('')
+        ${R.fooled.length ? `<p><b>You fell for ${R.fooled.length} greenwash paper${R.fooled.length > 1 ? 's' : ''}:</b></p>` + R.fooled.map(a => `<div class="listitem"><b>${esc(a.p.title)}</b> <span class="lvl">${'●'.repeat(a.p.lvl || 2)}${'○'.repeat(3 - (a.p.lvl || 2))}</span><br>${diffText(a.p).join('<br>')}<br><small>${esc(a.p.fine)}</small></div>`).join('')
           : `<div class="listitem ok">🕵️ <b>You were not fooled by any greenwash. Well spotted!</b></div>`}
         ${R.missed.length ? `<p style="margin-top:12px"><b>Strong papers you skipped:</b></p>` + R.missed.map(p => `<div class="listitem" style="border-color:#ffb100;background:#fff7dd"><b>${esc(p.title)}</b>: −${p.emis}% pollution. <small>${esc(p.say)}</small></div>`).join('') : ''}
       </div>
@@ -519,6 +537,6 @@
     if (b && !b.disabled) { e.preventDefault(); b.click(); }
   });
 
-  window.NZ_DEBUG = { get G() { return G; } };
+  window.NZ_DEBUG = { get G() { return G; }, render() { window.__still = true; renderDesk(false); } };
   showTitle();
 })();

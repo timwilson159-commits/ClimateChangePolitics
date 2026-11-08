@@ -16,3 +16,8 @@ Play: open `index.html` (or the GitHub Pages site). No build step, no dependenci
 
 ## Keyboard shortcuts (desk screen)
 A = approve, X = reject, F = fact-check, R = read the fine print. Arrow keys also work (right = approve, left = reject). A key guide shows on the left of wide screens.
+
+## Difficulty knobs
+`core.js` CFG: startPts (starting points), fooledPts (clean-up cost by trick level), maxDeceptive (misleading papers per game), heroScore/heroPop (what the top endings need). Test changes with `node tools/sim2.js 100`.
+
+Trick levels: 1 = mild (inflated cut), 2 = tricky (hidden price, votes backlash, delayed start, fake payback), 3 = nasty (backfires or several lies at once). Deceptive papers show wrong badges until fact-checked.

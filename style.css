@@ -273,3 +273,6 @@ kbd{font:inherit;font-weight:900;background:#fff;border:2px solid var(--navy);bo
   .stampbtn{padding:5px 6px;font-size:1.15rem}.stampbtn small{display:none}
   .budget{padding:3px 10px}.stage{gap:6px;padding:6px 10px 8px}
 }
+
+.lvl{letter-spacing:2px;color:var(--red-d);font-size:.9em;white-space:nowrap}
+.lies{text-align:left;margin:6px 0;padding-left:22px;font-weight:700}.lies li{margin:3px 0}

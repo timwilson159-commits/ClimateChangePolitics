@@ -32,7 +32,7 @@ const ART_MANIFEST = [
   "id": "gas_future",
   "folder": "papers",
   "group": "Energy",
-  "title": "Gas Transition Plan",
+  "title": "Switch-to-Gas Plan",
   "scene": "A modern gas power station beside a neat pipeline; a worker in hi-vis checks a valve with a tablet; orderly and pleasant; a faint heat-shimmer at one pipe joint."
  },
  {
@@ -60,7 +60,7 @@ const ART_MANIFEST = [
   "id": "smart_grid",
   "folder": "papers",
   "group": "Energy",
-  "title": "Smart Power Grid",
+  "title": "Smarter Power Lines",
   "scene": "A town with power lines; a glowing blue network of dots and lines over rooftops, a tablet/phone with a happy sun/lightning icon, a meter dial pointing to green."
  },
  {
@@ -186,7 +186,7 @@ const ART_MANIFEST = [
   "id": "cheap_offsets",
   "folder": "papers",
   "group": "Industry",
-  "title": "Offset Credits Scheme",
+  "title": "Pollution Swap Scheme",
   "scene": "A business meeting: a manager and an official shake hands over a certificate on a table; a factory with a chimney is visible through the window behind them."
  },
  {
@@ -270,7 +270,7 @@ const ART_MANIFEST = [
   "id": "landfill_gas",
   "folder": "papers",
   "group": "Waste",
-  "title": "Capture Dump Gas",
+  "title": "Catch Gas From Rubbish Dumps",
   "scene": "A landfill hill with pipes poking in and a gas capture tank beside it, a small flare/green flame turning into a lightning bolt into a few houses; seagulls overhead."
  },
  {
@@ -326,7 +326,7 @@ const ART_MANIFEST = [
   "id": "summit_pledge",
   "folder": "papers",
   "group": "Society & other",
-  "title": "Global Climate Pledge",
+  "title": "Global Climate Promise",
   "scene": "A formal summit stage with delegates signing a large document at a long table, invented generic flags behind them; sober and calm; one sleepy delegate at the far end."
  },
  {
@@ -335,6 +335,90 @@ const ART_MANIFEST = [
   "group": "Society & other",
   "title": "Citizens’ Panel",
   "scene": "A big round table of 8 diverse everyday people (young, old, farmer, nurse, tradie, student) with speech bubbles of coloured icons (a leaf, a coin, a house) discussing; a facilitator at a flip chart."
+ },
+ {
+  "id": "biofuel_blend",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Biofuel Blend",
+  "scene": "A car filling up at a fuel pump with a small leaf sticker on the pump; a field of golden crop plants behind the station; sunny, calm and ordinary."
+ },
+ {
+  "id": "carbon_neutral_label",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Carbon-Neutral Label",
+  "scene": "A shop shelf of packaged goods, each with a small round green leaf label; a smiling shopper picks one up; a factory chimney is visible through the shop window."
+ },
+ {
+  "id": "free_solar",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Free Solar Giveaway",
+  "scene": "A smiling delivery worker handing a boxed solar kit to a happy family at their front door of a tin-roof house; a large ribbon bow on the box; sunny."
+ },
+ {
+  "id": "smart_meters",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Smart Meter Rollout",
+  "scene": "A technician fitting a small digital meter on the wall of a house; a family looks on; a tablet shows a simple graph; neat and modern."
+ },
+ {
+  "id": "wave_power",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Wave Power Plan",
+  "scene": "A row of floating wave-energy buoys out on a blue sea with a small control building on the shore; engineers with tablets; bright day."
+ },
+ {
+  "id": "green_bonds",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Green Savings Bonds",
+  "scene": "A bank counter where a smiling clerk hands a certificate with a leaf symbol to a customer; a small model wind turbine and solar panel on the counter."
+ },
+ {
+  "id": "highway_boost",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Green Highway Boost",
+  "scene": "A newly widened highway with many lanes of cars flowing, road crew finishing the edge, green trees along the verge; clear sky; calm and positive."
+ },
+ {
+  "id": "oil_field_capture",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Oil Field Pollution Capture",
+  "scene": "An oil field with pumpjacks and a large tank-and-pipe structure beside them; engineers in hi-vis with clipboards; pipes run underground; clear sky."
+ },
+ {
+  "id": "electric_buses",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Electric Buses",
+  "scene": "A row of modern electric buses charging at a depot under a canopy with solar panels; a driver waves; commuters waiting; bright and tidy."
+ },
+ {
+  "id": "home_batteries",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Home Batteries",
+  "scene": "The side of a tin-roof house with solar panels on the roof and a sleek wall-mounted home battery, a glowing evening window and a happy family inside."
+ },
+ {
+  "id": "bushland_regrowth",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "Let Bushland Regrow",
+  "scene": "A cleared hillside with a protective fence and young gum saplings growing back among grasses; a ranger checking the fence; a kangaroo in the distance."
+ },
+ {
+  "id": "gas_export_ban",
+  "folder": "papers",
+  "group": "New harder papers",
+  "title": "End Gas Exports",
+  "scene": "A large gas export terminal with big tanks and a ship at the dock; a red barrier across the gate; workers holding lunchboxes look worried; a manager points at the closed gate."
  },
  {
   "id": "bushfire",

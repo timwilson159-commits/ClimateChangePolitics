@@ -182,8 +182,55 @@ const PAPERS = [
     fact:'Many promises made at summits were never kept.', shown:{emis:5} },
   { id:'citizens_panel', area:'society', title:'Citizens’ Panel', text:'A group of ordinary people helps plan what to do.', cost:10, pay:0, pop:5, emis:3, qol:[0,0,1,0,0], adv:'sci',
     say:'Ordinary people help design the plan. It builds trust.', fine:'Helps with angry protests.',
-    fact:'Plans people helped make are easier to accept.' }
+    fact:'Plans people helped make are easier to accept.' },
+
+  // ---------- NEW: harder papers (8 deceptive at three trick levels, 4 honest with real trade-offs) ----------
+  { id:'biofuel_blend', area:'transport', title:'Biofuel Blend', text:'Mix plant-based fuel into petrol and diesel.', cost:14, pay:0, pop:3, emis:3, qol:[1,0,0,-1,0], adv:'lob',
+    say:'Farmers get a new market and cars get a cleaner fuel.', fine:'Fuel crops need farmland and fertiliser, which cuts the savings by half.',
+    fact:'Some biofuels cut far less pollution than people expect.', shown:{emis:6} },
+  { id:'carbon_neutral_label', area:'industry', title:'Carbon-Neutral Label', text:'Products can carry a green label if the maker buys offsets.', cost:5, pay:0, pop:3, emis:2, qol:[0,0,0,0,0], adv:'spin',
+    say:'Shoppers love a green label, and it costs very little.', fine:'The label only needs an offset to be bought. The factory does not have to cut its own pollution.',
+    fact:'Green labels can make products look cleaner than they are.', shown:{emis:5, pop:4} },
+  { id:'free_solar', area:'energy', title:'Free Solar Giveaway', text:'Give every household a free solar kit.', cost:18, pay:0, pop:3, emis:6, qol:[2,0,2,0,0], adv:'spin',
+    say:'Free solar for everyone! Voters will cheer.', fine:'The kits are free for families, but the government pays for every one. The real bill is much bigger than the headline.',
+    fact:'Free programs still have a cost. Someone pays.', shown:{cost:8, pop:6} },
+  { id:'smart_meters', area:'energy', title:'Smart Meter Rollout', text:'Put smart meters in every home to track power use.', cost:10, pay:1, pop:-5, emis:4, qol:[0,0,-1,0,0], adv:'spin',
+    say:'Cheap, high-tech and good for headlines.', fine:'Many people worry the meters track their daily life. Expect a privacy backlash.',
+    fact:'Technology that tracks people can lose their trust fast.', shown:{pop:3} },
+  { id:'wave_power', area:'energy', title:'Wave Power Plan', text:'Build power plants that run on ocean waves.', cost:20, pay:0, pop:4, emis:9, delay:3, qol:[2,0,0,1,0], adv:'lob', to:8,
+    say:'Endless clean power from the sea. Big potential.', fine:'The technology is still being tested. It will take about 6 years before it works.',
+    fact:'New energy technology can take many years to be ready.', shown:{delay:0} },
+  { id:'green_bonds', area:'society', title:'Green Savings Bonds', text:'Sell bonds that pay for clean projects.', cost:9, pay:0, pop:2, emis:3, qol:[1,0,0,0,0], adv:'spin',
+    say:'Investors get paid back, and so do we.', fine:'The bond interest is paid by taxpayers, so the budget does not get any money back.',
+    fact:'Borrowed money always has to be paid back by someone.', shown:{pay:4} },
+  { id:'highway_boost', area:'transport', title:'Green Highway Boost', text:'Widen highways so traffic flows and engines waste less fuel.', cost:24, pay:0, pop:3, emis:-4, qol:[1,-1,0,-1,0], adv:'lob',
+    say:'Less time stuck in traffic means less pollution.', fine:'Wider roads attract more cars. Pollution usually goes up, not down.',
+    fact:'New roads often fill up with extra traffic within a few years.', shown:{emis:6}, lvl:3 },
+  { id:'oil_field_capture', area:'industry', title:'Oil Field Pollution Capture', text:'Trap pollution gas at oil fields and store it underground.', cost:30, pay:0, pop:2, emis:-2, delay:1, qol:[2,0,0,-1,0], adv:'lob',
+    say:'World-class technology that makes oil cleaner.', fine:'The trapped gas is used to pump out even more oil. Overall pollution goes up.',
+    fact:'Some capture projects help dig up more fossil fuel.', shown:{emis:10, cost:20}, lvl:3 },
+  { id:'electric_buses', area:'transport', title:'Electric Buses', text:'Replace diesel buses with electric buses.', cost:22, pay:1, pop:3, emis:7, qol:[1,2,1,0,0], adv:'sci',
+    say:'Quiet, clean buses. Costly to buy but cheap to run.', fine:'Needs new bus depots and chargers.',
+    fact:'Electric buses can save councils money on fuel and repairs.', syn:{ev_chargers:2} },
+  { id:'home_batteries', area:'homes', title:'Home Batteries', text:'Help families store their own solar power for the evening.', cost:15, pay:2, pop:3, emis:4, qol:[1,0,2,0,1], adv:'sci',
+    say:'Use your own sun power after dark.', fine:'Works best with rooftop solar.',
+    fact:'Home batteries can keep the lights on in a blackout.', syn:{solar_rooftop:2} },
+  { id:'bushland_regrowth', area:'land', title:'Let Bushland Regrow', text:'Stop clearing and let cleared land grow back.', cost:10, pay:0, pop:1, emis:6, delay:2, qol:[0,1,0,4,1], adv:'sci', to:9,
+    say:'Cheap, but slow. Nature does the work.', fine:'It takes years, and the land needs fences to keep animals out.',
+    fact:'Natural regrowth can soak up a lot of pollution cheaply.' },
+  { id:'gas_export_ban', area:'energy', title:'End Gas Exports', text:'Stop selling Australian gas overseas.', cost:14, pay:0, pop:-8, emis:16, qol:[-6,1,-2,1,0], adv:'sci', to:8,
+    say:'The biggest cut on the table. It will start a huge fight.', fine:'Export workers lose their jobs and the industry fights back hard.',
+    fact:'Most Australian gas is sold overseas, so it is a big source of pollution.' }
 ];
+
+
+// Trick levels (1 = mild, 2 = tricky, 3 = nasty). Used for the clean-up penalty and the report.
+const LVL = { flight_offsets:1, tree_per_ticket:1, summit_pledge:1, biofuel_blend:1, carbon_neutral_label:1,
+  clean_coal:2, gas_future:2, cheap_offsets:2, free_solar:2, smart_meters:2, wave_power:2, green_bonds:2,
+  hydrogen_hype:3, highway_boost:3, oil_field_capture:3 };
+PAPERS.forEach(p => { if (LVL[p.id]) p.lvl = LVL[p.id]; });
+function addSyn(a, b, v) { const A = PAPERS.find(p => p.id === a), B = PAPERS.find(p => p.id === b); A.syn = A.syn || {}; B.syn = B.syn || {}; A.syn[b] = v; B.syn[a] = v; }
+addSyn('solar_rooftop', 'home_batteries', 2); addSyn('ev_chargers', 'electric_buses', 2); addSyn('free_solar', 'big_battery', 2);
 
 // Events shown on the news screen after each term.
 // kind: 'disaster' | 'politics' | 'luck'

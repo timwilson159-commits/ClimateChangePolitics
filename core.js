@@ -1,7 +1,7 @@
 // Net Zero Desk - pure game logic (works in browser and node)
 (function (root) {
   const CFG = {
-    rounds: 12, startPts: 80, fooledPts: 8, startPop: 60, baseE: 100, growth: 1.5, floorE: 4,
+    rounds: 12, startPts: 75, fooledPts: { 1: 5, 2: 8, 3: 12 }, maxDeceptive: 6, heroScore: 0.84, heroPop: 40, crowdPop: 58, startPop: 60, baseE: 100, growth: 1.5, floorE: 4,
     startT: 1.40, k: 0.0003, checks: 3, reissueMult: 1.25, elections: [4, 8],
     firstYear: 2026, yearsPerRound: 2
   };
@@ -18,7 +18,18 @@
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const baseline = r => CFG.baseE + CFG.growth * (r - 1);           // pollution if you do nothing, in term r
   const tempFromC = C => CFG.startT + CFG.k * C;
-  const isGreenwash = p => !!p.shown && p.shown.emis !== undefined && p.shown.emis > p.emis + 2;
+  // ways a paper can lie: the badges / chips (p.shown) differ from the truth
+  function deceptionDiffs(p) {
+    const sh = p.shown, d = [];
+    if (!sh) return d;
+    if (sh.emis !== undefined && sh.emis - p.emis >= 2) d.push({ k: 'emis', shown: sh.emis, truth: p.emis });
+    if (sh.cost !== undefined && p.cost - sh.cost >= 3) d.push({ k: 'cost', shown: sh.cost, truth: p.cost });
+    if (sh.pop !== undefined && sh.pop - p.pop >= 3) d.push({ k: 'pop', shown: sh.pop, truth: p.pop });
+    if (sh.pay !== undefined && sh.pay - (p.pay || 0) >= 2) d.push({ k: 'pay', shown: sh.pay, truth: p.pay || 0 });
+    if (sh.delay !== undefined && (p.delay || 0) - sh.delay >= 1) d.push({ k: 'delay', shown: sh.delay, truth: p.delay || 0 });
+    return d;
+  }
+  const isGreenwash = p => deceptionDiffs(p).length > 0;
 
   function shuffle(arr, rnd) {
     const a = arr.slice();
@@ -36,7 +47,7 @@
       approved: [], rejected: [], sched: [], offers: [], idx: 0, checks: CFG.checks,
       deck: shuffle(papers.map(p => p.id), rnd), seen: [], offerLog: [], eventLog: [],
       history: [], popHistory: [], recent: [], used: {}, elections: [], protectedCount: 0,
-      tempNow: CFG.startT, lastEvent: null, spent: 0, termBudget: 0, startPts: CFG.startPts, spentHistory: [], deceivedLog: [], caught: 0, factChecked: []
+      tempNow: CFG.startT, lastEvent: null, greensDealt: 0, spent: 0, termBudget: 0, startPts: CFG.startPts, spentHistory: [], deceivedLog: [], caught: 0, factChecked: []
     };
     return s;
   }
@@ -123,14 +134,14 @@
       if (!winOk(p, r)) { if (tries < 300) s.deck.push(id); continue; }
       if (offers.some(o => o.p.id === id) || s.approved.some(a => a.p.id === id)) continue;
       const g = isGreenwash(p);
-      if (g && greens >= 1 && s.rnd() > 0.1) { s.deck.push(id); continue; }
+      if (g && (greens >= 1 || s.greensDealt >= CFG.maxDeceptive) && s.rnd() > 0.1 && tries < 300) { s.deck.push(id); continue; }
       if (areas[p.area] && tries < 150 && s.rnd() < 0.8) { s.deck.push(id); continue; }
       // first term: gentle start - at least no more than one greenwash and keep the tutorial friendly
       if (r === 1 && g) { s.deck.push(id); continue; }
       if (!s.seen.includes(id)) s.seen.push(id);
       offers.push(mkOffer(p, p.cost, false));
       areas[p.area] = (areas[p.area] || 0) + 1;
-      if (g) greens++;
+      if (g) { greens++; s.greensDealt++; }
     }
     return offers;
   }
@@ -143,7 +154,9 @@
     return {
       cost: o.checked ? o.cost : o.shownCost,
       pop: o.checked ? p.pop : (p.shown && p.shown.pop !== undefined ? p.shown.pop : p.pop),
-      emis: o.checked ? p.emis : (p.shown && p.shown.emis !== undefined ? p.shown.emis : p.emis)
+      emis: o.checked ? p.emis : (p.shown && p.shown.emis !== undefined ? p.shown.emis : p.emis),
+      pay: o.checked ? (p.pay || 0) : (p.shown && p.shown.pay !== undefined ? p.shown.pay : (p.pay || 0)),
+      delay: o.checked ? (p.delay || 0) : (p.shown && p.shown.delay !== undefined ? p.shown.delay : (p.delay || 0))
     };
   }
 
@@ -178,7 +191,7 @@
     let penalty = 0;
     if (deceived) {
       s.deceivedLog.push({ round: s.round, id: p.id });
-      penalty = Math.min(s.pts, CFG.fooledPts);   // clean-up cost when a misleading paper is exposed
+      penalty = Math.min(s.pts, CFG.fooledPts[p.lvl || 2]);   // clean-up cost when a misleading paper is exposed
       s.pts -= penalty;
     }
     return { ok: true, bonus, amt, deceived, penalty };
@@ -354,15 +367,15 @@
       return (pb.emis + pb.pay * 2) / pb.cost - (pa.emis + pa.pay * 2) / pa.cost;
     });
     starts.push(new Set(order.slice(0, 12)));
-    for (let t = 0; t < 5; t++) starts.push(new Set(order.filter(() => rnd() < 0.4)));
+    for (let t = 0; t < 10; t++) starts.push(new Set(order.filter(() => rnd() < 0.3 + 0.05 * (t % 4))));
     for (const st of starts) {
       let cur = new Set(simulateChoice(s, st).picked), curC = simulateChoice(s, cur).C;
-      for (let it = 0; it < 1500; it++) {
+      for (let it = 0; it < 5000; it++) {
         const nxt = new Set(cur);
         const a = Math.floor(rnd() * n); nxt.has(a) ? nxt.delete(a) : nxt.add(a);
         if (rnd() < 0.4) { const b = Math.floor(rnd() * n); nxt.has(b) ? nxt.delete(b) : nxt.add(b); }
         const res = simulateChoice(s, nxt);
-        if (res.C < curC) { cur = new Set(res.picked); curC = res.C; }
+        if (res.C <= curC) { cur = new Set(res.picked); curC = res.C; }
       }
       if (curC < best.C) best = { C: curC, set: cur };
     }
@@ -394,9 +407,9 @@
     let ending;
     if (fooled.length >= 3 && score < 0.7) ending = 'fooled';
     else if (s.approved.length <= 4 || score < 0.12) ending = 'nothing';
-    else if (score >= 0.62 && s.pop >= 45) ending = 'hero';
-    else if (score >= 0.55 && s.pop < 45) ending = 'saviour';
-    else if (s.pop >= 62 && score < 0.45) ending = 'crowdpleaser';
+    else if (score >= CFG.heroScore && s.pop >= CFG.heroPop) ending = 'hero';
+    else if (score >= CFG.heroScore) ending = 'saviour';
+    else if (s.pop >= CFG.crowdPop && score < 0.55) ending = 'crowdpleaser';
     else if (greenCuts.length && lateCuts / greenCuts.length >= 0.5 && score < 0.6) ending = 'panic';
     else ending = 'steady';
     data.ending = ending;
@@ -414,7 +427,7 @@
     if (wonBoth) medals.push('elect');
     if (s.checks === 0 && fooled.length === 0) medals.push('checker');
     if (q.nature >= 60 && q.health >= 60) medals.push('thrive');
-    if (score >= 0.9) medals.push('perfect');
+    if (score >= 0.97) medals.push('perfect');
     data.medals = medals;
     // stars
     const combined = score * 0.6 + (s.pop / 100) * 0.2 + (Object.values(q).reduce((a, b) => a + b, 0) / 500) * 0.2;
@@ -423,6 +436,6 @@
   }
 
   root.NZ = { CFG, QOL_KEYS, newGame, startRound, approve, reject, factCheck, endRound, runElection, electionDue, isFinished,
-    offerShown, budgetPerTerm, tempProjected, tempFromC, baseline, qolAll, currentE, canAfford, report, isGreenwash, synBonus };
+    offerShown, deceptionDiffs, budgetPerTerm, tempProjected, tempFromC, baseline, qolAll, currentE, canAfford, report, isGreenwash, synBonus };
   if (typeof module !== 'undefined') module.exports = root.NZ;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -126,6 +126,20 @@ Do a second pass for "does a 15-year-old understand what this policy is within 2
 - summit_pledge : GREENWASH. A fancy summit podium with flags (invented generic colour stripes, no real flags), politicians clapping at a large scroll labelled by a tick; scroll has a very tiny sad note; a sleeping delegate; confetti.
 - citizens_panel : A big round table of 8 diverse everyday people (young, old, farmer, nurse, tradie, student) with speech bubbles of coloured icons (a leaf, a coin, a house) discussing; a facilitator at a flip chart.
 
+### New harder papers
+- biofuel_blend : A car filling up at a fuel pump with a small leaf sticker on the pump; a field of golden crop plants behind the station; sunny, calm and ordinary.
+- carbon_neutral_label : A shop shelf of packaged goods, each with a small round green leaf label; a smiling shopper picks one up; a factory chimney is visible through the shop window.
+- free_solar : A smiling delivery worker handing a boxed solar kit to a happy family at their front door of a tin-roof house; a large ribbon bow on the box; sunny.
+- smart_meters : A technician fitting a small digital meter on the wall of a house; a family looks on; a tablet shows a simple graph; neat and modern.
+- wave_power : A row of floating wave-energy buoys out on a blue sea with a small control building on the shore; engineers with tablets; bright day.
+- green_bonds : A bank counter where a smiling clerk hands a certificate with a leaf symbol to a customer; a small model wind turbine and solar panel on the counter.
+- highway_boost : A newly widened highway with many lanes of cars flowing, road crew finishing the edge, green trees along the verge; clear sky; calm and positive.
+- oil_field_capture : An oil field with pumpjacks and a large tank-and-pipe structure beside them; engineers in hi-vis with clipboards; pipes run underground; clear sky.
+- electric_buses : A row of modern electric buses charging at a depot under a canopy with solar panels; a driver waves; commuters waiting; bright and tidy.
+- home_batteries : The side of a tin-roof house with solar panels on the roof and a sleek wall-mounted home battery, a glowing evening window and a happy family inside.
+- bushland_regrowth : A cleared hillside with a protective fence and young gum saplings growing back among grasses; a ranger checking the fence; a kangaroo in the distance.
+- gas_export_ban : A large gas export terminal with big tanks and a ship at the dock; a red barrier across the gate; workers holding lunchboxes look worried; a manager points at the closed gate.
+
 ## events (assets/events)
 - bushfire : Wide orange-red glowing bushfire on a ridge with smoke clouds, a fire truck and silhouetted gum trees in the foreground, kangaroo running.
 - flood : A suburban street under brown floodwater up to the car doors, a family on a roof, a rescue boat.
